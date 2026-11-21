@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>冬旅案内 · JAPAN WINTER GUIDE (27 Des 2026 - 5 Jan 2027)</title>
+<style>
+  :root {
+    --washi: #F3EFE6;
+    --paper: #FAF7F0;
+    --tatami: #EAE4D7;
+    --ink: #1C1B18;
+    --sumi: #5E5A50;
+    --rule: #D6CFC0;
+    --matcha: #244736;
+    --matcha-bg: rgba(36, 71, 54, 0.11);
+    --hanko: #B6362B;
+    --hanko-bg: rgba(182, 54, 43, 0.10);
+    --kincha: #8D5B24;
+    --kincha-bg: rgba(141, 91, 36, 0.12);
+    --karashi: #966408;
+    --karashi-bg: rgba(150, 100, 8, 0.12);
+    --r: 12px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+    --serif: Georgia, "Yu Mincho", "Hiragino Mincho ProN", "Times New Roman", serif;
+  }
+  body.night {
+    --washi: #121210;
+    --paper: #191916;
+    --tatami: #23221E;
+    --ink: #EFECE4;
+    --sumi: #A39F93;
+    --rule: #32312B;
+    --matcha: #55A27F;
+    --matcha-bg: rgba(85, 162, 127, 0.14);
+    --hanko: #E15B4E;
+    --hanko-bg: rgba(225, 91, 78, 0.15);
+    --kincha: #C98C4B;
+    --kincha-bg: rgba(201, 140, 75, 0.15);
+    --karashi: #E3AA42;
+    --karashi-bg: rgba(227, 170, 66, 0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
+  html, body { width: 100%; overflow-x: hidden; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: 120px;
+    -webkit-tap-highlight-color: transparent;
+    /* Subtle Japanese asanoha/grid paper pattern */
+    background-color: var(--washi);
+    background-image:
+      linear-gradient(to right, rgba(140, 132, 115, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(140, 132, 115, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  button, input, select, textarea { font-family: inherit; font-size: 13px; color: var(--ink); }
+
+  /* Japanese Editorial Masthead */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 45;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+    padding: 10px 14px;
+  }
+  .hd-in {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .jp-eyebrow {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--sumi);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hanko-seal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--hanko);
+    color: var(--hanko);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    transform: rotate(-2deg);
+  }
+  .hd-title {
+    font-family: var(--serif);
+    font-size: 16.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+  }
+  .hd-sub { font-size: 11px; color: var(--sumi); }
+
+  main { max-width: 780px; margin: 14px auto; padding: 0 12px; }
+  section.page { display: none; }
+  section.page.active { display: block; }
+
+  /* Shoji & Kakejiku-inspired Swipeable Showcase */
+  .kakejiku-shell {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--hanko);
+    border-radius: var(--r);
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .swipe-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    gap: 10px;
+  }
+  .swipe-track::-webkit-scrollbar { display: none; }
+  .slide-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: var(--washi);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .slide-head-jp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 7px;
+    margin-bottom: 9px;
+  }
+  .jp-kanji-stamp {
+    font-family: var(--serif);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--hanko);
+    letter-spacing: 0.08em;
+  }
+  .slide-h { font-family: var(--serif); font-size: 18.5px; font-weight: 700; line-height: 1.3; margin-bottom: 4px; }
+  .slide-spec { font-size: 11.5px; font-weight: 700; color: var(--matcha); margin-bottom: 6px; }
+  .slide-p { font-size: 12.5px; color: var(--sumi); margin-bottom: 10px; }
+
+  .ctrl-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .nav-arrows { display: flex; align-items: center; gap: 6px; }
+  .round-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--tatami);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .round-btn.active { background: var(--hanko); color: #fff; border-color: var(--hanko); }
+  .dots-wrap { display: flex; gap: 5px; align-items: center; }
+  .dot-b {
+    width: 8px;
+    height: 8px;
+    border-radius: 99px;
+    background: var(--rule);
+    border: none;
+    cursor: pointer;
+  }
+  .dot-b.active { width: 20px; background: var(--hanko); }
+
+  /* Horizontal Day Selector */
+  .days-swipe {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    scrollbar-width: none;
+  }
+  .days-swipe::-webkit-scrollbar { display: none; }
+  .day-chip {
+    flex: 0 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 7px 11px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .day-chip.active { background: var(--matcha); color: #fff; border-color: var(--matcha); }
+
+  /* Quick Action Grid */
+  .q-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+  @media (min-width: 580px) { .q-grid { grid-template-columns: repeat(4, 1fr); } }
+  .q-btn {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--r);
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .q-ico { font-size: 18px; flex-shrink: 0; }
+  .q-t { font-size: 12px; font-weight: 800; line-height: 1.25; }
+  .q-s { font-size: 10.5px; color: var(--sumi); }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: var(--r);
+    padding: 13px 14px;
+    margin-bottom: 12px;
+  }
+  .card-hd { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 9px; flex-wrap: wrap; }
+  .card-lbl {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--sumi);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-lbl::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--hanko);
+    transform: rotate(45deg);
+  }
+
+  .btn {
+    background: var(--tatami);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 7px 11px;
+    border-radius: 9px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+  .btn-matcha { background: var(--matcha); color: #fff; border-color: var(--matcha); }
+  .btn-kincha { background: var(--kincha); color: #fff; border-color: var(--kincha); }
+  .btn-hanko { background: var(--hanko); color: #fff; border-color: var(--hanko); }
+  .btn-sm { padding: 5px 9px; font-size: 11.5px; border-radius: 8px; }
+
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 5px; }
+  .tag-ok { background: var(--matcha-bg); color: var(--matcha); }
+  .tag-warn { background: var(--karashi-bg); color: var(--karashi); }
+  .tag-red { background: var(--hanko-bg); color: var(--hanko); }
+  .tag-gold { background: var(--kincha-bg); color: var(--kincha); }
+  .tag-muted { background: var(--tatami); color: var(--sumi); }
+
+  .row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  input[type="text"], input[type="number"], select, textarea {
+    background: var(--washi);
+    border: 1px solid var(--rule);
+    border-radius: 9px;
+    padding: 8px 10px;
+    width: 100%;
+  }
+  .row input, .row select { width: auto; min-width: 0; }
+
+  .slot { background: var(--washi); border: 1px solid var(--rule); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+  .slot.done { opacity: 0.55; }
+  .slot-top { display: flex; gap: 9px; align-items: flex-start; }
+  .slot-top input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--matcha); flex-shrink: 0; cursor: pointer; }
+  .slot-tm { font-size: 11px; font-weight: 800; color: var(--matcha); }
+  .slot-nm { font-size: 13.5px; font-weight: 700; margin: 1px 0 3px; }
+  .slot-ds { font-size: 12px; color: var(--sumi); }
+
+  .note-box {
+    background: var(--washi);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--matcha);
+    border-radius: 9px;
+    padding: 9px 11px;
+    font-size: 12px;
+    margin-top: 7px;
+  }
+  .note-box strong { color: var(--matcha); display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+  .note-box.planb { border-left-color: var(--hanko); }
+  .note-box.planb strong { color: var(--hanko); }
+
+  /* Railway Corridor Map & Swipeable Station Cards */
+  .map-box { background: var(--washi); border: 1px solid var(--rule); border-radius: 10px; padding: 8px; }
+  .map-box svg { width: 100%; height: auto; display: block; }
+  .st-node { cursor: pointer; }
+  .st-swipe {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    gap: 8px;
+    margin-top: 9px;
+  }
+  .st-swipe::-webkit-scrollbar { display: none; }
+  .st-card-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: var(--tatami);
+    border: 1px solid var(--rule);
+    border-radius: 11px;
+    padding: 12px;
+    font-size: 12px;
+  }
+  .addr-box {
+    background: var(--paper);
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 7px 9px;
+    margin: 6px 0 8px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .slot-row { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 8px; }
+  .slot-tag {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 7px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .k-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; }
+  @media (min-width: 560px) { .k-grid { grid-template-columns: repeat(4, 1fr); } }
+  .k-cell { background: var(--washi); border: 1px solid var(--rule); border-radius: 9px; padding: 9px; }
+  .k-jp { font-family: var(--serif); font-size: 18px; font-weight: 800; color: var(--kincha); line-height: 1.3; }
+  .k-jp.danger { color: var(--hanko); }
+
+  .kana-table { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin-top: 8px; }
+  @media (min-width: 560px) { .kana-table { grid-template-columns: repeat(10, 1fr); } }
+  .kana-tile {
+    background: var(--washi);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 6px 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .kana-ch { font-family: var(--serif); font-size: 16px; font-weight: 800; color: var(--ink); }
+  .kana-ro { font-size: 10px; color: var(--kincha); font-weight: 700; }
+
+  .food-item { border-bottom: 1px solid var(--rule); padding: 9px 0; }
+  .food-item:last-child { border-bottom: none; }
+
+  .p-bg { background: var(--tatami); height: 7px; border-radius: 99px; overflow: hidden; margin: 6px 0; }
+  .p-bar { height: 100%; background: var(--matcha); transition: width 0.2s; }
+  .p-bar.over { background: var(--hanko); }
+
+  /* Floating Pill Dock + '•••' Drawer */
+  .dock-wrap {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    z-index: 80;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+  }
+  nav.pill-dock {
+    pointer-events: auto;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+    border-radius: 28px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    max-width: 520px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  nav.pill-dock button.dock-item {
+    background: transparent;
+    border: none;
+    color: var(--sumi);
+    padding: 6px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    font-size: 10.5px;
+    font-weight: 700;
+    flex: 1;
+    min-width: 0;
+  }
+  nav.pill-dock button.dock-item .d-ico { font-size: 16px; line-height: 1.1; }
+  nav.pill-dock button.dock-item .d-lbl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  nav.pill-dock button.dock-item.active { background: var(--matcha-bg); color: var(--matcha); }
+  nav.pill-dock button.dock-more {
+    background: var(--tatami);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  nav.pill-dock button.dock-more.open { background: var(--hanko); color: #fff; border-color: var(--hanko); }
+
+  .sheet-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 120;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 10px;
+  }
+  .sheet-bg.open { display: flex; }
+  .sheet-card {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 560px;
+    max-height: 82vh;
+    overflow-y: auto;
+    padding: 14px;
+    margin-bottom: 64px;
+  }
+  .more-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 10px; }
+  .more-tile {
+    background: var(--washi);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .ext-strip {
+    position: fixed;
+    bottom: 74px;
+    left: 12px;
+    right: 12px;
+    z-index: 110;
+    display: none;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .ext-strip.open { display: flex; }
+  .ext-box {
+    pointer-events: auto;
+    max-width: 520px;
+    width: 100%;
+    background: var(--paper);
+    border: 2px solid var(--matcha);
+    border-radius: 12px;
+    padding: 9px 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+  }
+
+  .modal-bg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    z-index: 200;
+    padding: 14px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+  }
+  .modal-bg.open { display: flex; }
+  .modal-box {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 14px;
+    max-width: 520px;
+    width: 100%;
+    padding: 15px;
+  }
+  .jp-card {
+    background: var(--washi);
+    border-left: 4px solid var(--hanko);
+    border-radius: 9px;
+    padding: 12px;
+    font-family: var(--serif);
+    font-size: 17.5px;
+    font-weight: 700;
+    line-height: 1.55;
+    margin: 9px 0;
+  }
+
+  .toast {
+    position: fixed;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 7px 15px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 300;
+    display: none;
+  }
+  .toast.show { display: block; }
+</style>
+</head>
+<body>
+
+<div class="toast" id="toast">Tersimpan</div>
+
+<div class="ext-strip" id="ext-strip">
+  <div class="ext-box">
+    <div style="min-width:0;flex:1;">
+      <div style="font-size:11.5px;font-weight:800;color:var(--matcha);" id="ext-title">Tautan Eksternal</div>
+      <div style="font-size:10.5px;color:var(--sumi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" id="ext-url"></div>
+    </div>
+    <div class="row">
+      <a class="btn btn-sm btn-matcha" id="ext-link" href="#" target="_blank" rel="noopener noreferrer">Buka ↗</a>
+      <button type="button" class="btn btn-sm" data-act="copy-ext">Salin</button>
+      <button type="button" class="btn btn-sm" data-act="close-ext">✕</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="hd-in">
+    <div>
+      <div class="jp-eyebrow"><span class="hanko-seal">冬旅</span> 関東・東京・鎌倉 · 27 DES 2026 - 5 JAN 2027</div>
+      <div class="hd-title">JAPAN WINTER FIELD GUIDE</div>
+      <div class="hd-sub">One-Bag · 10 Hari · Jam Lokal JST (UTC+9)</div>
+    </div>
+    <button type="button" class="btn btn-sm btn-hanko" data-act="sos" data-k="pork">JP / SOS</button>
+  </div>
+</header>
+
+<main>
+  <section id="page-schedule" class="page active">
+    <div class="kakejiku-shell">
+      <div class="swipe-track" id="hero-track"></div>
+      <div class="ctrl-row">
+        <div class="nav-arrows">
+          <button type="button" class="round-btn" id="auto-btn" data-act="toggle-auto" title="Putar/Jeda">▶</button>
+          <button type="button" class="round-btn" data-act="slide-hero" data-dir="-1" title="Geser Kiri">&lt;</button>
+          <button type="button" class="round-btn" data-act="slide-hero" data-dir="1" title="Geser Kanan">&gt;</button>
+        </div>
+        <div class="dots-wrap" id="hero-dots"></div>
+      </div>
+    </div>
+
+    <div class="q-grid">
+      <button type="button" class="q-btn" data-act="sos" data-k="pork">
+        <span class="q-ico">🍜</span>
+        <div><div class="q-t">Kartu Tanpa Babi</div><div class="q-s">Kaldu, lard &amp; menu</div></div>
+      </button>
+      <button type="button" class="q-btn" data-act="sub" data-s="kana">
+        <span class="q-ico">あ</span>
+        <div><div class="q-t">Panduan Kana &amp; JP</div><div class="q-s">Hiragana · Katakana</div></div>
+      </button>
+      <button type="button" class="q-btn" data-act="tab" data-p="page-map">
+        <span class="q-ico">🚉</span>
+        <div><div class="q-t">Peta &amp; Alamat</div><div class="q-s">Geser &amp; ketuk titik</div></div>
+      </button>
+      <button type="button" class="q-btn" data-act="tab" data-p="page-budget">
+        <span class="q-ico">💴</span>
+        <div><div class="q-t">Anggaran &amp; Suica</div><div class="q-s" id="q-suica-sub">Saldo ¥3,000</div></div>
+      </button>
+    </div>
+
+    <div class="days-swipe" id="day-chips"></div>
+    <div id="day-detail"></div>
+  </section>
+
+  <section id="page-map" class="page">
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Peta Jalur Kereta (Geser Kartu / Ketuk Titik)</span>
+        <div class="row">
+          <button type="button" class="btn btn-sm btn-matcha" id="c-ibaraki" data-act="corr" data-c="ibaraki">Jōsō &amp; Oarai</button>
+          <button type="button" class="btn btn-sm" id="c-tokyo" data-act="corr" data-c="tokyo">Tokyo</button>
+          <button type="button" class="btn btn-sm" id="c-kamakura" data-act="corr" data-c="kamakura">Kamakura</button>
+        </div>
+      </div>
+
+      <div class="map-box" id="map-wrap"></div>
+      <div class="st-swipe" id="st-swipe"></div>
+
+      <div class="ctrl-row">
+        <div class="nav-arrows">
+          <button type="button" class="round-btn" data-act="slide-st" data-dir="-1">&lt;</button>
+          <button type="button" class="round-btn" data-act="slide-st" data-dir="1">&gt;</button>
+        </div>
+        <div class="dots-wrap" id="st-dots"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><span class="card-lbl">Estimasi Tarif &amp; Potong Saldo Suica</span></div>
+      <div class="row" style="margin-bottom:8px;">
+        <select id="rt-sel" style="flex:1;"></select>
+        <button type="button" class="btn btn-sm btn-matcha" data-act="deduct-rt">Potong Suica</button>
+      </div>
+      <div id="rt-info" style="font-size:12px;color:var(--sumi);"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><span class="card-lbl">Catatan Jadwal Lapangan &amp; Pengingat</span></div>
+      <div style="font-size:11.5px;color:var(--sumi);margin-bottom:7px;">
+        Jadwal kereta/bus resmi real-time mengikuti papan stasiun &amp; aplikasi transit langsung (Navitime/Yahoo). Catat jam kereta/bus yang kamu cek di lapangan di bawah ini:
+      </div>
+      <div class="row">
+        <input type="text" id="st-live-note" placeholder="Contoh: Kereta Jōso jam 21:14 peron 2 / Shuttle T2 jam 08:30" style="flex:1;">
+        <button type="button" class="btn btn-sm btn-matcha" data-act="save-st-note">Simpan</button>
+      </div>
+      <div id="st-live-saved" style="margin-top:6px;font-size:11.5px;color:var(--kincha);font-weight:700;"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd"><span class="card-lbl">Pencarian Sekitar 1-Klik</span></div>
+      <div class="row">
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Stasiun Terdekat" data-u="https://www.google.com/maps/search/train+station+near+me">🚉 Stasiun</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Konbini / Supermarket" data-u="https://www.google.com/maps/search/7-Eleven+or+Lawson+or+Supermarket+near+me">🍱 Konbini</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Coin Locker" data-u="https://www.google.com/maps/search/Coin+Locker+near+me">🧳 Loker</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Toilet Umum" data-u="https://www.google.com/maps/search/Public+Toilet+near+me">🚻 Toilet</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="page-food" class="page">
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Radar Kemasan Tanpa Babi &amp; Lard (Kana &amp; Kanji)</span>
+        <button type="button" class="btn btn-sm btn-hanko" data-act="sos" data-k="pork">Kartu Tanya JP</button>
+      </div>
+      <p style="font-size:12px;color:var(--sumi);margin-bottom:8px;">
+        Bebas babi, kaldu tulang babi, lard, &amp; gelatin babi. Ayam, sapi, ikan, telur, mirin, &amp; sake boleh. Sertifikat halal bukan syarat utama—periksa bahan &amp; kuah.
+      </p>
+      <div class="k-grid">
+        <div class="k-cell"><div class="k-jp danger">豚 / 豚肉</div><div style="font-size:11.5px;font-weight:700;">Buta / Butaniku</div><div style="font-size:11px;color:var(--sumi);">Daging babi</div></div>
+        <div class="k-cell"><div class="k-jp danger">ポーク</div><div style="font-size:11.5px;font-weight:700;">Pōku (Katakana)</div><div style="font-size:11px;color:var(--sumi);">Pork / Ekstrak</div></div>
+        <div class="k-cell"><div class="k-jp danger">ラード</div><div style="font-size:11.5px;font-weight:700;">Rādo (Katakana)</div><div style="font-size:11px;color:var(--sumi);">Lemak babi / Lard</div></div>
+        <div class="k-cell"><div class="k-jp danger">豚骨</div><div style="font-size:11.5px;font-weight:700;">Tonkotsu</div><div style="font-size:11px;color:var(--sumi);">Kaldu tulang babi</div></div>
+        <div class="k-cell"><div class="k-jp danger">ゼラチン</div><div style="font-size:11.5px;font-weight:700;">Zerachin (Katakana)</div><div style="font-size:11px;color:var(--sumi);">Gelatin babi</div></div>
+        <div class="k-cell"><div class="k-jp danger">ハム・ベーコン</div><div style="font-size:11.5px;font-weight:700;">Hamu / Bēkon</div><div style="font-size:11px;color:var(--sumi);">Ham &amp; Bacon</div></div>
+        <div class="k-cell"><div class="k-jp danger">ショートニング</div><div style="font-size:11.5px;font-weight:700;">Shōtoningu</div><div style="font-size:11px;color:var(--sumi);">Shortening</div></div>
+        <div class="k-cell"><div class="k-jp" style="color:var(--matcha);">鶏・牛・魚</div><div style="font-size:11.5px;font-weight:700;">Tori / Gyū / Sakana</div><div style="font-size:11px;color:var(--sumi);">Ayam/Sapi/Ikan</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Direktori Kuliner Rute &amp; Kanto</span>
+        <select id="food-area" style="width:auto;padding:5px 8px;font-size:11.5px;">
+          <option value="all">Semua Area</option>
+          <option value="Ueno">Ueno &amp; Okachimachi</option>
+          <option value="Asakusa">Asakusa</option>
+          <option value="Shinjuku">Shinjuku</option>
+          <option value="Shibuya">Shibuya</option>
+          <option value="Ginza">Ginza &amp; Shiba</option>
+          <option value="Kanagawa">Kamakura &amp; Yokohama</option>
+          <option value="Narita">Narita &amp; Chiba</option>
+          <option value="Joso">Jōsō &amp; Oarai</option>
+        </select>
+      </div>
+      <div id="food-list"></div>
+    </div>
+  </section>
+
+  <section id="page-budget" class="page">
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Pencatat Pengeluaran Harian (¥)</span>
+        <span class="tag tag-ok" id="b-pill">¥0 / ¥66,250</span>
+      </div>
+      <div class="row" style="margin-bottom:7px;">
+        <select id="e-day" style="flex:1 1 120px;"></select>
+        <select id="e-cat" style="flex:1 1 100px;">
+          <option value="Makan">Makan</option>
+          <option value="Transport">Transport</option>
+          <option value="Atraksi">Atraksi</option>
+          <option value="Belanja">Belanja</option>
+        </select>
+      </div>
+      <div class="row" style="margin-bottom:8px;">
+        <input type="number" id="e-amt" placeholder="Nominal ¥" style="flex:1;">
+        <input type="text" id="e-note" placeholder="Catatan" style="flex:1;">
+        <button type="button" class="btn btn-kincha" data-act="add-exp">+ Catat</button>
+      </div>
+      <div id="e-list" style="font-size:12px;"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Welcome Suica (28 Hari · Tanpa Deposit)</span>
+        <strong id="suica-val" style="font-size:18px;color:var(--matcha);">¥3,000</strong>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-sm" data-act="suica" data-d="-270">-¥270 (Bus Kuil)</button>
+        <button type="button" class="btn btn-sm" data-act="suica" data-d="-300">-¥300 (Daibutsu)</button>
+        <button type="button" class="btn btn-sm" data-act="suica" data-d="-500">-¥500</button>
+        <button type="button" class="btn btn-sm btn-matcha" data-act="suica" data-d="1000">+¥1,000</button>
+        <button type="button" class="btn btn-sm" data-act="suica-rst">Reset</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl">Konverter Kurs (8.5 / 9.0 / 10.0) &amp; Tax-Free</span>
+        <div class="row">
+          <button type="button" class="btn btn-sm" data-act="fx" data-r="8.5">8.5</button>
+          <button type="button" class="btn btn-sm btn-kincha" data-act="fx" data-r="9.0">9.0</button>
+          <button type="button" class="btn btn-sm" data-act="fx" data-r="10.0">10.0</button>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom:8px;">
+        <input type="number" id="fx-in" value="66250" style="flex:1;">
+        <strong>JPY</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;background:var(--washi);padding:9px;border-radius:9px;border:1px solid var(--rule);">
+        <div><div style="font-size:10.5px;color:var(--sumi);">Won</div><strong id="fx-krw" style="font-size:15px;">KRW 596.250</strong></div>
+        <div><div style="font-size:10.5px;color:var(--sumi);">Rupiah (~Rp105)</div><strong id="fx-idr" style="font-size:15px;">Rp 6.956.250</strong></div>
+        <div><div style="font-size:10.5px;color:var(--sumi);">Tax-Free (≥¥5.000)</div><strong id="fx-tf" style="color:var(--matcha);">✅ Memenuhi</strong></div>
+      </div>
+      <div id="budget-breakdown" style="margin-top:9px;font-size:11.5px;color:var(--sumi);line-height:1.55;"></div>
+    </div>
+  </section>
+
+  <section id="page-more" class="page">
+    <div class="card">
+      <div class="card-hd">
+        <span class="card-lbl" id="more-title">Detail Tambahan</span>
+        <button type="button" class="btn btn-sm" data-act="open-sheet">☰ Menu Lain</button>
+      </div>
+      <div id="more-body" style="font-size:12.5px;"></div>
+    </div>
+  </section>
+</main>
+
+<div class="sheet-bg" id="sheet-bg">
+  <div class="sheet-card">
+    <div class="card-hd">
+      <span class="card-lbl">Menu Lengkap Lapangan</span>
+      <button type="button" class="btn btn-sm" data-act="close-sheet">✕</button>
+    </div>
+    <div class="more-grid">
+      <button type="button" class="more-tile" data-act="sub" data-s="kana"><span>あ</span><span>Panduan Kana &amp; Istilah</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="alternatives"><span>🔄</span><span>Alternatif Tokyo (28)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="logistics"><span>🏨</span><span>Hotel, Shuttle &amp; Suica (29)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="onebag"><span>🎒</span><span>One-Bag &amp; Berat (34)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="planb"><span>⚡</span><span>Plan B IF 01-IF 10 (32-33)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="backup"><span>💾</span><span>Backup / Restore JSON</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="sources" style="grid-column:span 2;"><span>📚</span><span>56 Sumber Resmi (Hal. 36-38)</span></button>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-sm" style="flex:1;" data-act="theme" id="theme-btn">🌙 Mode Gelap</button>
+      <button type="button" class="btn btn-sm" style="flex:1;" data-act="ics">📅 Unduh .ics</button>
+      <button type="button" class="btn btn-sm btn-hanko" style="flex:1;" data-act="sos" data-k="hotel">🏨 Kartu Hotel</button>
+    </div>
+  </div>
+</div>
+
+<div class="dock-wrap">
+  <nav class="pill-dock" aria-label="Navigasi Utama">
+    <button type="button" class="dock-item active" data-act="tab" data-p="page-schedule"><span class="d-ico">🗓️</span><span class="d-lbl">Jadwal</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-map"><span class="d-ico">🚉</span><span class="d-lbl">Peta</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-food"><span class="d-ico">🍜</span><span class="d-lbl">Kuliner</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-budget"><span class="d-ico">💴</span><span class="d-lbl">Dana</span></button>
+    <button type="button" class="dock-more" id="dock-more" data-act="toggle-sheet" aria-label="Menu Lainnya">•••</button>
+  </nav>
+</div>
+
+<div class="modal-bg" id="sos-bg">
+  <div class="modal-box">
+    <div class="card-hd">
+      <strong style="font-size:13.5px;">Pocket Notes · Kartu Bahasa Jepang</strong>
+      <button type="button" class="btn btn-sm" data-act="close-sos">✕</button>
+    </div>
+    <div class="row" style="margin-bottom:8px;">
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="pork">🍜 Tanpa Babi &amp; Lard</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="hotel">🏨 Hotel, Sarapan &amp; Biyu</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="train">🚃 Kereta &amp; Shuttle</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="lost">🪪 Koban / Hilang</button>
+    </div>
+    <div class="jp-card" id="fc-jp"></div>
+    <div style="font-size:12px;color:var(--sumi);margin-bottom:8px;" id="fc-ro"></div>
+    <div style="font-size:12px;background:var(--matcha-bg);padding:9px;border-radius:9px;" id="fc-id"></div>
+    <div class="row" style="margin-top:9px;">
+      <button type="button" class="btn btn-sm btn-matcha" data-act="copy-fc">Salin Teks Jepang</button>
+      <span style="font-size:11px;color:var(--sumi);">Darurat: <code>110</code> / <code>119</code></span>
+    </div>
+  </div>
+</div>
+
+<script>
+const HERO_SLIDES = [
+  {
+    id:"emperor",
+    jp:"令和九年一月二日 · 皇居一般参賀",
+    kicker:"01 / SOROTAN UTAMA · 2 JAN 2027",
+    title:"Kunjungan Umum Kaisar di Kawasan Istana",
+    spec:"Palace East Plaza · Menunggu Info Resmi IHA 2027 · East Gardens Tutup 28 Des-3 Jan",
+    desc:"Target melihat Kaisar pada kunjungan umum Tahun Baru. Jangan mengunci tiket Kabuki atau kegiatan lain sebelum waktu keluar istana jelas.",
+    btnText:"Buka Hari 07 (2 Jan)",
+    btnAct:"day", btnVal:"7",
+    secText:"Cek IHA",
+    secUrl:"https://www.kunaicho.go.jp"
+  },
+  {
+    id:"hotel",
+    jp:"成田温泉美湯 · 朝食ビュッフェ付",
+    kicker:"02 / VOUCHER TERBARU · 4-5 JAN 2027",
+    title:"ART HOTEL Narita · Biyu Spa & Sarapan",
+    spec:"Garden Twin Lake View · Biyu Hot Springs · Buffet BOLD KITCHEN (06.30-10.00)",
+    desc:"Sarapan, shuttle gratis (T2 Halte 26 / T1 Halte 16), dan Wi-Fi termasuk. Paket Sora-ben lama dicabut; sarapan tidak dihitung ulang sebagai biaya harian.",
+    btnText:"Buka Hari 09-10",
+    btnAct:"day", btnVal:"9",
+    secText:"Kartu Hotel JP",
+    secSos:"hotel"
+  },
+  {
+    id:"market",
+    jp:"豊洲市場・築地場外 · 年末年始案内",
+    kicker:"03 / KALENDER LIBUR & PASAR · 30 DES",
+    title:"Toyosu & Tsukiji Maju ke 30 Desember",
+    spec:"Prioritas Sebelum Libur · Senkyaku Banrai · Toyoda Castle Tutup 28 Des-4 Jan",
+    desc:"Banyak toko Tsukiji libur hingga awal Januari. Shinjuku Gyoen tutup 29 Des-3 Jan & Senin 4 Jan; Museum Edo-Tokyo diumumkan buka 4 Jan.",
+    btnText:"Buka Hari 04 (30 Des)",
+    btnAct:"day", btnVal:"4",
+    secText:"Lihat Plan B",
+    secSub:"planb"
+  },
+  {
+    id:"budget",
+    jp:"旅費予算管理 · KRW 972.050",
+    kicker:"04 / ANGGARAN · DI LUAR PESAWAT + HOTEL",
+    title:"Total Disiapkan KRW 972.050",
+    spec:"Batas KRW 1.000.000 · Harian ¥66.250 (KRW 596.250 @9.0) · Cadangan KRW 170.000",
+    desc:"Sudah termasuk bus Daeso-Incheon PP, eSIM, asuransi, kebutuhan kecil/loker/kairo, duty-free/oleh-oleh, dana darurat KRW 120.000, dan buffer kurs KRW 50.000.",
+    btnText:"Buka Anggaran",
+    btnAct:"tab", btnVal:"page-budget",
+    secText:"Saldo Suica",
+    secTab:"page-budget"
+  }
+];
+
+const DAYS = [
+  {
+    d:1, dt:"27 Des 2026", w:"Minggu", ti:"Daeso to Ishige", stay:"Jōsō · Malam 1 dari 3 (Rumah Kawan)",
+    tr:3500, fd:2500, at:0, krw:54000,
+    focus:"Tiba di area Ishige, bukan mengejar atraksi setelah penerbangan.",
+    slots:[
+      { id:"d1_1", t:"Pagi", n:"Daeso menuju Incheon", b:"warn", bt:"Cek Jadwal Bus", d:"Pilih bus yang memberi waktu cukup sebelum penerbangan. Jam 07.00 adalah opsi pada dokumen lama, bukan jadwal 27 Des yang sudah dipastikan.", m:"https://www.google.com/maps/search/Daeso+Bus+Terminal+Eumseong" },
+      { id:"d1_2", t:"11.30-14.15", n:"Check-in dan duty-free (ICN T1)", b:"ok", bt:"Plafon Belanja", d:"Setelah urusan penerbangan selesai, beli 1 slop rokok dan ginseng stick. Gunakan batas belanja gabungan pada anggaran, bukan belanja tanpa plafon.", m:"https://www.google.com/maps/search/Incheon+International+Airport+Terminal+1" },
+      { id:"d1_3", t:"15.20-17.45", n:"Eastar Jet ZE603 (ICN T1 -> NRT T3)", b:"ok", bt:"Sesuai E-Ticket", d:"Jam mengikuti dokumen perjalananmu. Cocokkan kembali terminal, jadwal, dan ketentuan bagasi dengan e-ticket terbaru.", m:"https://www.google.com/maps/search/Narita+Airport+Terminal+3" },
+      { id:"d1_4", t:"17.45-19.15", n:"Narita dan kartu IC (Welcome Suica)", b:"ok", bt:"Isi Awal ~¥3.000", d:"Imigrasi, ambil barang bila ada, lalu menuju stasiun T2/3. Welcome Suica fisik dijual di stasiun bandara; isi awal sekitar JPY 3.000.", m:"https://www.google.com/maps/search/Narita+Airport+Terminal+2+3+Station" },
+      { id:"d1_5", t:"19.15-23.30", n:"Kereta menuju Ishige", b:"warn", bt:"Cek Koneksi Akhir", d:"Rute kerja: JR Narita Line via Narita dan Abiko, JR Joban ke Toride, lalu Kantetsu Joso Line ke Ishige. Cek koneksi terakhir saat tiba; waktu ini alokasi, bukan jadwal kereta terpesan.", m:"https://www.google.com/maps/dir/Narita+Airport+Terminal+2/Ishige+Station,+Joso,+Ibaraki" }
+    ],
+    move:"Narita T3 ke stasiun T2/3 dahulu. Joso Line menerima Suica. Cocokkan stasiun turun dan jemputan rumah kawan.",
+    food:"Pilih lauk ayam, sapi, telur, atau ikan tanpa bahan babi. Malam dikoordinasikan di rumah kawan. Mirin/sake boleh; sertifikat halal bukan syarat.",
+    planb:"Jika kedatangan terlambat, cek sisa koneksi sebelum meninggalkan bandara. Hubungi kawan untuk titik jemput di Moriya/Toride. Taksi atau hotel darurat memakai dana cadangan."
+  },
+  {
+    d:2, dt:"28 Des 2026", w:"Senin", ti:"River, castle & hot spring", stay:"Jōsō · Malam 2 dari 3 (Rumah Kawan)",
+    tr:2000, fd:2500, at:2200, krw:60300,
+    focus:"Foto eksterior Toyoda, masak, lalu berendam tanpa buru-buru.",
+    slots:[
+      { id:"d2_1", t:"08.00-09.00", n:"Sarapan dan cek rute", b:"ok", bt:"Sesuai Posisi Kawan", d:"Pilih urutan lokasi berdasarkan stasiun rumah kawan. Toyoda Castle berada di kawasan Ishige; Kinunoyu berada di bagian selatan Joso.", m:"https://www.google.com/maps/search/Ishige+Station+Joso" },
+      { id:"d2_2", t:"09.00-11.30", n:"Sungai Kinu dan Toyoda", b:"red", bt:"Interior Tutup 28 Des-4 Jan", d:"Foto dari jalur publik dan eksterior Toyoda Castle. Interior tutup pada 28 Des-4 Jan; menara sekarang fasilitas modern (buka 1992).", m:"https://www.google.com/maps/search/Toyoda+Castle+Joso+Ibaraki" },
+      { id:"d2_3", t:"12.00-14.00", n:"Masak sambal homemade & siapkan bekal", b:"ok", bt:"Dapur Kawan", d:"Belanja bahan lokal, masak bersama kawan, makan siang. Ayam, sapi, ikan, atau telur boleh; hindari daging, lemak, dan kaldu babi. Siapkan bekal Oarai.", m:"https://www.google.com/maps/search/Supermarket+near+Ishige+Station" },
+      { id:"d2_4", t:"15.00-18.00", n:"Kinunoyu Hot Spring", b:"ok", bt:"¥1.700 Hari Kerja / ¥1.950 Libur", d:"Nikmati onsen umum dan tsubo-yu. Tarif reguler JPY 1.700 pada hari kerja atau JPY 1.950 akhir pekan/libur; sewa handuk besar JPY 240.", m:"https://www.google.com/maps/search/Kinunoyu+Hot+Spring+Joso" },
+      { id:"d2_5", t:"18.00-20.00", n:"Makan dan pulang santai", b:"ok", bt:"Cek Bahan Kuah", d:"Makan dari dapur kawan atau pilih ikan/ayam/sapi yang bahan babinya dapat diperiksa. Jangan menebak isi kuah hanya dari nama lauk.", m:"https://www.google.com/maps/search/Kinunoyu+Hot+Spring+Joso" }
+    ],
+    move:"Anggaran lokal JPY 2.000 mengasumsikan kombinasi kereta, transportasi lokal, atau bantuan kawan. Taksi mandiri bisa menambah biaya besar.",
+    food:"Masak nasi, sambal, dan lauk ayam/ikan/sapi. Di onsen, periksa kaldu, lard, dan saus; hindari tonjiru atau babi. Mirin/sake boleh.",
+    planb:"Jika hujan, kurangi foto luar dan perpanjang waktu memasak. Tsubo-yu ada di area bersama; ruang mandi privat Kinunoyu Besso terpisah (mulai JPY 5.500/60m/2 orang hari kerja)."
+  },
+  {
+    d:3, dt:"29 Des 2026", w:"Selasa", ti:"A day on the Pacific", stay:"Jōsō · Malam 3 dari 3 (Rumah Kawan)",
+    tr:6500, fd:2500, at:0, krw:81000,
+    focus:"Satu pesisir, satu tujuan utama; lindungi sambungan pulang.",
+    slots:[
+      { id:"d3_1", t:"07.00-10.30", n:"Berangkat lebih awal ke Oarai", b:"warn", bt:"Jadwal Libur", d:"Dari Mitsukaido: Joso Line ke Toride, JR ke Mito, lalu Kashima Rinkai ke Oarai. Dari Ishige, bandingkan opsi via Shimodate di aplikasi rute.", m:"https://www.google.com/maps/dir/Ishige+Station/Oarai+Station" },
+      { id:"d3_2", t:"10.30-11.00", n:"Oarai Station ke kuil (Bus ~¥270)", b:"warn", bt:"Pola Libur 29 Des", d:"Gunakan bus menuju Oarai Isosaki Jinja-shita; alokasi tarif JPY 270 sekali jalan. Cek jadwal liburan akhir tahun.", m:"https://www.google.com/maps/search/Oarai+Isosaki+Jinja-shita+bus+stop" },
+      { id:"d3_3", t:"11.00-12.30", n:"Oarai Isosaki Shrine & Torii Pesisir", b:"ok", bt:"Buka 06.00-17.00", d:"Kunjungi kompleks kuil dan sudut pandang torii di pesisir (~3 km dari stasiun). Torii adalah ruang suci Shinto; jangan panjat karang.", m:"https://www.google.com/maps/search/Oarai+Isosaki+Shrine" },
+      { id:"d3_4", t:"12.30-14.30", n:"Makan dan fotografi pesisir", b:"ok", bt:"Ikan / Bekal Jōsō", d:"Pilih bekal Joso atau ikan bakar/kaisen-don lokal tanpa bahan babi. Foto lanskap dari jalur aman; jangan tambah banyak lokasi jauh.", m:"https://www.google.com/maps/search/Oarai+Fish+Market+or+Seafood" },
+      { id:"d3_5", t:"15.00-19.30", n:"Kembali ke Joso sebelum gelap", b:"warn", bt:"Lindungi Kepulangan", d:"Berangkat dari pesisir sebelum terlalu sore. Simpan rute pulang dan jam bus terakhir yang tersedia hari itu.", m:"https://www.google.com/maps/dir/Oarai+Station/Ishige+Station" }
+    ],
+    move:"Dari Oarai Station ke kuil sekitar 40 menit jalan kaki atau naik bus. Anggaran transport JPY 6.500 adalah plafon rencana.",
+    food:"Targetkan kaisen-don, sashimi, atau ikan bakar tanpa kaldu/lemak/saus babi. Mirin/sake boleh. Bekal Joso jadi cadangan hemat.",
+    planb:"Jika cuaca pesisir buruk, batalkan Oarai dan jalankan hari lokal di Joso (belanja bahan, foto singkat, masak). Menghemat sebagian besar plafon transport JPY 6.500."
+  },
+  {
+    d:4, dt:"30 Des 2026", w:"Rabu", ti:"Markets, temples & neon", stay:"The Nell Ueno · Malam 1 dari 5",
+    tr:2500, fd:3500, at:0, krw:54000,
+    focus:"Pasar sebelum libur; Asakusa tetap dipertahankan bila waktu berkurang.",
+    slots:[
+      { id:"d4_1", t:"07.00-09.45", n:"Ishige -> Ueno, titip ransel", b:"ok", bt:"Check-in Sore (>=14.00)", d:"Joso Line ke Moriya, TX ke Akihabara, lalu JR ke Ueno/Okachimachi. Titip tas sesuai ketentuan The Nell.", m:"https://www.google.com/maps/search/Capsule+Hotel+%26+Spa+The+Nell+Ueno" },
+      { id:"d4_2", t:"10.45-12.00", n:"Toyosu Market / Senkyaku Banrai", b:"warn", bt:"Koridor Pengunjung", d:"Targetkan koridor pengunjung pasar, bukan lelang dini hari. Bila akses dibatasi, pilih Senkyaku Banrai (footbath lt. 8 gratis).", m:"https://www.google.com/maps/search/Toyosu+Senkyaku+Banrai" },
+      { id:"d4_3", t:"12.30-13.30", n:"Tsukiji Outer Market", b:"warn", bt:"Prioritas 30 Des", d:"Makan seafood/ikan dan jelajahi lorong. Banyak toko libur Tahun Baru setelah akhir tahun; jam tiap toko berbeda.", m:"https://www.google.com/maps/search/Tsukiji+Outer+Market+Tokyo" },
+      { id:"d4_4", t:"14.30-16.15", n:"Senso-ji dan Kaminarimon", b:"ok", bt:"Buka", d:"Naik metro ke Asakusa; foto gerbang, halaman kuil, dan Nakamise. Skytree cukup dilihat dari kawasan Sumida.", m:"https://www.google.com/maps/search/Senso-ji+Temple+Asakusa" },
+      { id:"d4_5", t:"16.45-18.00", n:"Akihabara", b:"warn", bt:"Cek Jam Libur", d:"Jelajahi jalan elektronik dan toko anime/game sesuai minat. Gunakan plafon oleh-oleh.", m:"https://www.google.com/maps/search/Akihabara+Electric+Town+Tokyo" },
+      { id:"d4_6", t:"18.30-21.00", n:"The Nell: check-in dan daiyokujo", b:"ok", bt:"Check-out 10.00", d:"Ambil ransel, check-in, makan malam dekat Ueno, lalu berendam sesuai jam hotel. Simpan tenaga untuk 31 Des.", m:"https://www.google.com/maps/search/Capsule+Hotel+%26+Spa+The+Nell+Ueno" }
+    ],
+    move:"Ueno ke Toyosu via Yurakucho; Toyosu ke Tsukiji via Tsukishima; Asakusa ke Akihabara via TX/metro. Perhitungkan jalan kaki dan antre.",
+    food:"Siang: ikan/seafood di Tsukiji (cek kaldu/lard). Malam: gyudon dasar (hindari butadon/tonjiru), Ayam-YA, atau Honolu di Asakusa.",
+    planb:"Jika tiba Ueno lebih siang, pilih satu: Toyosu/Senkyaku Banrai ATAU Tsukiji. Pertahankan Asakusa. Akihabara bisa digeser ke 4 Jan jika sempat."
+  },
+  {
+    d:5, dt:"31 Des 2026", w:"Kamis", ti:"Old lanes, bay & year-end bells", stay:"The Nell Ueno · Malam 2 dari 5",
+    tr:2000, fd:3500, at:500, krw:54000,
+    focus:"Simpan tenaga untuk acara Zojo-ji malam hari.",
+    slots:[
+      { id:"d5_1", t:"09.00-10.30", n:"Ueno Park dan Toshogu", b:"warn", bt:"Alokasi Tiket ¥500", d:"Jalan santai dan kunjungi shrine bila bagian berbayar dibuka. Cek harga serta akses hari itu.", m:"https://www.google.com/maps/search/Ueno+Toshogu+Shrine" },
+      { id:"d5_2", t:"10.45-12.00", n:"Yanaka Ginza / Yanesen", b:"warn", bt:"Toko Tutup Lebih Awal", d:"Berjalan dari area Nippori/Sendagi ke lorong kota lama. Toko dapat tutup lebih awal pada 31 Des.", m:"https://www.google.com/maps/search/Yanaka+Ginza+Tokyo" },
+      { id:"d5_3", t:"13.00-15.00", n:"Odaiba waterfront (Opsional)", b:"ok", bt:"Bisa Dilewati", d:"JR ke Shimbashi lalu Yurikamome ke Daiba/Odaiba-kaihinkoen. Fokus tepi teluk dan pemandangan Rainbow Bridge.", m:"https://www.google.com/maps/search/Odaiba+Marine+Park+Tokyo" },
+      { id:"d5_4", t:"16.00-17.15", n:"Tokyo Tower dari luar", b:"ok", bt:"Area Publik", d:"Kembali ke sisi Hamamatsucho/Shimbashi. Foto Tokyo Tower dari area publik dan berjalan sekitar Zojo-ji.", m:"https://www.google.com/maps/search/Tokyo+Tower" },
+      { id:"d5_5", t:"17.30-20.30", n:"Hangaku, makan, dan jeda", b:"warn", bt:"Diskon Tidak Dijamin", d:"Cari diskon makanan di supermarket yang masih buka sepanjang rute (50% tidak dijamin). Pilih lauk tanpa babi, makan, lalu istirahat.", m:"https://www.google.com/maps/search/Supermarket+near+Shimbashi+or+Ueno" },
+      { id:"d5_6", t:"21.30-23.00", n:"Zojo-ji: Joya no Kane", b:"warn", bt:"Acara Malam Tahun Baru", d:"Acuan pengumuman 2026: upacara 21.30 dan lonceng 21.45, berakhir ~23.00. Rencana dasar mengamati acara.", m:"https://www.google.com/maps/search/Zojo-ji+Temple+Tokyo" }
+    ],
+    move:"Odaiba menambah ongkos Yurikamome dan perpindahan. Cek kereta pulang ke Ueno; hindari taksi tengah malam.",
+    food:"Hangaku: cari bento ikan/ayam/sapi atau sushi sederhana, cek label bahan babi. Hindari ham, bacon, tonkatsu, gyoza, kaldu & lard babi.",
+    planb:"Bila lelah atau angin teluk tidak nyaman, jalankan Ueno-Yanaka lalu istirahat di hotel. Sore fokus Tokyo Tower dan Zojo-ji."
+  },
+  {
+    d:6, dt:"1 Jan 2027", w:"Jumat", ti:"Forest, fashion & city lights", stay:"The Nell Ueno · Malam 3 dari 5",
+    tr:1500, fd:3500, at:4000, krw:81000,
+    focus:"Tidur cukup untuk prioritas istana esok; potong satu kawasan jika antre panjang.",
+    slots:[
+      { id:"d6_1", t:"09.00-11.30", n:"Meiji Jingu: suasana hatsumode", b:"warn", bt:"Antrean Awal Tahun", d:"JR Yamanote ke Harajuku. Beri kelonggaran untuk pengaturan pengunjung dan antrean hatsumode.", m:"https://www.google.com/maps/search/Meiji+Jingu+Shrine+Tokyo" },
+      { id:"d6_2", t:"11.30-12.45", n:"Takeshita Street dan Omotesando", b:"warn", bt:"Jam Libur Toko", d:"Pilih segmen jalan yang ramai. Minuman matcha atau camilan masuk jatah makan (cek babi/gelatin).", m:"https://www.google.com/maps/search/Takeshita+Street+Harajuku" },
+      { id:"d6_3", t:"13.15-14.15", n:"Shibuya Crossing dan Hachiko", b:"ok", bt:"Area Publik", d:"JR satu segmen atau jalan kaki. Foto penyeberangan dari area publik (Shibuya Sky dilewati).", m:"https://www.google.com/maps/search/Shibuya+Scramble+Crossing" },
+      { id:"d6_4", t:"15.00-16.00", n:"Tocho: luar gedung / dek bersyarat", b:"warn", bt:"Cek Pengumuman 1 Jan", d:"Foto Tokyo Metropolitan Government Building. Masuk dek hanya jika diumumkan buka; Shinjuku Gyoen tutup 29 Des-3 Jan.", m:"https://www.google.com/maps/search/Tokyo+Metropolitan+Government+Building" },
+      { id:"d6_5", t:"16.30-18.30", n:"Omoide Yokocho dan Kabukicho", b:"warn", bt:"Cek Yakitori & Kuah", d:"Jelajahi gang dan gerbang neon di Shinjuku. Yakitori: minta ayam/sapi tanpa bahan babi; periksa sup & saus.", m:"https://www.google.com/maps/search/Omoide+Yokocho+Shinjuku" },
+      { id:"d6_6", t:"18.30-21.00", n:"Pilih Suehirotei ATAU pulang spa", b:"warn", bt:"Plafon Teater ¥4.000", d:"Jika ada sesi teater yang cocok, pakai plafon JPY 4.000 dan pendekkan agenda Shinjuku sebelumnya. Jika tidak, pulang ke Ueno untuk tidur cukup.", m:"https://www.google.com/maps/search/Suehirotei+Shinjuku" }
+    ],
+    move:"Harajuku-Shibuya-Shinjuku-Ueno dihubungkan JR. Tocho di sisi barat; Omoide/Kabukicho di sisi timur.",
+    food:"Shinjuku-tei dekat Suehirotei atau gyudon dasar Yoshinoya (hindari tonjiru). Cek komposisi bahan tiap menu.",
+    planb:"Jika antrean Meiji panjang, pendekkan Omotesando dan pilih Shibuya ATAU Tocho. Alternatif santai: Shimokitazawa atau Nakameguro menggantikan blok Shinjuku."
+  },
+  {
+    d:7, dt:"2 Jan 2027", w:"Sabtu", ti:"The Emperor comes first", stay:"The Nell Ueno · Malam 4 dari 5",
+    tr:1500, fd:3000, at:3000, krw:67500,
+    focus:"Kaisar menjadi prioritas. Kabuki, belanja, dan night walk menyesuaikan.",
+    slots:[
+      { id:"d7_1", t:"08.00-09.30", n:"Ueno menuju kawasan istana", b:"ok", bt:"Bawa Daypack Kecil", d:"Bawa daypack kecil; ransel utama di hotel. Gunakan JR ke Tokyo atau metro sesuai akses yang diumumkan.", m:"https://www.google.com/maps/search/Tokyo+Station+to+Imperial+Palace" },
+      { id:"d7_2", t:"Pagi-Siang", n:"PRIORITAS: Melihat Kaisar di Palace East Plaza", b:"warn", bt:"Menunggu Info Resmi 2027", d:"Ikuti jalur masuk resmi ke Palace East Plaza untuk penampilan di balkon (acuan pola 2026: masuk 09.30-14.10; penampilan 10.10-14.20). Jangan antre dini hari.", m:"https://www.google.com/maps/search/Tokyo+Imperial+Palace+Kokyo+Gaien" },
+      { id:"d7_3", t:"Setelah Keluar", n:"Makan dan evaluasi waktu", b:"ok", bt:"Evaluasi Antrean", d:"Makan di sekitar Tokyo/Marunouchi atau Ginza. Jika antrean memakan waktu, batalkan teater.", m:"https://www.google.com/maps/search/Ginza+Tokyo" },
+      { id:"d7_4", t:"15.00-18.30", n:"Ginza / Kabuki-za bersyarat (Plafon ¥3.000)", b:"warn", bt:"Jangan Dikunci Dini", d:"Satu babak (hitomaku-mi) hanya dibeli bila waktu keluar istana dan jadwal teater cocok. Alternatif: jalan Ginza.", m:"https://www.google.com/maps/search/Kabukiza+Theatre+Ginza" },
+      { id:"d7_5", t:"18.00-20.30", n:"Tokyo Station / pulang Ueno", b:"ok", bt:"Fasad Marunouchi", d:"Foto fasad bata Marunouchi dan makan bila belum. Roppongi Hills-Tokyo Midtown hanya pengganti Ginza/Kabuki bila sempat.", m:"https://www.google.com/maps/search/Tokyo+Station+Marunouchi+Building" }
+    ],
+    move:"Hari ini dilindungi dari tiket berjam-masuk pagi/siang. Siapkan rute kembali dari gerbang keluar yang berlaku.",
+    food:"Sushi ikan, tendon udang/sayur, gyudon dasar yang jelas bahannya, atau restoran terverifikasi. Bawa air & camilan untuk jeda antre.",
+    planb:"Jika acara batal atau penuh, pilih Kokyo Gaien yang dibuka, Tokyo Station, lalu Ginza. East Gardens tutup 28 Des-3 Jan."
+  },
+  {
+    d:8, dt:"3 Jan 2027", w:"Minggu", ti:"Kamakura, with a port-city option", stay:"The Nell Ueno · Malam 5 dari 5",
+    tr:4500, fd:3000, at:750, krw:74250,
+    focus:"Dua kuil dulu; Yokohama boleh dicoret agar packing tetap santai.",
+    slots:[
+      { id:"d8_1", t:"07.30-09.30", n:"Ueno menuju Kamakura & Hase", b:"ok", bt:"JR Yokosuka + Enoden", d:"JR ke Tokyo, lanjut Yokosuka Line ke Kamakura; Enoden ke Hase. Sisihkan waktu antre Tahun Baru.", m:"https://www.google.com/maps/dir/Ueno+Station/Hase+Station+Kamakura" },
+      { id:"d8_2", t:"09.30-11.00", n:"Kotoku-in: Kamakura Daibutsu", b:"ok", bt:"¥300 (+¥50 Dalam Patung)", d:"Tarif dewasa JPY 300; bagian dalam patung opsional JPY 50 bila tersedia. Musim dingin reguler hingga 17.00.", m:"https://www.google.com/maps/search/Kotoku-in+Kamakura" },
+      { id:"d8_3", t:"11.00-12.30", n:"Hasedera", b:"ok", bt:"Tarif Dewasa ¥400", d:"Jalan dari Kotoku-in ke kuil dan taman. Tarif reguler dewasa JPY 400; penerimaan musim ini hingga 16.30.", m:"https://www.google.com/maps/search/Hasedera+Temple+Kamakura" },
+      { id:"d8_4", t:"13.00-15.00", n:"Makan dan Komachi-dori", b:"warn", bt:"Cek Jam Libur", d:"Shirasu-don/ikan atau menu Muslim Kondo (A ¥1.870 / B ¥2.420). Jangan tambah Enoshima jika memilih Yokohama.", m:"https://www.google.com/maps/search/Komachi-dori+Kamakura" },
+      { id:"d8_5", t:"16.00-18.30", n:"Yokohama Chinatown (Opsional)", b:"warn", bt:"Singgah Bersyarat", d:"Jika cukup tenaga, turun di Yokohama, lanjut JR ke Ishikawacho dan jalan ke Chinatown. Fokus gerbang, jalan, dan makan singkat.", m:"https://www.google.com/maps/search/Yokohama+Chinatown" },
+      { id:"d8_6", t:"19.00-21.00", n:"Ueno: packing ransel kabin", b:"ok", bt:"Timbang Ransel", d:"Kembali Ueno, rapikan dokumen dan timbang ransel. Bila Kamakura selesai lambat, lewati Yokohama dan pulang langsung.", m:"https://www.google.com/maps/search/Capsule+Hotel+%26+Spa+The+Nell+Ueno" }
+    ],
+    move:"Plafon transport naik ke JPY 4.500 untuk memberi ruang singgah Yokohama. Tidak perlu pass Enoden jika hanya Kamakura-Hase PP.",
+    food:"Targetkan shirasu-don, sashimi, atau ikan panggang (cek kuah/lauk); atau menu Kondo A ¥1.870 / B ¥2.420.",
+    planb:"Jika kerumunan memperlambat hari, pilih satu kuil dan pulang langsung ke Ueno. Yokohama adalah tambahan pertama yang dicoret."
+  },
+  {
+    d:9, dt:"4 Jan 2027", w:"Senin", ti:"Edo memories, onsen night", stay:"ART HOTEL Narita · 1 Malam",
+    tr:2500, fd:3000, at:800, krw:56700,
+    focus:"Museum lalu pindah Narita; jangan melewatkan shuttle demi tambahan kawasan.",
+    slots:[
+      { id:"d9_1", t:"08.00-09.00", n:"Check-out dan titip ransel", b:"ok", bt:"Check-out Reguler 10.00", d:"Selesaikan check-out sebelum museum; The Nell reguler check-out 10.00. Titip tas sesuai ketentuan atau loker.", m:"https://www.google.com/maps/search/Ueno+Station+Coin+Lockers" },
+      { id:"d9_2", t:"09.30-12.00", n:"Museum Edo-Tokyo (Alokasi Tiket ¥800)", b:"ok", bt:"4 Jan Diumumkan Buka", d:"4 Jan tercantum buka meski Senin pada pengumuman pameran. Targetkan koleksi tetap: alokasi tiket JPY 800.", m:"https://www.google.com/maps/search/Edo-Tokyo+Museum+Ryogoku" },
+      { id:"d9_3", t:"12.00-14.00", n:"Makan dan ambil tas", b:"ok", bt:"Makan Utama di Ueno", d:"Kembali ke Ueno untuk makan dari pilihan yang sudah dikenal. Ambil seluruh barang sebelum ke bandara.", m:"https://www.google.com/maps/search/Ueno+Station" },
+      { id:"d9_4", t:"14.00-17.30", n:"Kereta dan shuttle hotel (Batas Keluar Ueno ~15.00)", b:"warn", bt:"T2 Halte 26 · ~30-35m", d:"Keisei Ueno ke Narita Airport T2/3. Dari T2 lantai 1 halte 26 (atau T1 halte 16), naik shuttle gratis ART HOTEL (~30-35 menit).", m:"https://www.google.com/maps/search/ART+HOTEL+Narita" },
+      { id:"d9_5", t:"18.00-21.30", n:"Garden Twin Lake View dan Biyu Hot Springs", b:"ok", bt:"Termasuk Voucher Terbaru", d:"Voucher terbaru mencantumkan akses Biyu & sarapan esok (Sora-ben lama tidak berlaku). Cek jam shuttle T2 besok pagi.", m:"https://www.google.com/maps/search/ART+HOTEL+Narita" }
+    ],
+    move:"Kunci batas meninggalkan Ueno sekitar 15.00 agar leluasa menunggu shuttle bandara ke hotel.",
+    food:"Makan utama di Ueno sebelum pindah. Di Narita T2: Sojibo atau T's Tantan. Di hotel: pilih ikan/ayam/sapi & cek kuah/lemak/babi.",
+    planb:"Jika museum batal dibuka atau waktu mepet, lewati museum dan pindah ke Narita lebih awal. Jika Biyu dibatasi, gunakan mandi kamar."
+  },
+  {
+    d:10, dt:"5 Jan 2027", w:"Selasa", ti:"One last tap, then home", stay:"Kembali ke Daeso, Eumseong",
+    tr:0, fd:1500, at:0, krw:13500,
+    focus:"Sarapan sudah termasuk; tiba di Narita T2 sekitar 09.30.",
+    slots:[
+      { id:"d10_1", t:"07.00-08.00", n:"Sarapan hotel sudah termasuk", b:"ok", bt:"NARITA BOLD KITCHEN 06.30-10.00", d:"Voucher baru menulis sarapan; layanan reguler hotel adalah buffet 06.30-10.00. Pilih menu tanpa babi; rencana Sora-ben lama dicabut.", m:"https://www.google.com/maps/search/ART+HOTEL+Narita" },
+      { id:"d10_2", t:"08.00-09.30", n:"Check-out dan shuttle gratis ke NRT T2", b:"ok", bt:"Target Tiba T2 ~09.30", d:"Pilih shuttle yang memberi target tiba T2 sekitar 09.30. Pastikan jam bus di resepsionis malam sebelumnya.", m:"https://www.google.com/maps/search/Narita+International+Airport+Terminal+2" },
+      { id:"d10_3", t:"09.30-11.30", n:"Urus penerbangan dan habiskan saldo IC", b:"ok", bt:"Tap Terakhir Welcome Suica", d:"Check-in, lalu gunakan sisa Welcome Suica pada toko yang menerima IC. Habiskan saldo seperlunya.", m:"https://www.google.com/maps/search/Narita+International+Airport+Terminal+2+Shops" },
+      { id:"d10_4", t:"12.30-15.20", n:"Penerbangan pulang YP732 (NRT T2 -> ICN T1)", b:"ok", bt:"Cek E-Ticket & Gate", d:"Jam dan terminal mengikuti dokumenmu: NRT T2 menuju ICN T1. E-ticket terbaru dan gate bandara menjadi acuan akhir.", m:"https://www.google.com/maps/search/Incheon+International+Airport+Terminal+1" },
+      { id:"d10_5", t:"Sore-Malam", n:"Incheon menuju Daeso", b:"warn", bt:"Cek Jadwal Bus Terbaru", d:"Opsi bus 18.10 berasal dari dokumen lama dan perlu dicek ulang. Hindari koneksi terlalu rapat dengan kedatangan internasional.", m:"https://www.google.com/maps/search/Incheon+Airport+Terminal+1+Bus+Terminal" }
+    ],
+    move:"Tidak ada kereta bandara Jepang pada hari ini bila shuttle hotel digunakan. Bus Korea masuk pos PP terpisah.",
+    food:"Sarapan hotel sudah dibayar dalam paket akomodasi (pilih telur, ikan, nasi, ayam/sapi; hindari ham/bacon/sosis babi). Jatah ¥1.500 untuk siang/minum/pulang.",
+    planb:"Jika shuttle penuh, ambil bus sebelumnya sejak malam. Jika bus Korea terlewat, pakai keberangkatan berikutnya dengan dana cadangan."
+  }
+];
+
+const CORRIDORS = {
+  ibaraki:{
+    title:"常総・大洗・成田 · JŌSŌ & OARAI",
+    sub:"Kantetsu Jōso Line · JR Joban/Narita · Kashima Rinkai",
+    stations:[
+      { id:"ishige", name:"Ishige", jp:"石下駅", x:95, y:95,
+        addr:"〒300-2706 Ibaraki-ken, Jōsō-shi, Ishige 2582 (Stasiun Kantetsu Jōso Line)",
+        slots:["Pola ~06:40","Pola ~07:45","Pola ~19:20","Pola ~21:10"],
+        note:"Basecamp Jōsō (27-30 Des). Dekat Sungai Kinu & eksterior Toyoda Castle (tutup interior 28 Des-4 Jan).",
+        q:"Ishige+Station+Joso+Ibaraki", yq:"石下" },
+      { id:"toride", name:"Toride", jp:"取手駅", x:240, y:95,
+        addr:"〒302-0024 Ibaraki-ken, Toride-shi, Shinmachi 1-chome (JR Joban <-> Kantetsu Jōso)",
+        slots:["Pola ~07:10","Pola ~08:30","Pola ~20:05","Pola ~21:55"],
+        note:"Simpul transfer JR Joban Line <-> Kantetsu Jōso Line; kartu IC/Suica bisa dipakai.",
+        q:"Toride+Station+Ibaraki", yq:"取手" },
+      { id:"oarai", name:"Oarai", jp:"大洗駅", x:395, y:60,
+        addr:"〒311-1305 Ibaraki-ken, Higashiibaraki-gun, Oarai-machi, Sakuramichi 301",
+        slots:["Pola ~08:15","Pola ~09:40","Pola ~15:10","Pola ~16:30"],
+        note:"Lanjut bus ke Oarai Isosaki Jinja-shita (~¥270). Pulang sebelum gelap (~15:00).",
+        q:"Oarai+Station+Ibaraki", yq:"大洗" },
+      { id:"nrt", name:"Narita T2/3", jp:"成田空港第2・第3ビル駅", x:520, y:125,
+        addr:"〒282-0004 Chiba-ken, Narita-shi, Furugome 1-1 (T2 Lt. 1 Halte 26 / T1 Halte 16)",
+        slots:["Pola ~18:10","Pola ~19:05","Shuttle ~08:30","Shuttle ~09:00"],
+        note:"Beli Welcome Suica fisik di stasiun T2/3. Shuttle gratis ART HOTEL: T2 Halte 26 / T1 Halte 16 (~30-35 mnt).",
+        q:"Narita+Airport+Terminal+2+3+Station", yq:"成田空港" }
+    ],
+    edges:[[0,1],[1,2],[1,3]]
+  },
+  tokyo:{
+    title:"都心周遊 · PUSAT TOKYO (30 DES - 4 JAN)",
+    sub:"JR Yamanote · Metro · TX · Keisei",
+    stations:[
+      { id:"ueno", name:"Ueno (The Nell)", jp:"上野駅 / ザ・ネル上野", x:290, y:52,
+        addr:"〒110-0005 Tokyo-to, Taito-ku, Ueno 7-chome (Shinobazu Exit / Keisei Ueno)",
+        slots:["Pola ~08:30","Pola ~10:15","Pola ~14:30","Pola ~15:00"],
+        note:"Basecamp 30 Des-4 Jan (check-in 14.00, check-out 10.00). Batas keluar ke Narita ~15.00 pada 4 Jan.",
+        q:"Ueno+Station+Tokyo", yq:"上野" },
+      { id:"asakusa", name:"Asakusa / Ryogoku", jp:"浅草駅・両国駅", x:455, y:80,
+        addr:"〒111-0032 Tokyo-to, Taito-ku, Asakusa 2-chome & Sumida-ku, Yokoami (Edo-Tokyo Museum)",
+        slots:["Pola ~10:00","Pola ~14:30","Pola ~16:45","Pola ~19:00"],
+        note:"Senso-ji (30 Des) & Museum Edo-Tokyo (diumumkan buka 4 Jan).",
+        q:"Asakusa+Station+Tokyo", yq:"浅草" },
+      { id:"tokyo", name:"Istana / Ginza", jp:"皇居・銀座・東京駅", x:410, y:140,
+        addr:"〒100-8111 Tokyo-to, Chiyoda-ku, Chiyoda 1-1 (Palace East Plaza) & Chuo-ku, Ginza",
+        slots:["Pola ~08:30","Pola ~09:30","Pola ~13:30","Pola ~15:30"],
+        note:"Prioritas 2 Jan di Palace East Plaza (cek IHA 2027). East Gardens tutup 28 Des-3 Jan.",
+        q:"Tokyo+Imperial+Palace", yq:"東京" },
+      { id:"shinjuku", name:"Shinjuku / Shibuya", jp:"新宿駅・渋谷駅", x:140, y:105,
+        addr:"〒160-0022 Tokyo-to, Shinjuku-ku, Shinjuku 3-chome & Shibuya-ku, Jinnan/Dogenzaka",
+        slots:["Pola ~09:00","Pola ~13:15","Pola ~16:30","Pola ~19:00"],
+        note:"Meiji Jingu (1 Jan), Shibuya Crossing, Tocho (Shinjuku Gyoen tutup 29 Des-4 Jan) & Suehirotei.",
+        q:"Shinjuku+Station+Tokyo", yq:"新宿" }
+    ],
+    edges:[[0,1],[1,2],[2,3],[3,0]]
+  },
+  kamakura:{
+    title:"鎌倉日帰り · KAMAKURA (3 JAN)",
+    sub:"JR Yokosuka Line -> Enoden -> Yokohama Opsional",
+    stations:[
+      { id:"u2", name:"Ueno / Tokyo", jp:"上野駅・東京駅", x:85, y:95,
+        addr:"〒100-0005 Tokyo-to, Chiyoda-ku, Marunouchi 1-chome (JR Yokosuka Line)",
+        slots:["Pola ~07:30","Pola ~08:00","Pola ~08:30","Pola ~19:00"],
+        note:"Berangkat pagi menuju Kamakura via JR Yokosuka Line.",
+        q:"Tokyo+Station", yq:"東京" },
+      { id:"kam", name:"Kamakura", jp:"鎌倉駅", x:255, y:95,
+        addr:"〒248-0006 Kanagawa-ken, Kamakura-shi, Komachi 1-1-1 (JR <-> Enoden)",
+        slots:["Pola ~08:40","Pola ~09:10","Pola ~13:00","Pola ~16:00"],
+        note:"Dekat Komachi-dori; pindah ke kereta Enoden menuju Hase.",
+        q:"Kamakura+Station", yq:"鎌倉" },
+      { id:"hase", name:"Hase", jp:"長谷駅", x:405, y:95,
+        addr:"〒248-0016 Kanagawa-ken, Kamakura-shi, Hase 1-chome (Kotoku-in & Hasedera)",
+        slots:["Pola ~09:30","Pola ~11:00","Pola ~12:30","Pola ~15:30"],
+        note:"Kotoku-in (Daibutsu ¥300, s/d 17.00) & Hasedera (¥400, penerimaan s/d 16.30).",
+        q:"Hase+Station+Kamakura", yq:"長谷" },
+      { id:"yok", name:"Yokohama (Opsi)", jp:"横浜中華街", x:535, y:95,
+        addr:"〒231-0023 Kanagawa-ken, Yokohama-shi, Naka-ku, Yamashitacho (via JR Ishikawacho)",
+        slots:["Pola ~16:00","Pola ~17:00","Pola ~18:00","Pola ~18:30"],
+        note:"Singgah opsional pada rute pulang 3 Jan; lewati jika sore agar packing Ueno santai.",
+        q:"Yokohama+Chinatown", yq:"石川町" }
+    ],
+    edges:[[0,1],[1,2],[2,3]]
+  }
+};
+
+const KANA_SAMPLE = [
+  ["あ","a"],["い","i"],["う","u"],["え","e"],["お","o"],
+  ["か","ka"],["き","ki"],["く","ku"],["け","ke"],["こ","ko"],
+  ["さ","sa"],["し","shi"],["す","su"],["せ","se"],["そ","so"],
+  ["た","ta"],["ち","chi"],["つ","tsu"],["て","te"],["と","to"],
+  ["ア","a"],["イ","i"],["ウ","u"],["エ","e"],["オ","o"],
+  ["カ","ka"],["キ","ki"],["ク","ku"],["ケ","ke"],["コ","ko"],
+  ["サ","sa"],["シ","shi"],["ス","su"],["セ","se"],["ソ","so"],
+  ["タ","ta"],["チ","chi"],["ツ","tsu"],["テ","te"],["ト","to"]
+];
+
+const JP_TERMS = [
+  ["豚肉 / 豚 / 豚骨", "Butaniku / Buta / Tonkotsu", "Daging babi / babi / kaldu tulang babi (hindari)"],
+  ["ラード / ゼラチン", "Rādo / Zerachin", "Lemak babi (lard) / gelatin (cek asal bahan)"],
+  ["鶏肉 / 牛肉 / 魚", "Toriniku / Gyūniku / Sakana", "Ayam / daging sapi / ikan (aman)"],
+  ["駅 / 改札 / 出口", "Eki / Kaisatsu / Deguchi", "Stasiun / gerbang tiket / pintu keluar"],
+  ["終電 / 始発", "Shūden / Shihatsu", "Kereta terakhir / kereta pertama"],
+  ["温泉 / 朝食 / 部屋", "Onsen / Chōshoku / Heya", "Pemandian air panas / sarapan / kamar"]
+];
+
+const ROUTES = [
+  { id:"rt1", n:"Narita T2/3 -> Ishige (Jōso)", yen:1450, t:"~2j 15m", note:"Cek koneksi terakhir malam 27 Des; jemput cadangan Moriya/Toride." },
+  { id:"rt2", n:"Jōsō -> Oarai (PP)", yen:3600, t:"~2j 20m/arah", note:"Pulang sebelum gelap (~15:00) pada 29 Des." },
+  { id:"rt3", n:"Ishige -> Moriya (TX) -> Ueno", yen:1580, t:"~1j 35m", note:"Pindah ke Tsukuba Express di Moriya pada 30 Des." },
+  { id:"rt4", n:"Ueno -> Kamakura -> Hase (PP)", yen:2350, t:"~1j 15m/arah", note:"JR Yokosuka Line + Enoden pada 3 Jan." },
+  { id:"rt5", n:"Keisei Ueno -> Narita T2", yen:1050, t:"~45-60m", note:"Keluar Ueno ~15.00 pada 4 Jan; shuttle hotel di T2 Halte 26." }
+];
+
+const FOODS_FULL = [
+  { n:"Yoshinoya (Gyudon Dasar)", area:"Ueno", p:"¥498-1.000", tag:"Cek Bahan", d:"Pilih gyudon sapi dasar; hindari butadon dan tonjiru (sup babi). Mirin/sake boleh.", q:"Yoshinoya+Tokyo" },
+  { n:"Tendon Tenya", area:"Asakusa", p:"¥800-1.400", tag:"Cek Bahan", d:"Targetkan udang, ikan, atau sayur setelah Senso-ji; cek tabel komposisi bahan.", q:"Tendon+Tenya+Asakusa" },
+  { n:"Ayam-YA Shin-Okachimachi", area:"Ueno", p:"¥1.200-2.000", tag:"Ramen Ayam", d:"3-10-3 Motoasakusa, Taito. Opsi ramen tanpa babi dekat rute Ueno/Asakusa.", q:"Ayam-YA+Shin-Okachimachi" },
+  { n:"T's Tantan (ecute Ueno)", area:"Ueno", p:"¥1.000-1.600", tag:"100% Vegan", d:"Dalam gate JR Stasiun Ueno. Semua menu nabati/vegan tanpa bahan hewani.", q:"T's+Tantan+ecute+Ueno" },
+  { n:"GYUMON Ueno", area:"Ueno", p:"¥2.000-6.000", tag:"Halal · 4.8★", d:"2-18-1 Higashiueno, Taito (2F). Wagyu Ramen & Gyukatsu; ada fasilitas sholat.", q:"GYUMON+Ueno+Tokyo" },
+  { n:"KAGAYAKI HALAL RESTAURANT", area:"Ueno", p:"¥2.000-3.000", tag:"Halal · 4.9★", d:"3-28-4 Higashiueno, Taito. Gyukatsu, A5 Wagyu Steak & Hamburg; ada fasilitas sholat.", q:"Kagayaki+Halal+Restaurant+Ueno" },
+  { n:"Sankyu Halal Ramen Ueno", area:"Ueno", p:"¥1.000-2.000", tag:"Halal · 4.8★", d:"1-2-9 Ueno, Taito (1F). Ramen, Gyoza & Karaage tanpa babi/alkohol.", q:"Sankyu+Halal+Ramen+Ueno" },
+  { n:"Honolu Premier Asakusa Hanare", area:"Asakusa", p:"~¥1.500", tag:"Ramen Ayam", d:"3-17-3 Asakusa, Taito. Opsi menu ayam dekat kawasan Asakusa.", q:"Honolu+Premier+Asakusa" },
+  { n:"GYUMON Tokyo Asakusa Kaminarimon", area:"Asakusa", p:"¥2.000-6.000", tag:"Halal · 4.8★", d:"1-18-11 Asakusa, Taito (3F). Wagyu Ramen, Gyukatsu & Tempura.", q:"GYUMON+Asakusa+Kaminarimon" },
+  { n:"HALAL WAGYU RAMEN SHINJUKU-TEI Asakusa", area:"Asakusa", p:"¥2.000-6.000", tag:"Halal · 4.8★", d:"1-10-2 Asakusa, Taito (2F). Wagyu Ramen & Wagyu Nigiri; ada fasilitas sholat.", q:"Halal+Wagyu+Ramen+Shinjuku-tei+Asakusa" },
+  { n:"Sankyu Halal Ramen Asakusa", area:"Asakusa", p:"¥1.000-2.000", tag:"Halal · 4.9★", d:"2-25-7 Nishiasakusa, Taito (1F). Ramen, Karaage & Gyoza; ada fasilitas sholat.", q:"Sankyu+Halal+Ramen+Asakusa" },
+  { n:"Asakusa Halal Wagyu Steak HACHISAN", area:"Asakusa", p:"¥3.000-9.000", tag:"Halal · 5.0★", d:"3-30-12 Asakusa, Taito. Halal A5 Wagyu Steak & Tempura; ada fasilitas sholat.", q:"Hachisan+Asakusa+Halal+Wagyu" },
+  { n:"Shinjuku-tei Tokyo Shinjuku", area:"Shinjuku", p:"¥1.500-6.000", tag:"Halal · 4.8★", d:"3-11-6 Shinjuku (B103). Ramen ayam/Wagyu dekat rute Shinjuku & Suehirotei.", q:"Shinjuku-tei+Shinjuku" },
+  { n:"GYUMON Shinjuku Kabukicho / East Exit", area:"Shinjuku", p:"¥2.000-7.000", tag:"Halal · 4.8-4.9★", d:"Kabukicho 1-17-7 & Shinjuku 3-34-11. A5 Wagyu Ramen, Gyukatsu & Tempura.", q:"GYUMON+Shinjuku+Kabukicho" },
+  { n:"Gyumon Halal Wagyu Ramen Shibuya", area:"Shibuya", p:"¥2.000-7.000", tag:"Halal · 4.9★", d:"2-19-17 Shibuya (B1F) & Center Gai / Jinnan. Ramen Wagyu & Vegan; ada fasilitas sholat.", q:"Gyumon+Halal+Wagyu+Ramen+Shibuya" },
+  { n:"HALAL WAGYU YAKINIKU & RAMEN NARUTO Shibuya", area:"Shibuya", p:"¥1.000-6.000", tag:"Halal · 4.8★", d:"1-13-8 Udagawacho, Shibuya (2F). A5 Wagyu Yakiniku, Ramen & Tempura.", q:"Halal+Wagyu+Yakiniku+Naruto+Shibuya" },
+  { n:"SHINJUKU-TEI TOKYO Ginza", area:"Ginza", p:"¥2.000-6.000", tag:"Halal · 4.9★", d:"1-6-6 Uchisaiwaicho, Chiyoda (2F) & cabang Ginza. Wagyu Ramen & Beef Sushi.", q:"Shinjuku-tei+Ginza+Tokyo" },
+  { n:"GYUMON Ginza (Ramen & A5 Burger)", area:"Ginza", p:"¥2.000-7.000", tag:"Halal · 4.8★", d:"6-12-1 Ginza, Chuo (B1F / 1F). Wagyu Ramen, Gyukatsu & Smash Burger.", q:"GYUMON+Ginza+Tokyo" },
+  { n:"Halal SUKIYAKI Restaurant Diyafa", area:"Ginza", p:"¥10.000+", tag:"Halal · 4.9★", d:"2-18-4 Shiba, Minato (dekat Tokyo Tower). Wagyu Sukiyaki & Bento; ada fasilitas sholat.", q:"Halal+Sukiyaki+Diyafa+Shiba+Tokyo" },
+  { n:"Washoku Kondo Kamakura", area:"Kanagawa", p:"¥1.870-2.420", tag:"Muslim Menu", d:"Alternatif terpublikasi di Kamakura (Menu A ¥1.870 / B ¥2.420) selain shirasu-don & ikan.", q:"Washoku+Kondo+Kamakura" },
+  { n:"Cinta Jawa Café / Ceyhan / CARVAAN Yokohama", area:"Kanagawa", p:"¥1.000-7.000", tag:"Yokohama", d:"Opsi jika singgah Yokohama: Cinta Jawa (Kannai), Ceyhan (Ishikawacho), atau CARVAAN.", q:"Cinta+Jawa+Cafe+Yokohama" },
+  { n:"Sojibo / T's Tantan / Kineya / La Toque NRT", area:"Narita", p:"¥1.000-2.000", tag:"Narita T1/T2", d:"Pilihan di Bandara Narita: T's Tantan / Sojibo / La Toque (T2) & Kineya Mugimaru (T1).", q:"Narita+Airport+Terminal+2+Restaurants" },
+  { n:"Dapur Jōsō & Ikan Lokal Oarai", area:"Joso", p:"¥0-2.500", tag:"Masak & Ikan", d:"Masak sambal & lauk ayam/sapi/ikan di Jōsō; kaisen-don/sashimi/ikan bakar atau bekal di Oarai.", q:"Oarai+Station+Seafood" }
+];
+
+const BAG_LIST = [
+  { id:"p1", n:"Ransel Kabin Utama", g:1100 },
+  { id:"p2", n:"Jaket Musim Dingin & Lapisan Dasar", g:1850 },
+  { id:"p3", n:"Celana, Kaus Kaki & Sarung Tangan", g:1150 },
+  { id:"p4", n:"Paspor, E-Ticket, Voucher & Dompet Yen", g:250 },
+  { id:"p5", n:"Charger, Kabel & Power Bank (Sesuai Aturan)", g:650 },
+  { id:"p6", n:"Alat Mandi, Obat, Kairo & Alat Makan Ringkas", g:500 },
+  { id:"p7", n:"Daypack Kecil & Botol Minum", g:350 },
+  { id:"p8", n:"Duty-Free (1 Slop Rokok & Ginseng Stick)", g:450 }
+];
+
+const PLAN_B_LIST = [
+  ["IF 01 · ZE603 Terlambat", "Cek koneksi Jōso terakhir sebelum keluar bandara; sepakati titik jemput Moriya/Toride. Pakai dana cadangan jika butuh taksi."],
+  ["IF 02 · Cuaca Oarai Buruk", "Ganti dengan hari lokal Jōsō (masak & belanja bahan). Hemat sebagian besar plafon transport ¥6.500."],
+  ["IF 03 · Diskon Hangaku Kosong", "Beli makanan sederhana dengan bahan jelas atau makan di restoran pilihan (50% bukan jaminan)."],
+  ["IF 04 · Odaiba/Zojo-ji Terlalu Lelah", "Lewati Odaiba, beri waktu istirahat di Ueno, lalu pilih acara Zojo-ji yang nyaman pulangnya."],
+  ["IF 05 · Meiji Antre / Tocho Belum Pasti", "Potong Omotesando atau pilih Shibuya saja; Tocho cukup luar gedung bila dek belum pasti buka. Suehirotei ¥4.000 opsional."],
+  ["IF 06 · Acara Kaisar Belum/Batal Pasti", "Pilih Kokyo Gaien yang dibuka, Tokyo Station, lalu Ginza. East Gardens tutup 28 Des-3 Jan."],
+  ["IF 07 · Kamakura Selesai Terlalu Sore", "Coret Yokohama Chinatown dan kembali ke Ueno untuk packing (plafon transport ¥4.500 tidak wajib habis)."],
+  ["IF 08 · Rute Narita Terganggu", "Potong museum/Akihabara dan berangkat ke Narita lebih awal (dana museum ¥800 tersimpan)."],
+  ["IF 09 · Biyu Dibatasi", "Akses Biyu & sarapan tercantum pada voucher baru ART HOTEL; jika dibatasi, gunakan mandi kamar (¥700 tidak dibudgetkan lagi)."],
+  ["IF 10 · Shuttle Penuh / Bus Korea Terlewat", "Minta jadwal sebelumnya & alternatif sejak malam; gunakan cadangan darurat jika perlu koneksi berikutnya."]
+];
+
+const FCS = {
+  pork:{
+    jp:"すみません、豚肉・豚骨スープ・ラード・豚由来ゼラチンは食べられません。鶏肉・牛肉・魚・みりん・お酒は大丈夫です。豚が入っていないメニューはどれですか？",
+    ro:"Sumimasen, butaniku, tonkotsu sūpu, rādo, buta-yurai zerachin wa taberaremasen. Toriniku, gyūniku, sakana, mirin, osake wa daijōbu desu. Buta ga haitteinai menyū wa dore desu ka?",
+    id:"Permisi, saya tidak makan daging babi, kaldu tulang babi, lard, atau gelatin babi. Ayam, sapi, ikan, mirin, dan alkohol boleh. Menu mana yang tanpa babi?"
+  },
+  hotel:{
+    jp:"予約番号 1758916550です。朝食と美湯温泉スパ付きのプランです。朝食会場・時間、温泉の入り方、明朝の成田空港第2ターミナル行き無料シャトルバスの時間を教えてください。",
+    ro:"Yoyaku bangō 1758916550 desu. Chōshoku to Biyu onsen supa-tsuki no puran desu. Chōshoku kaijō, jikan, onsen no hairikata, myōchō no Narita Kūkō Dai-2 Tāminaru-yuki muryō shatoru basu no jikan o oshiete kudasai.",
+    id:"Voucher 1758916550 termasuk sarapan buffet & akses Biyu Hot Springs Spa. Mohon info lokasi/jam sarapan, cara masuk Biyu, dan jadwal shuttle gratis besok ke Narita T2."
+  },
+  train:{
+    jp:"すみません、終電に乗り遅れました。石下駅（常総線）または上野駅まで戻る方法はありますか？始発は何時ですか？",
+    ro:"Sumimasen, shūden ni noriokuremashita. Ishige-eki (Jōsō-sen) mata wa Ueno-eki made modoru hōhō wa arimasu ka? Shihatsu wa nan-ji desu ka?",
+    id:"Permisi, saya tertinggal kereta terakhir. Bagaimana cara kembali ke Stasiun Ishige (Jōso Line) atau Stasiun Ueno? Jam berapa kereta pertama?"
+  },
+  lost:{
+    jp:"すみません、パスポート／財布／Welcome Suicaカードを紛失しました。保険請求のために遺失届（紛失証明書）を発行していただけますか？",
+    ro:"Sumimasen, pasupōto / saifu / Welcome Suica kādo o funshitsu shimashita. Hoken seikyū no tame ni ishitsutodoke o hakkō shite itadakemasu ka?",
+    id:"Permisi, saya kehilangan paspor / dompet / Welcome Suica. Bisakah dibuatkan surat tanda lapor kehilangan (Ishitsu Todoke) untuk klaim asuransi?"
+  }
+};
+
+const SOURCES = [
+  ["01","Joso City - Toyoda Castle (28 Des-4 Jan)","https://www.city.joso.lg.jp"],
+  ["02","Kinunoyu - Tarif umum, jam & handuk","https://www.kinunoyu.com"],
+  ["03","Kinunoyu - Tarif ruang pemandian privat","https://www.kinunoyu.com"],
+  ["04","Oarai Tourism - Jadwal bus liburan","https://www.oarai-info.jp"],
+  ["05","Oarai Isosaki Shrine - Akses & jam","https://www.oarai-isosakijinja.net"],
+  ["06","The Nell - FAQ hotel pada Rakuten","https://travel.rakuten.co.jp"],
+  ["07","Zojo-ji - Joya no Kane","https://www.zojoji.or.jp"],
+  ["08-09","Suehirotei - Tiket & program Tahun Baru","https://suehirotei.com"],
+  ["10","Shochiku - Kabuki-za Januari 2027","https://www.kabuki-bito.jp"],
+  ["11-12","Edo-Tokyo Museum (Buka 4 Jan) & Tiket","https://www.edo-tokyo-museum.or.jp"],
+  ["13","Kotoku-in - Jam & tarif Daibutsu","https://www.kotoku-in.jp"],
+  ["14","Hasedera - Jam & tiket","https://www.hasedera.jp"],
+  ["15-16","ART HOTEL Narita - Shuttle, Biyu & Sarapan","https://iconia.co.jp"],
+  ["17-18","JR East Welcome Suica & Kantetsu Jōso Line","https://www.jreast.co.jp"],
+  ["19-29","JNTO, GO TOKYO, T's Tantan, Kondo & Narita","https://www.gotokyo.org"],
+  ["31 & 41-43","Imperial Household Agency (IHA) - 2 Jan","https://www.kunaicho.go.jp"],
+  ["44-49","Shinjuku Gyoen, Tocho, Tsukiji, Toyosu & Senkyaku Banrai","https://www.toyosu-senkyakubanrai.jp"],
+  ["50-56","GO TOKYO Kawasan & Yokohama Chinatown","https://www.yokohamajapan.com"]
+];
+
+const SKEY = "jwfg_jp_authentic_v8";
+let st = {
+  light:true, page:"page-schedule", heroIdx:0, day:1,
+  done:{}, notes:{}, corr:"ibaraki", stIdx:0,
+  suica:3000, fx:9.0, exps:[],
+  bag:{ p1:true, p2:true, p3:true, p4:true, p5:true, p6:true, p7:true },
+  refs:{ narita:"ART HOTEL Narita · Ref 1758916550 (4-5 Jan · Biyu + Sarapan)", ueno:"", flight:"", sos:"" },
+  hotels:[
+    { id:"h_nell", name:"The Nell Ueno (上野)", dates:"30 Des 2026 - 4 Jan 2027 (5 Malam)", ref:"", note:"Check-in 14.00, check-out 10.00; pembersihan 10.00-14.00 bisa membatasi fasilitas." },
+    { id:"h_art", name:"ART HOTEL Narita (成田)", dates:"4 Jan - 5 Jan 2027 (1 Malam)", ref:"1758916550", note:"Garden Twin Lake View + Biyu Hot Springs Spa + Sarapan buffet (06.30-10.00) + Shuttle gratis T2 Halte 26 / T1 Halte 16 (~30-35 mnt). Pembatalan gratis < 7 Des 2026." }
+  ],
+  editingHotelId: null,
+  stNotes: {},
+  sub:"kana"
+};
+try {
+  const raw = JSON.parse(localStorage.getItem(SKEY) || "null");
+  if (raw) st = { ...st, ...raw, refs:{...st.refs,...(raw.refs||{})} };
+} catch(e){}
+
+function save(){ try{ localStorage.setItem(SKEY, JSON.stringify(st)); }catch(e){} }
+function toast(m){
+  const t = document.getElementById("toast");
+  t.textContent = m; t.classList.add("show");
+  clearTimeout(window._tt); window._tt = setTimeout(()=>t.classList.remove("show"), 1900);
+}
+function copyStr(txt, msg){
+  const ta = document.createElement("textarea");
+  ta.value = txt; ta.style.position="fixed"; ta.style.left="-9999px";
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand("copy"); toast(msg || "Disalin!"); }catch(e){}
+  document.body.removeChild(ta);
+}
+
+let curExt = "";
+function openExt(url, title){
+  curExt = url;
+  document.getElementById("ext-title").textContent = title || "Tautan Eksternal";
+  document.getElementById("ext-url").textContent = url;
+  document.getElementById("ext-link").href = url;
+  document.getElementById("ext-strip").classList.add("open");
+  try{ window.open(url, "_blank", "noopener,noreferrer"); }catch(e){}
+}
+
+let autoPlayTimer = null;
+function renderHeroCarousel(){
+  const track = document.getElementById("hero-track");
+  if (!track) return;
+  track.innerHTML = HERO_SLIDES.map((s, i)=>{
+    let secBtn = "";
+    if (s.secUrl) secBtn = `<button type="button" class="btn btn-sm" data-act="ext" data-t="${s.title}" data-u="${s.secUrl}">${s.secText}</button>`;
+    else if (s.secSos) secBtn = `<button type="button" class="btn btn-sm" data-act="sos" data-k="${s.secSos}">${s.secText}</button>`;
+    else if (s.secSub) secBtn = `<button type="button" class="btn btn-sm" data-act="sub" data-s="${s.secSub}">${s.secText}</button>`;
+    else if (s.secTab) secBtn = `<button type="button" class="btn btn-sm" data-act="tab" data-p="${s.secTab}">${s.secText}</button>`;
+
+    return `
+      <div class="slide-card" data-slide-i="${i}">
+        <div class="slide-visual">
+          <div class="slide-head-jp">
+            <span class="slide-kicker">${s.kicker}</span>
+            <span class="jp-kanji-stamp">${s.jp}</span>
+          </div>
+          <div class="slide-h">${s.title}</div>
+          <div class="slide-spec">${s.spec}</div>
+        </div>
+        <div class="slide-p">${s.desc}</div>
+        <div class="row">
+          <button type="button" class="btn btn-sm btn-matcha" data-act="${s.btnAct}" data-v="${s.btnVal}">${s.btnText}</button>
+          ${secBtn}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("hero-dots").innerHTML = HERO_SLIDES.map((_, i)=>`
+    <button type="button" class="dot-b ${i===st.heroIdx?'active':''}" data-act="go-hero" data-i="${i}" aria-label="Slide ${i+1}"></button>
+  `).join("");
+}
+
+function goHeroSlide(idx, smooth=true){
+  const total = HERO_SLIDES.length;
+  st.heroIdx = ((idx % total) + total) % total;
+  save();
+  const track = document.getElementById("hero-track");
+  if (track) track.scrollTo({ left: st.heroIdx * track.clientWidth, behavior: smooth ? "smooth" : "auto" });
+  document.querySelectorAll("#hero-dots .dot-b").forEach((d, i)=> d.classList.toggle("active", i === st.heroIdx));
+}
+
+function toggleAutoPlay(){
+  const btn = document.getElementById("auto-btn");
+  if (autoPlayTimer) {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = null;
+    btn.textContent = "▶";
+    btn.classList.remove("active");
+    toast("Putar otomatis dijeda");
+  } else {
+    btn.textContent = "❚❚";
+    btn.classList.add("active");
+    toast("Geser otomatis aktif");
+    autoPlayTimer = setInterval(()=> goHeroSlide(st.heroIdx + 1), 4200);
+  }
+}
+
+document.getElementById("hero-track")?.addEventListener("scroll", e=>{
+  const tr = e.target;
+  if (!tr.clientWidth) return;
+  const idx = Math.round(tr.scrollLeft / tr.clientWidth);
+  if (idx !== st.heroIdx && idx >= 0 && idx < HERO_SLIDES.length) {
+    st.heroIdx = idx;
+    save();
+    document.querySelectorAll("#hero-dots .dot-b").forEach((d, i)=> d.classList.toggle("active", i === st.heroIdx));
+  }
+}, { passive: true });
+
+function renderSchedule(){
+  document.getElementById("q-suica-sub").textContent = `Saldo ¥${st.suica.toLocaleString()}`;
+  document.getElementById("day-chips").innerHTML = DAYS.map(x=>`
+    <button type="button" class="day-chip ${st.day===x.d?'active':''}" data-act="day" data-d="${x.d}">D${String(x.d).padStart(2,"0")} · ${x.dt.slice(0,6)}</button>
+  `).join("");
+
+  const cur = DAYS.find(x=>x.d===st.day) || DAYS[0];
+  const jpyTotal = cur.tr + cur.fd + cur.at;
+  const noteVal = st.notes[cur.d] || "";
+
+  const slotsHtml = cur.slots.map(s=>{
+    const chk = !!st.done[s.id];
+    const tc = s.b==="ok"?"tag-ok":(s.b==="warn"?"tag-warn":(s.b==="red"?"tag-red":"tag-gold"));
+    return `
+      <div class="slot ${chk?'done':''}">
+        <div class="slot-top">
+          <input type="checkbox" ${chk?'checked':''} data-act="done" data-id="${s.id}">
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">
+              <span class="slot-tm">${s.t}</span>
+              <span class="tag ${tc}">${s.bt}</span>
+            </div>
+            <div class="slot-nm">${s.n}</div>
+            <div class="slot-ds">${s.d}</div>
+            <div class="row" style="margin-top:7px;">
+              <button type="button" class="btn btn-sm" data-act="ext" data-t="${s.n}" data-u="${s.m}">📍 Peta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("day-detail").innerHTML = `
+    <div class="card">
+      <div class="card-hd">
+        <div>
+          <strong style="font-size:15px;">DAY ${String(cur.d).padStart(2,"0")} / ${cur.w.toUpperCase()} · ${cur.dt} — ${cur.ti}</strong>
+          <div style="font-size:12px;color:var(--sumi);">Akomodasi: <strong>${cur.stay}</strong> · Fokus: ${cur.focus}</div>
+        </div>
+        <span class="tag tag-gold">KRW ${cur.krw.toLocaleString()} (¥${jpyTotal.toLocaleString()})</span>
+      </div>
+
+      ${slotsHtml}
+
+      <div class="note-box"><strong>Move Smart / Transportasi</strong>${cur.move}</div>
+      <div class="note-box"><strong>Food Finder / Tanpa Babi</strong>${cur.food}</div>
+      <div class="note-box planb"><strong>Plan B / Jika Berubah</strong>${cur.planb}</div>
+
+      <div style="margin-top:9px;padding-top:8px;border-top:1px dashed var(--rule);font-size:11.5px;color:var(--sumi);">
+        Alokasi: Transport ¥${cur.tr.toLocaleString()} · Makan ¥${cur.fd.toLocaleString()} · Atraksi ¥${cur.at.toLocaleString()} · Total KRW ${cur.krw.toLocaleString()} (semua angka adalah alokasi perencanaan).
+      </div>
+
+      <div style="margin-top:8px;">
+        <div class="row">
+          <input type="text" id="d-note-in" value="${noteVal.replace(/"/g,"&quot;")}" placeholder="Catatan pribadimu untuk Hari ${cur.d}..." style="flex:1;">
+          <button type="button" class="btn btn-sm btn-matcha" data-act="save-note" data-d="${cur.d}">Simpan</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderMap(){
+  ["ibaraki","tokyo","kamakura"].forEach(k=>{
+    const b = document.getElementById("c-"+k);
+    if (b) b.classList.toggle("btn-matcha", st.corr===k);
+  });
+  const c = CORRIDORS[st.corr] || CORRIDORS.ibaraki;
+  const idx = Math.min(st.stIdx || 0, c.stations.length - 1);
+  const sAct = c.stations[idx];
+
+  const lines = c.edges.map(([a,b])=>{
+    const sa = c.stations[a], sb = c.stations[b];
+    return `<line x1="${sa.x}" y1="${sa.y}" x2="${sb.x}" y2="${sb.y}" stroke="#244736" stroke-width="3.5" stroke-linecap="round"/>`;
+  }).join("");
+
+  const nodes = c.stations.map((s,i)=>{
+    const sel = i === idx;
+    return `
+      <g class="st-node" data-act="go-st" data-i="${i}">
+        ${sel ? `<circle cx="${s.x}" cy="${s.y}" r="12" fill="none" stroke="#B6362B" stroke-width="2.5"/>` : ''}
+        <circle cx="${s.x}" cy="${s.y}" r="6.5" fill="${sel?'#B6362B':'#244736'}"/>
+        <text x="${s.x}" y="${s.y - 15}" text-anchor="middle" font-size="11" font-weight="700" fill="#1C1B18">${s.name}</text>
+      </g>
+    `;
+  }).join("");
+
+  document.getElementById("map-wrap").innerHTML = `
+    <svg viewBox="0 0 600 175" xmlns="http://www.w3.org/2000/svg">
+      <rect width="600" height="175" rx="8" fill="#FAF7F0"/>
+      <text x="12" y="20" font-size="10.5" font-weight="800" fill="#244736">${c.title}</text>
+      <text x="12" y="34" font-size="9.5" fill="#5E5A50">${c.sub}</text>
+      ${lines}
+      ${nodes}
+    </svg>
+  `;
+
+  document.getElementById("st-swipe").innerHTML = c.stations.map((s,i)=>{
+    const chips = (s.slots || []).map(sl=> `<span class="slot-tag">${sl}</span>`).join("");
+    return `
+      <div class="st-card-slide">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;">
+          <strong style="font-size:14px;">${s.name} (${s.jp})</strong>
+          <span class="tag tag-gold">${i+1} / ${c.stations.length} · Geser</span>
+        </div>
+        <div class="addr-box">
+          <strong>Alamat:</strong> ${s.addr}
+        </div>
+        <div style="font-size:11px;font-weight:700;color:var(--sumi);">Slot waktu rencana / pola (bukan jadwal real-time resmi; cek Navitime/Yahoo):</div>
+        <div class="slot-row">${chips}</div>
+        <div style="color:var(--sumi);margin-bottom:8px;">${s.note}</div>
+        <div class="row">
+          <button type="button" class="btn btn-sm btn-kincha" data-act="ext" data-t="Maps · ${s.name}" data-u="https://www.google.com/maps/search/${s.q}">📍 Google Maps</button>
+          <button type="button" class="btn btn-sm btn-matcha" data-act="ext" data-t="Navitime" data-u="https://japantravel.navitime.com/en/area/jp/route/">🚆 Navitime</button>
+          <button type="button" class="btn btn-sm" data-act="ext" data-t="Yahoo! Transit" data-u="https://transit.yahoo.co.jp/search/result?from=${encodeURIComponent(s.yq)}">🚃 Yahoo! Transit</button>
+          <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${s.addr}">Salin Alamat</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("st-dots").innerHTML = c.stations.map((s,i)=>`
+    <button type="button" class="dot-b ${i===idx?'active':''}" data-act="go-st" data-i="${i}" aria-label="${s.name}"></button>
+  `).join("");
+
+  const sel = document.getElementById("rt-sel");
+  if (!sel.value) sel.innerHTML = ROUTES.map(r=>`<option value="${r.id}">${r.n} (~¥${r.yen})</option>`).join("");
+  const rt = ROUTES.find(r=>r.id===sel.value) || ROUTES[0];
+  document.getElementById("rt-info").innerHTML = `Estimasi: <strong>¥${rt.yen.toLocaleString()}</strong> (~KRW ${Math.round(rt.yen*st.fx).toLocaleString()}) · ${rt.t} — ${rt.note}`;
+  const stNoteKey = `${st.corr}_${sAct?.id || idx}`;
+  const savedMemo = (st.stNotes && st.stNotes[stNoteKey]) || "";
+  const inp = document.getElementById("st-live-note");
+  const disp = document.getElementById("st-live-saved");
+  if (inp) inp.value = savedMemo;
+  if (disp) disp.textContent = savedMemo ? `Catatan tersimpan di ${sAct.name}: "${savedMemo}"` : `Belum ada catatan jam lapangan untuk ${sAct.name}.`;
+}
+
+function goStationSlide(idx, smooth=true){
+  const c = CORRIDORS[st.corr] || CORRIDORS.ibaraki;
+  const total = c.stations.length;
+  st.stIdx = ((idx % total) + total) % total;
+  save();
+  renderMap();
+  const sw = document.getElementById("st-swipe");
+  if (sw) sw.scrollTo({ left: st.stIdx * sw.clientWidth, behavior: smooth ? "smooth" : "auto" });
+}
+
+document.getElementById("st-swipe")?.addEventListener("scroll", e=>{
+  const sw = e.target;
+  const c = CORRIDORS[st.corr] || CORRIDORS.ibaraki;
+  if (!sw.clientWidth) return;
+  const idx = Math.round(sw.scrollLeft / sw.clientWidth);
+  if (idx !== st.stIdx && idx >= 0 && idx < c.stations.length) {
+    st.stIdx = idx;
+    save();
+    renderMap();
+  }
+}, { passive: true });
+
+function renderFood(){
+  const area = document.getElementById("food-area").value;
+  const rows = area === "all" ? FOODS_FULL : FOODS_FULL.filter(f=> f.area === area);
+  document.getElementById("food-list").innerHTML = rows.map(f=>`
+    <div class="food-item">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;">
+        <div style="flex:1 1 200px;">
+          <strong>${f.n}</strong> · <span class="tag tag-ok">${f.tag}</span> · <strong style="color:var(--kincha);font-size:11.5px;">${f.p}</strong>
+          <div style="font-size:12px;color:var(--sumi);margin-top:2px;">${f.d}</div>
+        </div>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="${f.n}" data-u="https://www.google.com/maps/search/${f.q}">📍 Peta</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderBudget(){
+  const planJpy = DAYS.reduce((a,b)=> a + b.tr + b.fd + b.at, 0);
+  const actJpy = st.exps.reduce((a,b)=> a + b.amt, 0);
+
+  const pill = document.getElementById("b-pill");
+  pill.textContent = `¥${actJpy.toLocaleString()} / ¥${planJpy.toLocaleString()}`;
+  pill.className = `tag ${actJpy>planJpy?'tag-red':'tag-ok'}`;
+
+  const eDay = document.getElementById("e-day");
+  if (eDay.options.length === 0) {
+    eDay.innerHTML = DAYS.map((x,i)=>`<option value="${i}">D${String(x.d).padStart(2,"0")} · ${x.dt.slice(0,6)}</option>`).join("");
+  }
+
+  document.getElementById("e-list").innerHTML = st.exps.length === 0
+    ? `<span style="color:var(--sumi);">Belum ada pengeluaran dicatat.</span>`
+    : st.exps.map(e=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px dashed var(--rule);">
+          <span><strong>D${String(e.dayIdx+1).padStart(2,"0")}</strong> · ${e.cat} (${e.note})</span>
+          <span><strong>¥${e.amt.toLocaleString()}</strong> <button type="button" class="btn btn-sm" data-act="del-e" data-id="${e.id}">✕</button></span>
+        </div>
+      `).join("");
+
+  document.getElementById("suica-val").textContent = `¥${st.suica.toLocaleString()}`;
+  const qs = document.getElementById("q-suica-sub");
+  if (qs) qs.textContent = `Saldo ¥${st.suica.toLocaleString()}`;
+
+  const jpy = parseFloat(document.getElementById("fx-in").value) || 0;
+  document.getElementById("fx-krw").textContent = `KRW ${Math.round(jpy*st.fx).toLocaleString()}`;
+  document.getElementById("fx-idr").textContent = `Rp ${Math.round(jpy*105).toLocaleString()}`;
+  const tf = document.getElementById("fx-tf");
+  tf.textContent = jpy>=5000 ? "✅ Memenuhi (≥¥5.000)" : "Di bawah ¥5.000";
+
+  const remBelowCap = 1000000 - 972050;
+  document.getElementById("budget-breakdown").innerHTML = `
+    <strong>Rencana Sebelum Cadangan:</strong> KRW 802.050 (Harian ¥66.250 = KRW 596.250 @9.0 + Bus Daeso-Incheon PP KRW 45.800 + eSIM KRW 20.000 + Asuransi KRW 15.000 + Kecil/Loker/Kairo KRW 25.000 + Duty-Free/Oleh-oleh KRW 100.000).<br>
+    <strong>Cadangan &amp; Buffer:</strong> Cadangan darurat KRW 120.000 + Buffer kurs/harga KRW 50.000 = <strong>Total Disiapkan KRW 972.050</strong> (sisa di bawah batas KRW 1.000.000: <strong>KRW ${remBelowCap.toLocaleString()}</strong>). Pesawat &amp; penginapan di luar anggaran ini.<br>
+    <strong>Rutinitas Malam 30 Detik:</strong> Bandingkan total aktual harian (transport + makan + atraksi + belanja) dengan plafon hari itu; jika berlebih, kurangi belanja atau aktifkan Plan B gratis. Pembatalan gratis voucher ART HOTEL Narita berlaku sebelum 7 Des 2026.
+  `;
+}
+
+function renderSub(){
+  const titleEl = document.getElementById("more-title");
+  const bodyEl = document.getElementById("more-body");
+  const s = st.sub;
+
+  if (s === "kana") {
+    titleEl.textContent = "Panduan Kana (Hiragana & Katakana) + Istilah";
+    const kanaTiles = KANA_SAMPLE.map(([ch, ro])=>`
+      <div class="kana-tile" data-act="copy-txt" data-txt="${ch}">
+        <div class="kana-ch">${ch}</div>
+        <div class="kana-ro">${ro}</div>
+      </div>
+    `).join("");
+    const termRows = JP_TERMS.map(([jp, ro, desc])=>`
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--rule);">
+        <div>
+          <strong style="font-size:14px;color:var(--kincha);">${jp}</strong> <span style="font-size:11.5px;font-weight:700;">(${ro})</span>
+          <div style="font-size:11.5px;color:var(--sumi);">${desc}</div>
+        </div>
+        <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${jp}">Salin</button>
+      </div>
+    `).join("");
+    bodyEl.innerHTML = `
+      <p style="color:var(--sumi);margin-bottom:6px;">Ketuk huruf kana mana pun untuk menyalin ke clipboard:</p>
+      <div class="kana-table">${kanaTiles}</div>
+      <div style="margin-top:12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--sumi);">Kosakata &amp; Label Penting</div>
+      ${termRows}
+    `;
+  } else if (s === "alternatives") {
+    titleEl.textContent = "Alternatif & Pengganti Rute Tokyo (Hal. 28)";
+    bodyEl.innerHTML = `
+      <p style="color:var(--sumi);margin-bottom:8px;">Pilih satu blok pengganti (tidak dijalankan bersamaan). Universal Studios Japan, teamLab Planets, dan Shibuya Sky tidak masuk agenda/anggaran.</p>
+      <div style="line-height:1.6;">
+        <div><strong>01 · Skytree + Asakusa river cruise:</strong> Ganti Akihabara (30 Des) atau Odaiba (31 Des).</div>
+        <div><strong>02 · Shimokitazawa + Nakameguro:</strong> Ganti blok Shinjuku/Suehirotei (1 Jan); ingat ini musim dingin, bukan musim sakura.</div>
+        <div><strong>03 · Koenji + Kagurazaka:</strong> Ganti Odaiba atau sebagian barat Tokyo.</div>
+        <div><strong>04 · Roppongi Hills + Tokyo Midtown:</strong> Pengganti Ginza/Kabuki setelah istana (2 Jan).</div>
+        <div><strong>05-06 · Shinjuku Gyoen (tutup 29 Des-3 Jan &amp; Sen 4 Jan) / Ueno Zoo.</strong></div>
+        <div><strong>07 · Fujisan / Hakone / Nikko:</strong> Alternatif day trip pengganti Kamakura (3 Jan) dengan rute &amp; biaya baru.</div>
+      </div>
+    `;
+  } else if (s === "logistics") {
+    titleEl.textContent = "Hotel, Shuttle, Suica & Referensi (Hal. 29 & 34)";
+    const hotels = Array.isArray(st.hotels) ? st.hotels : [];
+    const editObj = st.editingHotelId ? hotels.find(h => h.id === st.editingHotelId) : null;
+
+    const hotelCardsHtml = hotels.length === 0
+      ? `<div class="addr-box" style="color:var(--sumi);">Belum ada daftar hotel tersimpan. Tambahkan hotel baru di bawah.</div>`
+      : hotels.map((h, idx) => `
+        <div class="slot" style="margin-bottom:8px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;flex-wrap:wrap;">
+            <div>
+              <span class="tag tag-gold">HOTEL #${idx + 1}</span>
+              <strong style="font-size:13.5px;margin-left:4px;">${h.name}</strong>
+              <div style="font-size:11.5px;color:var(--matcha);font-weight:700;">${h.dates || "Tanggal fleksibel"}</div>
+            </div>
+            <div class="row">
+              ${h.ref ? `<button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${String(h.ref).replace(/"/g,'&quot;')}">Salin Ref (${h.ref})</button>` : ''}
+              <button type="button" class="btn btn-sm" data-act="edit-hotel" data-hid="${h.id}">✏️ Edit</button>
+              <button type="button" class="btn btn-sm btn-hanko" data-act="del-hotel" data-hid="${h.id}">Hapus</button>
+            </div>
+          </div>
+          ${h.note ? `<div class="slot-ds" style="margin-top:5px;">${h.note}</div>` : ''}
+        </div>
+      `).join("");
+
+    bodyEl.innerHTML = `
+      <div style="line-height:1.6;margin-bottom:10px;">
+        <div>• <strong>Penerbangan:</strong> ZE603 (ICN T1 15.20 -> NRT T3 17.45) · YP732 (NRT T2 12.30 -> ICN T1 15.20).</div>
+        <div>• <strong>Welcome Suica:</strong> Fisik di Narita T1/T2/T3, 28 hari, tanpa deposit; saldo tidak dikembalikan.</div>
+        <div>• <strong>Shuttle &amp; Akses:</strong> ART HOTEL shuttle gratis T2 Halte 26 / T1 Halte 16 (~30-35 mnt); pembatalan gratis sebelum 7 Des 2026.</div>
+      </div>
+
+      <div style="margin-bottom:10px;">
+        <div class="card-lbl" style="margin-bottom:7px;">Daftar Akomodasi &amp; Hotel (${hotels.length})</div>
+        ${hotelCardsHtml}
+      </div>
+
+      <div class="addr-box" style="background:var(--washi);border-style:solid;margin-bottom:10px;">
+        <div style="font-size:11.5px;font-weight:800;color:var(--kincha);margin-bottom:6px;">
+          ${editObj ? "✏️ Edit Data Hotel" : "+ Tambah Hotel / Penginapan Baru"}
+        </div>
+        <div style="display:grid;gap:6px;">
+          <input type="text" id="h-name" value="${(editObj?.name || '').replace(/"/g,'&quot;')}" placeholder="Nama Hotel (mis. APA Hotel Ueno / Host Jōsō)">
+          <div class="row">
+            <input type="text" id="h-dates" value="${(editObj?.dates || '').replace(/"/g,'&quot;')}" placeholder="Tanggal / Malam (mis. 30 Des - 2 Jan)" style="flex:1;">
+            <input type="text" id="h-ref" value="${(editObj?.ref || '').replace(/"/g,'&quot;')}" placeholder="No. Booking / Ref" style="flex:1;">
+          </div>
+          <input type="text" id="h-note" value="${(editObj?.note || '').replace(/"/g,'&quot;')}" placeholder="Catatan check-in, shuttle, sarapan, atau onsen">
+          <div class="row">
+            <button type="button" class="btn btn-sm btn-matcha" data-act="save-hotel">${editObj ? "Simpan Perubahan" : "+ Tambah Hotel"}</button>
+            ${editObj ? `<button type="button" class="btn btn-sm" data-act="cancel-edit-hotel">Batal Edit</button>` : ''}
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:6px;">
+        <div class="row">
+          <input type="text" id="r-flight" value="${(st.refs.flight||'').replace(/"/g,'&quot;')}" placeholder="Kode E-Ticket ZE603 & YP732" style="flex:1;">
+          <button type="button" class="btn btn-sm" data-act="c-ref" data-k="flight">Salin</button>
+        </div>
+        <button type="button" class="btn btn-sm btn-kincha" data-act="save-refs">Simpan Kode Penerbangan</button>
+      </div>
+    `;
+  } else if (s === "onebag") {
+    titleEl.textContent = "One-Bag System & Berat Ransel (Hal. 34)";
+    let g = 0;
+    const rows = BAG_LIST.map(b=>{
+      const c = !!st.bag[b.id];
+      if (c) g += b.g;
+      return `<label style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--rule);cursor:pointer;">
+        <span><input type="checkbox" ${c?'checked':''} data-act="bag" data-id="${b.id}" style="margin-right:6px;accent-color:var(--matcha);"> ${b.n}</span>
+        <span style="color:var(--sumi);">${b.g} g</span>
+      </label>`;
+    }).join("");
+    const kg = (g/1000).toFixed(2);
+    bodyEl.innerHTML = `
+      <div style="display:flex;justify-content:space-between;"><strong>Estimasi Kabin:</strong><strong>${kg} kg / 7.0 kg</strong></div>
+      <div class="p-bg"><div class="p-bar ${g>7000?'over':''}" style="width:${Math.min(100,Math.round(g/7000*100))}%"></div></div>
+      ${rows}
+      <div style="margin-top:8px;font-size:11.5px;color:var(--sumi);">Malam 3 Jan: timbang ransel &amp; cek loker/stopkontak di The Nell. Malam 4 Jan: konfirmasi shuttle T2 &amp; sarapan 07.00.</div>
+    `;
+  } else if (s === "planb") {
+    titleEl.textContent = "Plan B Darurat IF 01 - IF 10 (Hal. 32-33)";
+    bodyEl.innerHTML = PLAN_B_LIST.map(([k,v])=>`
+      <div style="padding:6px 0;border-bottom:1px dashed var(--rule);">
+        <strong style="color:var(--hanko);">${k}:</strong> ${v}
+      </div>
+    `).join("");
+  } else if (s === "backup") {
+    titleEl.textContent = "Backup & Pulihkan JSON";
+    bodyEl.innerHTML = `
+      <div class="row" style="margin-bottom:8px;">
+        <button type="button" class="btn btn-sm btn-matcha" data-act="dl-json">Unduh .json</button>
+        <button type="button" class="btn btn-sm" data-act="cp-json">Salin JSON</button>
+      </div>
+      <textarea id="j-box" placeholder="Tempel JSON untuk memulihkan..." style="min-height:68px;font-family:monospace;font-size:11px;"></textarea>
+      <button type="button" class="btn btn-sm btn-kincha" style="margin-top:6px;" data-act="imp-json">Pulihkan</button>
+    `;
+  } else {
+    titleEl.textContent = "56 Sumber Resmi (Hal. 36-38)";
+    bodyEl.innerHTML = SOURCES.map(x=>`
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;padding:5px 0;border-bottom:1px dashed var(--rule);">
+        <span><strong>[${x[0]}]</strong> ${x[1]}</span>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="${x[1]}" data-u="${x[2]}">Buka ↗</button>
+      </div>
+    `).join("");
+  }
+}
+
+function renderTheme(){
+  document.body.classList.toggle("night", !st.light);
+  const b = document.getElementById("theme-btn");
+  if (b) b.textContent = st.light ? "🌙 Mode Malam (Sumi)" : "☀️ Mode Siang (Washi)";
+}
+
+function switchPage(p){
+  st.page = p;
+  document.querySelectorAll("section.page").forEach(el=> el.classList.remove("active"));
+  const target = document.getElementById(p);
+  if (target) target.classList.add("active");
+  document.querySelectorAll("nav.pill-dock button.dock-item").forEach(b=> b.classList.toggle("active", b.dataset.p === p));
+  const moreBtn = document.getElementById("dock-more");
+  if (moreBtn) moreBtn.classList.toggle("open", p === "page-more");
+  if (p === "page-map") setTimeout(()=> goStationSlide(st.stIdx || 0, false), 40);
+  if (p === "page-schedule") setTimeout(()=> goHeroSlide(st.heroIdx || 0, false), 40);
+  window.scrollTo({ top:0, behavior:"smooth" });
+}
+
+function toggleSheet(force){
+  const el = document.getElementById("sheet-bg");
+  if (!el) return;
+  const next = typeof force === "boolean" ? force : !el.classList.contains("open");
+  el.classList.toggle("open", next);
+}
+
+let curFc = "pork";
+function openSos(k){
+  curFc = FCS[k] ? k : "pork";
+  const c = FCS[curFc];
+  document.getElementById("fc-jp").textContent = c.jp;
+  document.getElementById("fc-ro").textContent = c.ro;
+  document.getElementById("fc-id").innerHTML = `<strong>Arti:</strong> ${c.id}`;
+  document.getElementById("sos-bg").classList.add("open");
+}
+
+document.body.addEventListener("click", e=>{
+  if (e.target.id === "sheet-bg") { toggleSheet(false); return; }
+  if (e.target.id === "sos-bg") { document.getElementById("sos-bg").classList.remove("open"); return; }
+  const b = e.target.closest("[data-act]");
+  if (!b) return;
+  const act = b.dataset.act;
+
+  if (act === "tab") { toggleSheet(false); switchPage(b.dataset.p); }
+  else if (act === "toggle-sheet") { toggleSheet(); }
+  else if (act === "open-sheet") { toggleSheet(true); }
+  else if (act === "close-sheet") { toggleSheet(false); }
+  else if (act === "sub") { st.sub = b.dataset.s; save(); toggleSheet(false); renderSub(); switchPage("page-more"); }
+  else if (act === "day") { st.day = parseInt(b.dataset.d || b.dataset.v, 10); save(); renderSchedule(); switchPage("page-schedule"); }
+  else if (act === "go-hero") { goHeroSlide(parseInt(b.dataset.i, 10)); }
+  else if (act === "slide-hero") { goHeroSlide(st.heroIdx + parseInt(b.dataset.dir, 10)); }
+  else if (act === "toggle-auto") { toggleAutoPlay(); }
+  else if (act === "corr") { st.corr = b.dataset.c; st.stIdx = 0; save(); renderMap(); goStationSlide(0, false); }
+  else if (act === "go-st") { goStationSlide(parseInt(b.dataset.i, 10)); }
+  else if (act === "slide-st") { goStationSlide(st.stIdx + parseInt(b.dataset.dir, 10)); }
+  else if (act === "save-note") {
+    const d = parseInt(b.dataset.d, 10);
+    st.notes[d] = document.getElementById("d-note-in").value;
+    save(); toast(`Catatan Hari ${d} disimpan`);
+  }
+  else if (act === "deduct-rt") {
+    const r = ROUTES.find(x=>x.id===document.getElementById("rt-sel").value) || ROUTES[0];
+    st.suica = Math.max(0, st.suica - r.yen);
+    save(); renderBudget(); renderSchedule(); toast(`Suica -¥${r.yen.toLocaleString()}`);
+  }
+  else if (act === "ext") { openExt(b.dataset.u, b.dataset.t); }
+  else if (act === "copy-ext") { if (curExt) copyStr(curExt, "Link disalin!"); }
+  else if (act === "close-ext") { document.getElementById("ext-strip").classList.remove("open"); }
+  else if (act === "copy-txt") { copyStr(b.dataset.txt, "Teks disalin!"); }
+  else if (act === "sos") { toggleSheet(false); openSos(b.dataset.k); }
+  else if (act === "close-sos") { document.getElementById("sos-bg").classList.remove("open"); }
+  else if (act === "fc") { openSos(b.dataset.k); }
+  else if (act === "copy-fc") { copyStr(FCS[curFc].jp, "Teks Jepang disalin!"); }
+  else if (act === "theme") { st.light = !st.light; save(); renderTheme(); }
+  else if (act === "suica") { st.suica = Math.max(0, st.suica + parseInt(b.dataset.d, 10)); save(); renderBudget(); renderSchedule(); toast(`Suica: ¥${st.suica.toLocaleString()}`); }
+  else if (act === "suica-rst") { st.suica = 3000; save(); renderBudget(); renderSchedule(); toast("Suica direset ke ¥3.000"); }
+  else if (act === "fx") { st.fx = parseFloat(b.dataset.r); save(); renderBudget(); renderMap(); }
+  else if (act === "add-exp") {
+    const dayIdx = parseInt(document.getElementById("e-day").value, 10);
+    const cat = document.getElementById("e-cat").value;
+    const amt = parseInt(document.getElementById("e-amt").value, 10);
+    const note = document.getElementById("e-note").value.trim() || cat;
+    if (isNaN(amt) || amt <= 0) return;
+    st.exps.unshift({ id:Date.now(), dayIdx, cat, amt, note });
+    document.getElementById("e-amt").value=""; document.getElementById("e-note").value="";
+    save(); renderBudget(); toast(`¥${amt.toLocaleString()} dicatat`);
+  }
+  else if (act === "del-e") {
+    st.exps = st.exps.filter(x=>x.id!==parseInt(b.dataset.id, 10));
+    save(); renderBudget();
+  }
+  else if (act === "save-hotel") {
+    const name = (document.getElementById("h-name")?.value || "").trim();
+    const dates = (document.getElementById("h-dates")?.value || "").trim();
+    const ref = (document.getElementById("h-ref")?.value || "").trim();
+    const note = (document.getElementById("h-note")?.value || "").trim();
+    if (!name) { toast("Isi nama hotel terlebih dahulu"); return; }
+    if (!Array.isArray(st.hotels)) st.hotels = [];
+    if (st.editingHotelId) {
+      st.hotels = st.hotels.map(h => h.id === st.editingHotelId ? { ...h, name, dates, ref, note } : h);
+      st.editingHotelId = null;
+      toast("Data hotel diperbarui");
+    } else {
+      st.hotels.push({ id: "h_" + Date.now(), name, dates, ref, note });
+      toast("Hotel baru ditambahkan");
+    }
+    save();
+    renderSub();
+  }
+  else if (act === "edit-hotel") {
+    st.editingHotelId = b.dataset.hid;
+    save();
+    renderSub();
+  }
+  else if (act === "cancel-edit-hotel") {
+    st.editingHotelId = null;
+    save();
+    renderSub();
+  }
+  else if (act === "del-hotel") {
+    const hid = b.dataset.hid;
+    if (st.editingHotelId === hid) st.editingHotelId = null;
+    st.hotels = (st.hotels || []).filter(h => h.id !== hid);
+    save();
+    renderSub();
+    toast("Hotel dihapus");
+  }
+  else if (act === "save-st-note") {
+    const c = CORRIDORS[st.corr] || CORRIDORS.ibaraki;
+    const idx = Math.min(st.stIdx || 0, c.stations.length - 1);
+    const sAct = c.stations[idx];
+    const k = `${st.corr}_${sAct?.id || idx}`;
+    if (!st.stNotes) st.stNotes = {};
+    st.stNotes[k] = (document.getElementById("st-live-note")?.value || "").trim();
+    save();
+    renderMap();
+    toast("Catatan stasiun disimpan");
+  }
+  else if (act === "save-refs") {
+    st.refs = {
+      narita:(document.getElementById("r-narita")?.value||st.refs.narita||"").trim(),
+      flight:(document.getElementById("r-flight")?.value||"").trim(),
+      ueno:st.refs.ueno||"", sos:st.refs.sos||""
+    };
+    save(); toast("Catatan penerbangan tersimpan!");
+  }
+  else if (act === "c-ref") {
+    const v = document.getElementById("r-"+b.dataset.k)?.value || "";
+    if (v.trim()) copyStr(v.trim(), "Disalin!");
+  }
+  else if (act === "bag") { st.bag[b.dataset.id] = b.checked; save(); renderSub(); }
+  else if (act === "dl-json") {
+    const blob = new Blob([JSON.stringify(st,null,2)], {type:"application/json"});
+    const u = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href=u; a.download="Japan_Winter_2627_Backup.json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(u), 800); toast("Backup JSON diunduh");
+  }
+  else if (act === "cp-json") { copyStr(JSON.stringify(st), "JSON disalin!"); }
+  else if (act === "imp-json") {
+    try {
+      const p = JSON.parse(document.getElementById("j-box").value);
+      st = { ...st, ...p }; save(); renderAll(); toast("Data dipulihkan!");
+    } catch(err){ toast("JSON tidak valid"); }
+  }
+  else if (act === "ics") {
+    const ev = DAYS.map(d=>{
+      const parts = d.dt.split(" ");
+      const dayP = String(parseInt(parts[0],10)).padStart(2,"0");
+      const ym = parts[1]==="Des" ? "202612" : "202701";
+      return ["BEGIN:VEVENT","SUMMARY:Japan D" + String(d.d).padStart(2,"0") + " - " + d.ti,"DESCRIPTION:Stay: " + d.stay,"DTSTART;VALUE=DATE:" + ym + dayP,"DTEND;VALUE=DATE:" + ym + dayP,"END:VEVENT"].join("\r\n");
+    }).join("\r\n");
+    const ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Japan Winter 2627//ID",ev,"END:VCALENDAR"].join("\r\n");
+    const blob = new Blob([ics], {type:"text/calendar"});
+    const u = URL.createObjectURL(blob);
+    const a = document.createElement("a"); a.href=u; a.download="Japan_Winter_2627.ics";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(u), 800); toast("Kalender .ics diunduh");
+  }
+});
+
+document.body.addEventListener("change", e=>{
+  const el = e.target;
+  const act = el.dataset ? el.dataset.act : null;
+  if (act === "done") { st.done[el.dataset.id] = el.checked; save(); renderSchedule(); }
+  else if (act === "bag") { st.bag[el.dataset.id] = el.checked; save(); renderSub(); }
+  else if (el.id === "rt-sel") { renderMap(); }
+  else if (el.id === "food-area") { renderFood(); }
+});
+
+document.body.addEventListener("input", e=>{
+  if (e.target.id === "fx-in") renderBudget();
+});
+
+function renderAll(){
+  renderTheme();
+  renderHeroCarousel();
+  renderSchedule();
+  renderMap();
+  renderFood();
+  renderBudget();
+  renderSub();
+  switchPage(st.page || "page-schedule");
+}
+renderAll();
+</script>
+</body>
+</html>
