@@ -559,7 +559,233 @@
     display: none;
   }
   .toast.show { display: block; }
+
+  .upload-zone {
+    background: var(--washi);
+    border: 1.5px dashed var(--kincha);
+    border-radius: 11px;
+    padding: 11px;
+    margin-bottom: 10px;
+  }
+  .preview-thumb {
+    width: 100%;
+    max-height: 190px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    margin: 7px 0;
+  }
+  .ocr-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 99px;
+    background: var(--matcha-bg);
+    color: var(--matcha);
+  }
+
+
+  .live-clock-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-left: 3.5px solid var(--matcha);
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .clock-num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    color: var(--matcha);
+  }
+  .token-chips {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 6px 0 8px;
+  }
+  .tok-btn {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 7px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: monospace;
+    cursor: pointer;
+  }
+  .tok-btn:active { border-color: var(--hanko); }
+
+
+  .schematic-wrap {
+    background: #0B1418;
+    color: #ECF4F6;
+    border: 1px solid #1E2E36;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 8px;
+  }
+  .sch-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    border-bottom: 1px solid rgba(236, 244, 246, 0.16);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .sch-kicker {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #9BB7C0;
+    text-transform: uppercase;
+  }
+  .sch-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    color: #FFFFFF;
+  }
+  .sch-sub {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #9BB7C0;
+    text-transform: uppercase;
+  }
+  .sch-legend {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px 10px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(236, 244, 246, 0.14);
+    font-size: 10.5px;
+    color: #C4D4DA;
+  }
+  @media (min-width: 560px) { .sch-legend { grid-template-columns: repeat(3, 1fr); } }
+  .leg-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 6px;
+  }
+  .leg-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+
+  .zen-ico {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .zen-ico svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .q-ico .zen-ico {
+    width: 22px;
+    height: 22px;
+    color: var(--hanko);
+  }
+  .dock-item .zen-ico {
+    width: 18px;
+    height: 18px;
+  }
+  .more-tile .zen-ico {
+    width: 18px;
+    height: 18px;
+    color: var(--matcha);
+  }
+  .enso-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: var(--paper);
+    font-size: 11px;
+    color: var(--sumi);
+  }
+  .enso-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--serif);
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+
+  body {
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+  }
+  .dock-wrap {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+  .install-bar {
+    display: none;
+    background: var(--tatami);
+    border: 1px solid var(--rule);
+    border-left: 3.5px solid var(--hanko);
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 11.5px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .install-bar.show {
+    display: flex;
+  }
+  @media (display-mode: standalone), (display-mode: fullscreen) {
+    .install-bar { display: none !important; }
+  }
+
 </style>
+
+<meta name="theme-color" content="#F3EFE6" id="meta-theme-color">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="冬旅案内 · JP Winter">
+<link rel="manifest" id="pwa-manifest-link" href="./manifest.json">
+<link rel="apple-touch-icon" id="apple-icon-link" href="">
+
 </head>
 <body>
 
@@ -572,7 +798,7 @@
       <div style="font-size:10.5px;color:var(--sumi);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" id="ext-url"></div>
     </div>
     <div class="row">
-      <a class="btn btn-sm btn-matcha" id="ext-link" href="#" target="_blank" rel="noopener noreferrer">Buka ↗</a>
+      <a class="btn btn-sm btn-matcha" id="ext-link" href="#" target="_blank" rel="noopener noreferrer">Buka →</a>
       <button type="button" class="btn btn-sm" data-act="copy-ext">Salin</button>
       <button type="button" class="btn btn-sm" data-act="close-ext">✕</button>
     </div>
@@ -592,6 +818,31 @@
 
 <main>
   <section id="page-schedule" class="page active">
+    <div class="install-bar" id="install-bar">
+      <div style="flex:1;min-width:180px;">
+        <strong style="color:var(--ink);">Mode Aplikasi (Layar Penuh)</strong>
+        <div style="color:var(--sumi);" id="install-hint">Buka lewat tautan GitHub Pages (https://...) lalu pasang ke layar utama agar tampil penuh tanpa bar browser.</div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn btn-sm" data-act="toggle-fullscreen">Fullscreen</button>
+        <button type="button" class="btn btn-sm btn-hanko" id="btn-install-app" data-act="install-pwa">Instal App</button>
+      </div>
+    </div>
+    <div class="enso-bar">
+      <span class="enso-mark"><span class="zen-ico"><svg viewBox="0 0 24 24" style="stroke:var(--hanko);fill:none;stroke-width:2;"><path d="M18.5 6.5A8.5 8.5 0 1 0 20.4 13"/></svg></span> 禅旅 · ZEN FIELD NOTE</span>
+      <span>静謐 · 簡素 · 計画</span>
+    </div>
+    <div class="live-clock-strip">
+      <div>
+        <span class="tag tag-ok">JST / KST (UTC+9)</span>
+        <strong style="margin-left:5px;">Waktu Lokal:</strong>
+        <span class="clock-num" id="jst-clock">--:--:--</span>
+      </div>
+      <div style="font-size:11.5px;color:var(--sumi);" id="next-trip-milestone">
+        Berangkat 27 Des 2026 · ZE603 (15:20)
+      </div>
+    </div>
+
     <div class="kakejiku-shell">
       <div class="swipe-track" id="hero-track"></div>
       <div class="ctrl-row">
@@ -606,19 +857,19 @@
 
     <div class="q-grid">
       <button type="button" class="q-btn" data-act="sos" data-k="pork">
-        <span class="q-ico">🍜</span>
+        <span class="q-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M8 19h8M7 7l5-3 5 3"/></svg></span></span>
         <div><div class="q-t">Kartu Tanpa Babi</div><div class="q-s">Kaldu, lard &amp; menu</div></div>
       </button>
       <button type="button" class="q-btn" data-act="sub" data-s="kana">
-        <span class="q-ico">あ</span>
+        <span class="q-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 7h10M9 4c-.5 6-2.5 11-5 14M13 11h7M17 8v9c0 1.5-1 2.2-2.5 2"/></svg></span></span>
         <div><div class="q-t">Panduan Kana &amp; JP</div><div class="q-s">Hiragana · Katakana</div></div>
       </button>
       <button type="button" class="q-btn" data-act="tab" data-p="page-map">
-        <span class="q-ico">🚉</span>
+        <span class="q-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 12h12M9 17l-2 4M15 17l2 4"/></svg></span></span>
         <div><div class="q-t">Peta &amp; Alamat</div><div class="q-s">Geser &amp; ketuk titik</div></div>
       </button>
       <button type="button" class="q-btn" data-act="tab" data-p="page-budget">
-        <span class="q-ico">💴</span>
+        <span class="q-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 8l3.5 4.5L15.5 8M12 12.5V17M8.5 13h7M8.5 15h7"/></svg></span></span>
         <div><div class="q-t">Anggaran &amp; Suica</div><div class="q-s" id="q-suica-sub">Saldo ¥3,000</div></div>
       </button>
     </div>
@@ -674,10 +925,10 @@
     <div class="card">
       <div class="card-hd"><span class="card-lbl">Pencarian Sekitar 1-Klik</span></div>
       <div class="row">
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="Stasiun Terdekat" data-u="https://www.google.com/maps/search/train+station+near+me">🚉 Stasiun</button>
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="Konbini / Supermarket" data-u="https://www.google.com/maps/search/7-Eleven+or+Lawson+or+Supermarket+near+me">🍱 Konbini</button>
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="Coin Locker" data-u="https://www.google.com/maps/search/Coin+Locker+near+me">🧳 Loker</button>
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="Toilet Umum" data-u="https://www.google.com/maps/search/Public+Toilet+near+me">🚻 Toilet</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Stasiun Terdekat" data-u="https://www.google.com/maps/search/train+station+near+me">Stasiun</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Konbini / Supermarket" data-u="https://www.google.com/maps/search/7-Eleven+or+Lawson+or+Supermarket+near+me">Konbini</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Coin Locker" data-u="https://www.google.com/maps/search/Coin+Locker+near+me">Loker</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="Toilet Umum" data-u="https://www.google.com/maps/search/Public+Toilet+near+me">Toilet</button>
       </div>
     </div>
   </section>
@@ -799,28 +1050,28 @@
       <button type="button" class="btn btn-sm" data-act="close-sheet">✕</button>
     </div>
     <div class="more-grid">
-      <button type="button" class="more-tile" data-act="sub" data-s="kana"><span>あ</span><span>Panduan Kana &amp; Istilah</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="alternatives"><span>🔄</span><span>Alternatif Tokyo (28)</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="logistics"><span>🏨</span><span>Hotel, Shuttle &amp; Suica (29)</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="onebag"><span>🎒</span><span>One-Bag &amp; Berat (34)</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="planb"><span>⚡</span><span>Plan B IF 01-IF 10 (32-33)</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="backup"><span>💾</span><span>Backup / Restore JSON</span></button>
-      <button type="button" class="more-tile" data-act="sub" data-s="sources" style="grid-column:span 2;"><span>📚</span><span>56 Sumber Resmi (Hal. 36-38)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="kana"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 7h10M9 4c-.5 6-2.5 11-5 14M13 11h7M17 8v9c0 1.5-1 2.2-2.5 2"/></svg></span><span>Panduan Kana &amp; Istilah</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="alternatives"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></svg></span><span>Alternatif Tokyo (28)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="logistics"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 20V6l8-3 8 3v14"/><path d="M9 20v-5h6v5"/></svg></span><span>Hotel, Shuttle &amp; Suica (29)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="onebag"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M6 8h12l1.5 12h-15L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><span>One-Bag &amp; Berat (34)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="planb"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg></span><span>Plan B IF 01-IF 10 (32-33)</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="backup"><span class="zen-ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span>Backup / Restore JSON</span></button>
+      <button type="button" class="more-tile" data-act="sub" data-s="sources" style="grid-column:span 2;"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5z"/><path d="M8 7h6"/></svg></span><span>56 Sumber Resmi (Hal. 36-38)</span></button>
     </div>
     <div class="row">
-      <button type="button" class="btn btn-sm" style="flex:1;" data-act="theme" id="theme-btn">🌙 Mode Gelap</button>
-      <button type="button" class="btn btn-sm" style="flex:1;" data-act="ics">📅 Unduh .ics</button>
-      <button type="button" class="btn btn-sm btn-hanko" style="flex:1;" data-act="sos" data-k="hotel">🏨 Kartu Hotel</button>
+      <button type="button" class="btn btn-sm" style="flex:1;" data-act="theme" id="theme-btn">Mode Gelap · Sumi</button>
+      <button type="button" class="btn btn-sm" style="flex:1;" data-act="ics">Unduh .ics</button>
+      <button type="button" class="btn btn-sm btn-hanko" style="flex:1;" data-act="sos" data-k="hotel">Kartu Hotel</button>
     </div>
   </div>
 </div>
 
 <div class="dock-wrap">
   <nav class="pill-dock" aria-label="Navigasi Utama">
-    <button type="button" class="dock-item active" data-act="tab" data-p="page-schedule"><span class="d-ico">🗓️</span><span class="d-lbl">Jadwal</span></button>
-    <button type="button" class="dock-item" data-act="tab" data-p="page-map"><span class="d-ico">🚉</span><span class="d-lbl">Peta</span></button>
-    <button type="button" class="dock-item" data-act="tab" data-p="page-food"><span class="d-ico">🍜</span><span class="d-lbl">Kuliner</span></button>
-    <button type="button" class="dock-item" data-act="tab" data-p="page-budget"><span class="d-ico">💴</span><span class="d-lbl">Dana</span></button>
+    <button type="button" class="dock-item active" data-act="tab" data-p="page-schedule"><span class="d-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span></span><span class="d-lbl">Jadwal</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-map"><span class="d-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 12h12M9 17l-2 4M15 17l2 4"/></svg></span></span><span class="d-lbl">Peta</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-food"><span class="d-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M8 19h8M7 7l5-3 5 3"/></svg></span></span><span class="d-lbl">Kuliner</span></button>
+    <button type="button" class="dock-item" data-act="tab" data-p="page-budget"><span class="d-ico"><span class="zen-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 8l3.5 4.5L15.5 8M12 12.5V17M8.5 13h7M8.5 15h7"/></svg></span></span><span class="d-lbl">Dana</span></button>
     <button type="button" class="dock-more" id="dock-more" data-act="toggle-sheet" aria-label="Menu Lainnya">•••</button>
   </nav>
 </div>
@@ -832,15 +1083,16 @@
       <button type="button" class="btn btn-sm" data-act="close-sos">✕</button>
     </div>
     <div class="row" style="margin-bottom:8px;">
-      <button type="button" class="btn btn-sm" data-act="fc" data-k="pork">🍜 Tanpa Babi &amp; Lard</button>
-      <button type="button" class="btn btn-sm" data-act="fc" data-k="hotel">🏨 Hotel, Sarapan &amp; Biyu</button>
-      <button type="button" class="btn btn-sm" data-act="fc" data-k="train">🚃 Kereta &amp; Shuttle</button>
-      <button type="button" class="btn btn-sm" data-act="fc" data-k="lost">🪪 Koban / Hilang</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="pork">Tanpa Babi &amp; Lard</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="hotel">Hotel, Sarapan &amp; Biyu</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="train">Kereta &amp; Shuttle</button>
+      <button type="button" class="btn btn-sm" data-act="fc" data-k="lost">Koban / Hilang</button>
     </div>
-    <div class="jp-card" id="fc-jp"></div>
+    <div class="jp-card" id="fc-jp" data-act="speak-fc" style="cursor:pointer;" title="Ketuk untuk memutar audio bahasa Jepang"></div>
     <div style="font-size:12px;color:var(--sumi);margin-bottom:8px;" id="fc-ro"></div>
     <div style="font-size:12px;background:var(--matcha-bg);padding:9px;border-radius:9px;" id="fc-id"></div>
     <div class="row" style="margin-top:9px;">
+      <button type="button" class="btn btn-sm btn-hanko" data-act="speak-fc">Dengar Audio JP</button>
       <button type="button" class="btn btn-sm btn-matcha" data-act="copy-fc">Salin Teks Jepang</button>
       <span style="font-size:11px;color:var(--sumi);">Darurat: <code>110</code> / <code>119</code></span>
     </div>
@@ -1056,6 +1308,15 @@ const DAYS = [
   }
 ];
 
+const SCHEMATIC_LINES = [
+  { id:"ginza", name:"Ginza / TX / Jōsō", color:"#F3A712" },
+  { id:"marunouchi", name:"Marunouchi / Keisei", color:"#E63946" },
+  { id:"hibiya", name:"Hibiya / Yokosuka", color:"#A8ADC0" },
+  { id:"tozai", name:"Tōzai / Enoden", color:"#2EC4B6" },
+  { id:"yamanote", name:"Yamanote / Joban", color:"#9EF01A" },
+  { id:"yurakucho", name:"Yūrakuchō / Rinkai", color:"#F4A261" }
+];
+
 const CORRIDORS = {
   ibaraki:{
     title:"常総・大洗・成田 · JŌSŌ & OARAI",
@@ -1085,31 +1346,68 @@ const CORRIDORS = {
     edges:[[0,1],[1,2],[1,3]]
   },
   tokyo:{
-    title:"都心周遊 · PUSAT TOKYO (30 DES - 4 JAN)",
-    sub:"JR Yamanote · Metro · TX · Keisei",
+    title:"TOKYO 東京 · SCHEMATIC RAIL & HUBS",
+    sub:"TRAINS, TRAMS & CITY BUSES · 30 DES - 4 JAN",
     stations:[
-      { id:"ueno", name:"Ueno (The Nell)", jp:"上野駅 / ザ・ネル上野", x:290, y:52,
-        addr:"〒110-0005 Tokyo-to, Taito-ku, Ueno 7-chome (Shinobazu Exit / Keisei Ueno)",
-        slots:["Pola ~08:30","Pola ~10:15","Pola ~14:30","Pola ~15:00"],
-        note:"Basecamp 30 Des-4 Jan (check-in 14.00, check-out 10.00). Batas keluar ke Narita ~15.00 pada 4 Jan.",
-        q:"Ueno+Station+Tokyo", yq:"上野" },
-      { id:"asakusa", name:"Asakusa / Ryogoku", jp:"浅草駅・両国駅", x:455, y:80,
-        addr:"〒111-0032 Tokyo-to, Taito-ku, Asakusa 2-chome & Sumida-ku, Yokoami (Edo-Tokyo Museum)",
-        slots:["Pola ~10:00","Pola ~14:30","Pola ~16:45","Pola ~19:00"],
-        note:"Senso-ji (30 Des) & Museum Edo-Tokyo (diumumkan buka 4 Jan).",
-        q:"Asakusa+Station+Tokyo", yq:"浅草" },
-      { id:"tokyo", name:"Istana / Ginza", jp:"皇居・銀座・東京駅", x:410, y:140,
-        addr:"〒100-8111 Tokyo-to, Chiyoda-ku, Chiyoda 1-1 (Palace East Plaza) & Chuo-ku, Ginza",
-        slots:["Pola ~08:30","Pola ~09:30","Pola ~13:30","Pola ~15:30"],
-        note:"Prioritas 2 Jan di Palace East Plaza (cek IHA 2027). East Gardens tutup 28 Des-3 Jan.",
-        q:"Tokyo+Imperial+Palace", yq:"東京" },
-      { id:"shinjuku", name:"Shinjuku / Shibuya", jp:"新宿駅・渋谷駅", x:140, y:105,
-        addr:"〒160-0022 Tokyo-to, Shinjuku-ku, Shinjuku 3-chome & Shibuya-ku, Jinnan/Dogenzaka",
+      { id:"akabane", name:"Akabane", jp:"赤羽駅", x:185, y:36,
+        addr:"〒115-0045 Tokyo-to, Kita-ku, Akabane 1-chome (Akses Utara JR Keihin-Tohoku / Saikyo)",
+        slots:["Pola ~07:30","Pola ~09:00","Pola ~18:30","Pola ~21:30"],
+        note:"Simpul utara jalur kereta Tokyo; koneksi cepat ke pusat kota & jalur arah utara.",
+        q:"Akabane+Station+Tokyo", yq:"赤羽" },
+      { id:"ikebukuro", name:"Ikebukuro", jp:"池袋駅", x:145, y:76,
+        addr:"〒171-0022 Tokyo-to, Toshima-ku, Minami-Ikebukuro 1-chome (JR Yamanote / Metro)",
+        slots:["Pola ~08:15","Pola ~10:00","Pola ~17:00","Pola ~21:00"],
+        note:"Simpul barat-utara Yamanote & jalur metro; perpindahan mudah ke Shinjuku & Ueno.",
+        q:"Ikebukuro+Station+Tokyo", yq:"池袋" },
+      { id:"shinjuku", name:"Shinjuku", jp:"新宿駅", x:118, y:126,
+        addr:"〒160-0022 Tokyo-to, Shinjuku-ku, Shinjuku 3-chome (Meiji Jingu · Tocho · Suehirotei)",
         slots:["Pola ~09:00","Pola ~13:15","Pola ~16:30","Pola ~19:00"],
-        note:"Meiji Jingu (1 Jan), Shibuya Crossing, Tocho (Shinjuku Gyoen tutup 29 Des-4 Jan) & Suehirotei.",
-        q:"Shinjuku+Station+Tokyo", yq:"新宿" }
+        note:"Akses ke Meiji Jingu (1 Jan), Tocho, Omoide Yokocho, Kabukicho & Suehirotei.",
+        q:"Shinjuku+Station+Tokyo", yq:"新宿" },
+      { id:"shibuya", name:"Shibuya", jp:"渋谷駅", x:152, y:172,
+        addr:"〒150-0002 Tokyo-to, Shibuya-ku, Dogenzaka / Shibuya Crossing & Hachiko",
+        slots:["Pola ~11:30","Pola ~13:15","Pola ~15:00","Pola ~18:00"],
+        note:"Penyeberangan Shibuya & Hachiko (1 Jan); Shibuya Sky dilewati sesuai rencana.",
+        q:"Shibuya+Station+Tokyo", yq:"渋谷" },
+      { id:"shinagawa", name:"Shinagawa", jp:"品川駅", x:235, y:214,
+        addr:"〒108-0074 Tokyo-to, Minato-ku, Takanawa 3-chome (JR Yamanote / Yokosuka / Keikyu)",
+        slots:["Pola ~07:45","Pola ~15:30","Pola ~18:45","Pola ~22:10"],
+        note:"Simpul selatan menuju Tokyo Tower / Zojo-ji & koneksi jalur arah Kanagawa/Kamakura.",
+        q:"Shinagawa+Station+Tokyo", yq:"品川" },
+      { id:"ueno", name:"Ueno (The Nell)", jp:"上野駅 / ザ・ネル上野", x:332, y:86,
+        addr:"〒110-0005 Tokyo-to, Taito-ku, Ueno 7-chome (Basecamp 30 Des-4 Jan · Check-in 14.00 / Out 10.00)",
+        slots:["Pola ~08:30","Pola ~10:15","Pola ~14:30","Pola ~15:00"],
+        note:"Basecamp Ueno (30 Des-4 Jan). Keisei Ueno ke Narita T2/3; batas keluar ke Narita ~15.00 pada 4 Jan.",
+        q:"Ueno+Station+Tokyo", yq:"上野" },
+      { id:"kitasenju", name:"Kita-Senju", jp:"北千住駅", x:435, y:44,
+        addr:"〒120-0026 Tokyo-to, Adachi-ku, Senju 2-chome (Tsukuba Express / JR Joban / Metro)",
+        slots:["Pola ~07:10","Pola ~08:00","Pola ~19:00","Pola ~21:20"],
+        note:"Simpul timur-utara penghubung jalur TX / Joban & metro.",
+        q:"Kita-Senju+Station+Tokyo", yq:"北千住" },
+      { id:"asakusa", name:"Asakusa & Skytree", jp:"浅草駅・東京スカイツリー", x:425, y:92,
+        addr:"〒111-0032 Tokyo-to, Taito-ku, Asakusa 2-chome (Senso-ji · Kaminarimon · Sumida)",
+        slots:["Pola ~10:00","Pola ~14:30","Pola ~16:45","Pola ~19:00"],
+        note:"Senso-ji & Kaminarimon (30 Des); Skytree dilihat dari kawasan Sumida.",
+        q:"Asakusa+Station+Tokyo", yq:"浅草" },
+      { id:"tokyo", name:"Tokyo Station & Istana", jp:"東京駅・皇居東御苑周辺", x:338, y:144,
+        addr:"〒100-0005 Tokyo-to, Chiyoda-ku, Marunouchi 1-chome & Chiyoda 1-1 (Palace East Plaza)",
+        slots:["Pola ~08:30","Pola ~09:30","Pola ~13:30","Pola ~15:30"],
+        note:"Prioritas 2 Jan di Palace East Plaza (cek info resmi IHA 2027); East Gardens tutup 28 Des-3 Jan.",
+        q:"Tokyo+Station", yq:"東京" },
+      { id:"odaiba", name:"Odaiba", jp:"お台場海浜公園周辺", x:335, y:218,
+        addr:"〒135-0091 Tokyo-to, Minato-ku, Daiba 1-chome (Yurikamome / Waterfront)",
+        slots:["Pola ~13:00","Pola ~14:00","Pola ~15:00","Pola ~16:30"],
+        note:"Opsional siang 31 Des via Shimbashi & Yurikamome; fokus tepi teluk & Rainbow Bridge.",
+        q:"Odaiba+Marine+Park+Tokyo", yq:"お台場海浜公園" },
+      { id:"shinkiba", name:"Shin-Kiba", jp:"新木場駅", x:452, y:186,
+        addr:"〒136-0082 Tokyo-to, Koto-ku, Shin-Kiba 2-chome (JR Keiyo / Yurakucho / Rinkai)",
+        slots:["Pola ~10:45","Pola ~12:00","Pola ~13:30","Pola ~18:00"],
+        note:"Simpul pesisir timur menuju kawasan Toyosu / teluk.",
+        q:"Shin-Kiba+Station+Tokyo", yq:"新木場" }
     ],
-    edges:[[0,1],[1,2],[2,3],[3,0]]
+    edges:[
+      [0,1],[1,2],[2,3],[3,4],[4,9],[9,10],[10,8],[8,5],[5,1],[1,8],[5,7],[7,8],[6,7],[6,5],[2,8]
+    ]
   },
   kamakura:{
     title:"鎌倉日帰り · KAMAKURA (3 JAN)",
@@ -1262,7 +1560,7 @@ const SOURCES = [
   ["50-56","GO TOKYO Kawasan & Yokohama Chinatown","https://www.yokohamajapan.com"]
 ];
 
-const SKEY = "jwfg_jp_authentic_v8";
+const SKEY = "jwfg_zen_pwa_v23";
 let st = {
   light:true, page:"page-schedule", heroIdx:0, day:1,
   done:{}, notes:{}, corr:"ibaraki", stIdx:0,
@@ -1274,7 +1572,13 @@ let st = {
     { id:"h_art", name:"ART HOTEL Narita (成田)", dates:"4 Jan - 5 Jan 2027 (1 Malam)", ref:"1758916550", note:"Garden Twin Lake View + Biyu Hot Springs Spa + Sarapan buffet (06.30-10.00) + Shuttle gratis T2 Halte 26 / T1 Halte 16 (~30-35 mnt). Pembatalan gratis < 7 Des 2026." }
   ],
   editingHotelId: null,
+  tickets: [
+    { id:"tk_ze603", title:"Eastar Jet ZE603 (ICN T1 -> NRT T3)", provider:"Penerbangan", day:1, code:"ZE603", note:"27 Des 2026 · 15.20 - 17.45 (cek e-ticket & bagasi terbaru).", imgData:"" },
+    { id:"tk_yp732", title:"Penerbangan Pulang YP732 (NRT T2 -> ICN T1)", provider:"Penerbangan", day:10, code:"YP732", note:"5 Jan 2027 · 12.30 - 15.20 (target tiba NRT T2 ~09.30 via shuttle).", imgData:"" }
+  ],
+  lastScan: null,
   stNotes: {},
+  customSlots: {},
   sub:"kana"
 };
 try {
@@ -1288,6 +1592,54 @@ function toast(m){
   t.textContent = m; t.classList.add("show");
   clearTimeout(window._tt); window._tt = setTimeout(()=>t.classList.remove("show"), 1900);
 }
+
+function findJapaneseVoice(){
+  if (!("speechSynthesis" in window) || !window.speechSynthesis.getVoices) return null;
+  const voices = window.speechSynthesis.getVoices() || [];
+  return (
+    voices.find(v => /^ja[-_]JP$/i.test(v.lang || "")) ||
+    voices.find(v => /^ja$/i.test(v.lang || "")) ||
+    voices.find(v => /japanese|日本語/i.test(v.name || "")) ||
+    null
+  );
+}
+
+function speakJapanese(text, label){
+  const clean = String(text || "").replace(/[／・·]/g, "、").trim();
+  if (!clean) return;
+  if (!("speechSynthesis" in window)) {
+    toast("Perangkat tidak mendukung sintesis suara");
+    return;
+  }
+  try {
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+    }
+    const jpVoice = findJapaneseVoice();
+    const utter = new SpeechSynthesisUtterance(clean);
+    utter.lang = "ja-JP";
+    utter.rate = 0.9;
+    utter.pitch = 1.0;
+    if (jpVoice) {
+      utter.voice = jpVoice;
+      utter.lang = jpVoice.lang || "ja-JP";
+      utter.onstart = () => toast(label ? `Audio JP (${jpVoice.name}): ${label}` : `Audio JP: ${jpVoice.name}`);
+      utter.onerror = () => toast("Gagal memutar suara Jepang di perangkat ini");
+      window.speechSynthesis.speak(utter);
+    } else {
+      toast("Voice Jepang (ja-JP) belum terpasang di TTS HP; unduh paket suara Jepang di pengaturan TTS HP.");
+    }
+  } catch (err) {
+    toast("Gagal memutar audio bahasa Jepang");
+  }
+}
+
+if ("speechSynthesis" in window && window.speechSynthesis.addEventListener) {
+  window.speechSynthesis.addEventListener("voiceschanged", () => {
+    findJapaneseVoice();
+  });
+}
+
 function copyStr(txt, msg){
   const ta = document.createElement("textarea");
   ta.value = txt; ta.style.position="fixed"; ta.style.left="-9999px";
@@ -1312,7 +1664,7 @@ function renderHeroCarousel(){
   if (!track) return;
   track.innerHTML = HERO_SLIDES.map((s, i)=>{
     let secBtn = "";
-    if (s.secUrl) secBtn = `<button type="button" class="btn btn-sm" data-act="ext" data-t="${s.title}" data-u="${s.secUrl}">${s.secText}</button>`;
+    if (s.secUrl) secBtn = `<button type="button" class="btn btn-sm" data-act="ext" data-t="${String(s.title||'').replace(/"/g,'&quot;')}" data-u="${s.secUrl}">${s.secText}</button>`;
     else if (s.secSos) secBtn = `<button type="button" class="btn btn-sm" data-act="sos" data-k="${s.secSos}">${s.secText}</button>`;
     else if (s.secSub) secBtn = `<button type="button" class="btn btn-sm" data-act="sub" data-s="${s.secSub}">${s.secText}</button>`;
     else if (s.secTab) secBtn = `<button type="button" class="btn btn-sm" data-act="tab" data-p="${s.secTab}">${s.secText}</button>`;
@@ -1387,7 +1739,9 @@ function renderSchedule(){
   const jpyTotal = cur.tr + cur.fd + cur.at;
   const noteVal = st.notes[cur.d] || "";
 
-  const slotsHtml = cur.slots.map(s=>{
+  const extraDaySlots = (st.customSlots && Array.isArray(st.customSlots[cur.d])) ? st.customSlots[cur.d] : [];
+  const mergedSlots = [...cur.slots, ...extraDaySlots];
+  const slotsHtml = mergedSlots.map(s=>{
     const chk = !!st.done[s.id];
     const tc = s.b==="ok"?"tag-ok":(s.b==="warn"?"tag-warn":(s.b==="red"?"tag-red":"tag-gold"));
     return `
@@ -1402,7 +1756,7 @@ function renderSchedule(){
             <div class="slot-nm">${s.n}</div>
             <div class="slot-ds">${s.d}</div>
             <div class="row" style="margin-top:7px;">
-              <button type="button" class="btn btn-sm" data-act="ext" data-t="${s.n}" data-u="${s.m}">📍 Peta</button>
+              <button type="button" class="btn btn-sm" data-act="ext" data-t="${String(s.n||'').replace(/"/g,'&quot;')}" data-u="${String(s.m||'').replace(/"/g,'&quot;')}">Peta</button>
             </div>
           </div>
         </div>
@@ -1465,14 +1819,56 @@ function renderMap(){
     `;
   }).join("");
 
+  const viewH = st.corr === "tokyo" ? 245 : 175;
+  const multiColors = ["#9EF01A","#E63946","#F3A712","#2EC4B6","#A8ADC0","#F4A261"];
+  const schLines = c.edges.map(([a,b], ei)=>{
+    const sa = c.stations[a], sb = c.stations[b];
+    const col = st.corr === "tokyo" ? multiColors[ei % multiColors.length] : "#F3A712";
+    const midX = Math.round((sa.x + sb.x) / 2);
+    const midY = sa.y;
+    return `
+      <polyline points="${sa.x},${sa.y} ${midX},${midY} ${sb.x},${sb.y}" fill="none" stroke="${col}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
+    `;
+  }).join("");
+
+  const schNodes = c.stations.map((s,i)=>{
+    const sel = i === idx;
+    const labelY = s.y < 48 ? s.y + 18 : s.y - 11;
+    return `
+      <g class="st-node" data-act="go-st" data-i="${i}">
+        ${sel ? `<circle cx="${s.x}" cy="${s.y}" r="11" fill="none" stroke="#FF6B5B" stroke-width="2.5"/>` : ''}
+        <circle cx="${s.x}" cy="${s.y}" r="5.5" fill="${sel?'#FF6B5B':'#FFFFFF'}" stroke="#0B1418" stroke-width="1.5"/>
+        <text x="${s.x}" y="${labelY}" text-anchor="middle" font-size="9.5" font-weight="700" fill="${sel?'#FFD166':'#ECF4F6'}">${s.name}</text>
+      </g>
+    `;
+  }).join("");
+
+  const legendHtml = SCHEMATIC_LINES.map(l => `
+    <span class="leg-item" data-act="copy-txt" data-txt="${String(l.name||'').replace(/"/g,'&quot;')}">
+      <span class="leg-dot" style="background:${l.color};"></span>
+      <span>${l.name}</span>
+    </span>
+  `).join("");
+
   document.getElementById("map-wrap").innerHTML = `
-    <svg viewBox="0 0 600 175" xmlns="http://www.w3.org/2000/svg">
-      <rect width="600" height="175" rx="8" fill="#FAF7F0"/>
-      <text x="12" y="20" font-size="10.5" font-weight="800" fill="#244736">${c.title}</text>
-      <text x="12" y="34" font-size="9.5" fill="#5E5A50">${c.sub}</text>
-      ${lines}
-      ${nodes}
-    </svg>
+    <div class="schematic-wrap">
+      <div class="sch-top">
+        <div>
+          <div class="sch-kicker">JAPAN · SCHEMATIC ROUTES</div>
+          <div class="sch-title">${c.title}</div>
+          <div class="sch-sub">${c.sub}</div>
+        </div>
+        <span class="tag tag-gold">Ketuk Titik Stasiun</span>
+      </div>
+      <svg viewBox="0 0 600 ${viewH}" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="${viewH}" rx="10" fill="#0B1418"/>
+        <path d="M 380 ${viewH-55} Q 490 ${viewH-45} 595 ${viewH-15} L 595 ${viewH} L 380 ${viewH} Z" fill="#13262E" opacity="0.65"/>
+        <text x="582" y="${viewH-10}" text-anchor="end" font-size="8.5" fill="#6E8B96">Bay / Corridor</text>
+        ${schLines}
+        ${schNodes}
+      </svg>
+      <div class="sch-legend">${legendHtml}</div>
+    </div>
   `;
 
   document.getElementById("st-swipe").innerHTML = c.stations.map((s,i)=>{
@@ -1490,10 +1886,10 @@ function renderMap(){
         <div class="slot-row">${chips}</div>
         <div style="color:var(--sumi);margin-bottom:8px;">${s.note}</div>
         <div class="row">
-          <button type="button" class="btn btn-sm btn-kincha" data-act="ext" data-t="Maps · ${s.name}" data-u="https://www.google.com/maps/search/${s.q}">📍 Google Maps</button>
-          <button type="button" class="btn btn-sm btn-matcha" data-act="ext" data-t="Navitime" data-u="https://japantravel.navitime.com/en/area/jp/route/">🚆 Navitime</button>
-          <button type="button" class="btn btn-sm" data-act="ext" data-t="Yahoo! Transit" data-u="https://transit.yahoo.co.jp/search/result?from=${encodeURIComponent(s.yq)}">🚃 Yahoo! Transit</button>
-          <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${s.addr}">Salin Alamat</button>
+          <button type="button" class="btn btn-sm btn-kincha" data-act="ext" data-t="Maps · ${s.name}" data-u="https://www.google.com/maps/search/${s.q}">Google Maps</button>
+          <button type="button" class="btn btn-sm btn-matcha" data-act="ext" data-t="Navitime" data-u="https://japantravel.navitime.com/en/area/jp/route/">Navitime</button>
+          <button type="button" class="btn btn-sm" data-act="ext" data-t="Yahoo! Transit" data-u="https://transit.yahoo.co.jp/search/result?from=${encodeURIComponent(s.yq)}">Yahoo! Transit</button>
+          <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${String(s.addr||'').replace(/"/g,'&quot;')}">Salin Alamat</button>
         </div>
       </div>
     `;
@@ -1504,7 +1900,7 @@ function renderMap(){
   `).join("");
 
   const sel = document.getElementById("rt-sel");
-  if (!sel.value) sel.innerHTML = ROUTES.map(r=>`<option value="${r.id}">${r.n} (~¥${r.yen})</option>`).join("");
+  if (sel && sel.options.length === 0) sel.innerHTML = ROUTES.map(r=>`<option value="${r.id}">${r.n} (~¥${r.yen})</option>`).join("");
   const rt = ROUTES.find(r=>r.id===sel.value) || ROUTES[0];
   document.getElementById("rt-info").innerHTML = `Estimasi: <strong>¥${rt.yen.toLocaleString()}</strong> (~KRW ${Math.round(rt.yen*st.fx).toLocaleString()}) · ${rt.t} — ${rt.note}`;
   const stNoteKey = `${st.corr}_${sAct?.id || idx}`;
@@ -1547,7 +1943,7 @@ function renderFood(){
           <strong>${f.n}</strong> · <span class="tag tag-ok">${f.tag}</span> · <strong style="color:var(--kincha);font-size:11.5px;">${f.p}</strong>
           <div style="font-size:12px;color:var(--sumi);margin-top:2px;">${f.d}</div>
         </div>
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="${f.n}" data-u="https://www.google.com/maps/search/${f.q}">📍 Peta</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="${String(f.n||'').replace(/"/g,'&quot;')}" data-u="https://www.google.com/maps/search/${f.q}">Peta</button>
       </div>
     </div>
   `).join("");
@@ -1583,7 +1979,7 @@ function renderBudget(){
   document.getElementById("fx-krw").textContent = `KRW ${Math.round(jpy*st.fx).toLocaleString()}`;
   document.getElementById("fx-idr").textContent = `Rp ${Math.round(jpy*105).toLocaleString()}`;
   const tf = document.getElementById("fx-tf");
-  tf.textContent = jpy>=5000 ? "✅ Memenuhi (≥¥5.000)" : "Di bawah ¥5.000";
+  tf.textContent = jpy>=5000 ? "Memenuhi (≥¥5.000)" : "Di bawah ¥5.000";
 
   const remBelowCap = 1000000 - 972050;
   document.getElementById("budget-breakdown").innerHTML = `
@@ -1591,6 +1987,177 @@ function renderBudget(){
     <strong>Cadangan &amp; Buffer:</strong> Cadangan darurat KRW 120.000 + Buffer kurs/harga KRW 50.000 = <strong>Total Disiapkan KRW 972.050</strong> (sisa di bawah batas KRW 1.000.000: <strong>KRW ${remBelowCap.toLocaleString()}</strong>). Pesawat &amp; penginapan di luar anggaran ini.<br>
     <strong>Rutinitas Malam 30 Detik:</strong> Bandingkan total aktual harian (transport + makan + atraksi + belanja) dengan plafon hari itu; jika berlebih, kurangi belanja atau aktifkan Plan B gratis. Pembatalan gratis voucher ART HOTEL Narita berlaku sebelum 7 Des 2026.
   `;
+}
+
+
+const VOUCHER_SAMPLES = {
+  agoda: {
+    provider: "Agoda",
+    kind: "hotel",
+    title: "Hotel Mystays Ueno Inaricho",
+    dates: "30 Des 2026 - 2 Jan 2027",
+    code: "AGD98472105",
+    day: 4,
+    amountJpy: 0,
+    rawText: "Agoda Booking ID: AGD98472105\nHotel Mystays Ueno Inaricho\nCheck-in: 30 Des 2026 (15:00) - Check-out: 2 Jan 2027 (11:00)\nNon-smoking room, dekat stasiun metro."
+  },
+  trip: {
+    provider: "Trip.com",
+    kind: "ticket",
+    title: "Keisei Skyliner / Narita Access E-Ticket",
+    dates: "4 Jan 2027",
+    code: "TRP66291048",
+    day: 9,
+    amountJpy: 1250,
+    rawText: "Trip.com Order: TRP66291048\nKeisei Ueno -> Narita Airport T2/3\nTanggal: 4 Jan 2027 · QR / Barcode siap pindai."
+  },
+  klook: {
+    provider: "Klook",
+    kind: "ticket",
+    title: "Kotoku-in & Hasedera / Enoden Pass Voucher",
+    dates: "3 Jan 2027",
+    code: "KLK55102938",
+    day: 8,
+    amountJpy: 750,
+    rawText: "Klook Voucher: KLK55102938\nKamakura & Hase Day Trip Voucher\nTanggal: 3 Jan 2027 · Tunjukkan kode/QR di loket."
+  }
+};
+
+function parseVoucherPayload(fileName, rawText, forcedKind){
+  const combined = `${fileName || ""} ${rawText || ""}`.trim();
+  const low = combined.toLowerCase();
+
+  let provider = "Voucher / Web";
+  if (low.includes("agoda")) provider = "Agoda";
+  else if (low.includes("trip.com") || low.includes("trip ") || low.includes("trip_")) provider = "Trip.com";
+  else if (low.includes("klook")) provider = "Klook";
+  else if (low.includes("booking")) provider = "Booking.com";
+  else if (low.includes("ze603") || low.includes("yp732") || low.includes("eastar") || low.includes("flight") || low.includes("air")) provider = "Maskapai / Tiket";
+  else if (low.includes("suica") || low.includes("jr") || low.includes("keisei") || low.includes("skyliner") || low.includes("shinkansen")) provider = "Kereta / IC Pass";
+
+  let kind = forcedKind && forcedKind !== "auto" ? forcedKind : "auto";
+  if (kind === "auto") {
+    const hotelHints = ["hotel", "inn", "resort", "check-in", "checkin", "check out", "checkout", "malam", "night", "room", "kamar", "onsen", "biyu", "nell", "art hotel", "agoda", "booking"];
+    const ticketHints = ["ticket", "tiket", "boarding", "pass", "qr", "barcode", "ze603", "yp732", "skyliner", "keisei", "suica", "klook", "shrine", "museum", "observatory", "ferry", "bus"];
+    const hScore = hotelHints.filter(w => low.includes(w)).length;
+    const tScore = ticketHints.filter(w => low.includes(w)).length;
+    kind = hScore > tScore ? "hotel" : "ticket";
+  }
+
+  const codeMatch = combined.match(/(?:ref|booking|order|pnr|no\.?|kode|barcode|qr)?\s*[:#-]?\s*([A-Z0-9]{6,16})/i);
+  const code = codeMatch ? codeMatch[1].toUpperCase() : "";
+
+  const dateMatches = combined.match(/\b\d{1,2}\s*(?:jan|feb|mar|apr|mei|may|jun|jul|agu|aug|sep|okt|oct|nov|des|dec)(?:\s*20\d{2})?\b/gi) || [];
+  const dates = dateMatches.length >= 2 ? `${dateMatches[0]} - ${dateMatches[1]}` : (dateMatches[0] || "");
+
+  const dayMatch = low.match(/\b(?:day|hari|d)\s*0?([1-9]|10)\b/);
+  let day = dayMatch ? parseInt(dayMatch[1], 10) : 1;
+  if (!dayMatch && low.includes("27 des")) day = 1;
+  else if (!dayMatch && low.includes("28 des")) day = 2;
+  else if (!dayMatch && low.includes("29 des")) day = 3;
+  else if (!dayMatch && low.includes("30 des")) day = 4;
+  else if (!dayMatch && low.includes("31 des")) day = 5;
+  else if (!dayMatch && low.includes("1 jan")) day = 6;
+  else if (!dayMatch && low.includes("2 jan")) day = 7;
+  else if (!dayMatch && low.includes("3 jan")) day = 8;
+  else if (!dayMatch && low.includes("4 jan")) day = 9;
+  else if (!dayMatch && low.includes("5 jan")) day = 10;
+
+  let cleanTitle = (rawText || "").split(/\r?\n/).map(l => l.trim()).find(l => l.length > 3 && l.length < 70) || "";
+  if (!cleanTitle && fileName) {
+    cleanTitle = fileName.replace(/\.[^.]+$/, "").replace(/[_-]+/g, " ").trim();
+  }
+  if (!cleanTitle) {
+    cleanTitle = kind === "hotel" ? `Akomodasi (${provider})` : `Tiket / Voucher (${provider})`;
+  }
+
+  const summary = rawText
+    ? rawText.replace(/\s+/g, " ").trim().slice(0, 180)
+    : `Diambil dari foto ${fileName || "voucher"} (${provider}). Tambahkan teks voucher bila ingin detail jam/syarat lebih lengkap.`;
+
+  const allTokens = Array.from(new Set(
+    (combined.match(/\b[A-Z0-9]{5,18}\b/gi) || [])
+      .map(t => t.toUpperCase())
+      .filter(t => !["HTTPS","HTTP","WWW","COM","JPG","JPEG","PNG","WEBP","HOTEL","TICKET","TIKET","AGODA","KLOOK","BOOKING","CHECK","NIGHT","MALAM","JAN","DES"].includes(t))
+  )).slice(0, 8);
+
+  const yenMatch = combined.match(/(?:¥|jpy)\s*([0-9][0-9.,]{1,7})/i);
+  const amountJpy = yenMatch ? parseInt(yenMatch[1].replace(/[.,]/g, ""), 10) : (st.lastScan?.amountJpy || 0);
+
+  return {
+    kind, provider, title: cleanTitle, dates, code, day, amountJpy,
+    tokens: allTokens,
+    summary, rawText: rawText || "", preview: st.lastScan?.preview || "",
+    fileName: fileName || st.lastScan?.fileName || ""
+  };
+}
+
+function commitScanToState(scan, options = {}){
+  if (!scan) return;
+  if (scan.kind === "hotel") {
+    if (!Array.isArray(st.hotels)) st.hotels = [];
+    st.hotels.push({
+      id: "h_" + Date.now(),
+      name: scan.title,
+      provider: scan.provider,
+      dates: scan.dates || "Sesuai voucher",
+      ref: scan.code,
+      note: scan.summary,
+      imgData: scan.preview || ""
+    });
+    toast(`Hotel ditambahkan dari ${scan.provider}`);
+  } else {
+    if (!Array.isArray(st.tickets)) st.tickets = [];
+    const tk = {
+      id: "tk_" + Date.now(),
+      title: scan.title,
+      provider: scan.provider,
+      day: scan.day || 1,
+      code: scan.code,
+      note: scan.summary,
+      imgData: scan.preview || ""
+    };
+    st.tickets.unshift(tk);
+    // Also append quick reminder note to matching day so itinerary reflects the uploaded ticket
+    const dObj = DAYS.find(x => x.d === tk.day);
+    if (dObj) {
+      const prev = st.notes[tk.day] || "";
+      const tagLine = `[${tk.provider}] ${tk.title}${tk.code ? " (" + tk.code + ")" : ""}`;
+      if (!prev.includes(tagLine)) {
+        st.notes[tk.day] = prev ? `${prev} · ${tagLine}` : tagLine;
+      }
+    }
+    toast(`Tiket masuk ke Hari ${String(tk.day).padStart(2,"0")} (${scan.provider})`);
+  }
+  if (options.addToTimeline) {
+    const targetDay = parseInt(options.day || scan.day || 1, 10);
+    if (!st.customSlots) st.customSlots = {};
+    if (!Array.isArray(st.customSlots[targetDay])) st.customSlots[targetDay] = [];
+    st.customSlots[targetDay].push({
+      id: "cs_" + Date.now(),
+      t: options.timeSlot || "Voucher / Barcode",
+      n: `${scan.title}${scan.code ? " [" + scan.code + "]" : ""}`,
+      b: scan.kind === "hotel" ? "gold" : "ok",
+      bt: scan.provider || "Voucher",
+      d: `${scan.dates ? scan.dates + " · " : ""}${scan.summary}`,
+      m: `https://www.google.com/maps/search/${encodeURIComponent(scan.title)}`
+    });
+  }
+
+  if (options.addExpense && parseInt(options.amountJpy || 0, 10) > 0) {
+    const amtVal = parseInt(options.amountJpy, 10);
+    const dIdx = Math.max(0, Math.min(9, (parseInt(options.day || scan.day || 1, 10) - 1)));
+    if (!Array.isArray(st.exps)) st.exps = [];
+    st.exps.unshift({
+      id: Date.now(),
+      dayIdx: dIdx,
+      cat: scan.kind === "hotel" ? "Atraksi" : "Transport",
+      amt: amtVal,
+      note: `${scan.provider}: ${scan.title}`.slice(0, 42)
+    });
+  }
+
+  save();
 }
 
 function renderSub(){
@@ -1601,18 +2168,21 @@ function renderSub(){
   if (s === "kana") {
     titleEl.textContent = "Panduan Kana (Hiragana & Katakana) + Istilah";
     const kanaTiles = KANA_SAMPLE.map(([ch, ro])=>`
-      <div class="kana-tile" data-act="copy-txt" data-txt="${ch}">
+      <div class="kana-tile" data-act="speak-jp" data-jp="${ch}" data-lbl="${ch} (${ro})" data-txt="${ch}" title="Ketuk untuk dengar suara & salin">
         <div class="kana-ch">${ch}</div>
         <div class="kana-ro">${ro}</div>
       </div>
     `).join("");
     const termRows = JP_TERMS.map(([jp, ro, desc])=>`
       <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed var(--rule);">
-        <div>
+        <div style="cursor:pointer;flex:1;" data-act="speak-jp" data-jp="${jp.replace(/"/g,'&quot;')}" data-lbl="${ro.replace(/"/g,'&quot;')}">
           <strong style="font-size:14px;color:var(--kincha);">${jp}</strong> <span style="font-size:11.5px;font-weight:700;">(${ro})</span>
           <div style="font-size:11.5px;color:var(--sumi);">${desc}</div>
         </div>
-        <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${jp}">Salin</button>
+        <div class="row">
+          <button type="button" class="btn btn-sm btn-hanko" data-act="speak-jp" data-jp="${jp.replace(/"/g,'&quot;')}" data-lbl="${ro.replace(/"/g,'&quot;')}">Audio JP</button>
+          <button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${jp.replace(/"/g,'&quot;')}">Salin</button>
+        </div>
       </div>
     `).join("");
     bodyEl.innerHTML = `
@@ -1635,51 +2205,125 @@ function renderSub(){
       </div>
     `;
   } else if (s === "logistics") {
-    titleEl.textContent = "Hotel, Shuttle, Suica & Referensi (Hal. 29 & 34)";
+    titleEl.textContent = "Hotel, Tiket & Otomatisasi Foto Voucher";
     const hotels = Array.isArray(st.hotels) ? st.hotels : [];
+    const tickets = Array.isArray(st.tickets) ? st.tickets : [];
     const editObj = st.editingHotelId ? hotels.find(h => h.id === st.editingHotelId) : null;
+    const scan = st.lastScan || null;
 
     const hotelCardsHtml = hotels.length === 0
-      ? `<div class="addr-box" style="color:var(--sumi);">Belum ada daftar hotel tersimpan. Tambahkan hotel baru di bawah.</div>`
+      ? `<div class="addr-box" style="color:var(--sumi);">Belum ada daftar hotel tersimpan. Tambahkan hotel baru atau unggah foto voucher di bawah.</div>`
       : hotels.map((h, idx) => `
         <div class="slot" style="margin-bottom:8px;">
           <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;flex-wrap:wrap;">
             <div>
               <span class="tag tag-gold">HOTEL #${idx + 1}</span>
               <strong style="font-size:13.5px;margin-left:4px;">${h.name}</strong>
+              ${h.provider ? `<span class="tag tag-muted" style="margin-left:4px;">${h.provider}</span>` : ''}
               <div style="font-size:11.5px;color:var(--matcha);font-weight:700;">${h.dates || "Tanggal fleksibel"}</div>
             </div>
             <div class="row">
               ${h.ref ? `<button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${String(h.ref).replace(/"/g,'&quot;')}">Salin Ref (${h.ref})</button>` : ''}
-              <button type="button" class="btn btn-sm" data-act="edit-hotel" data-hid="${h.id}">✏️ Edit</button>
+              <button type="button" class="btn btn-sm" data-act="edit-hotel" data-hid="${h.id}">Edit</button>
               <button type="button" class="btn btn-sm btn-hanko" data-act="del-hotel" data-hid="${h.id}">Hapus</button>
             </div>
           </div>
           ${h.note ? `<div class="slot-ds" style="margin-top:5px;">${h.note}</div>` : ''}
+          ${h.imgData ? `<img src="${h.imgData}" alt="Voucher ${h.name}" class="preview-thumb" style="max-height:120px;">` : ''}
+        </div>
+      `).join("");
+
+    const ticketCardsHtml = tickets.length === 0
+      ? `<div style="font-size:11.5px;color:var(--sumi);margin-bottom:8px;">Belum ada tiket/pass tersimpan. Unggah foto tiket atau barcode/QR dari Agoda, Trip.com, Klook, atau maskapai di bawah.</div>`
+      : tickets.map((tk, i) => `
+        <div class="slot" style="margin-bottom:7px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;flex-wrap:wrap;">
+            <div>
+              <span class="tag tag-ok">TIKET #${i + 1}</span>
+              <strong style="font-size:13px;margin-left:4px;">${tk.title}</strong>
+              ${tk.provider ? `<span class="tag tag-muted">${tk.provider}</span>` : ''}
+              <div style="font-size:11px;color:var(--sumi);">Hari D${String(tk.day || 1).padStart(2,"0")} · Ref/Kode: <strong>${tk.code || "-"}</strong></div>
+            </div>
+            <div class="row">
+              ${tk.code ? `<button type="button" class="btn btn-sm" data-act="copy-txt" data-txt="${String(tk.code).replace(/"/g,'&quot;')}">Salin Kode</button>` : ''}
+              <button type="button" class="btn btn-sm btn-hanko" data-act="del-ticket" data-tid="${tk.id}">Hapus</button>
+            </div>
+          </div>
+          ${tk.note ? `<div class="slot-ds" style="margin-top:4px;">${tk.note}</div>` : ''}
+          ${tk.imgData ? `<img src="${tk.imgData}" alt="Tiket ${tk.title}" class="preview-thumb" style="max-height:115px;">` : ''}
         </div>
       `).join("");
 
     bodyEl.innerHTML = `
-      <div style="line-height:1.6;margin-bottom:10px;">
-        <div>• <strong>Penerbangan:</strong> ZE603 (ICN T1 15.20 -> NRT T3 17.45) · YP732 (NRT T2 12.30 -> ICN T1 15.20).</div>
-        <div>• <strong>Welcome Suica:</strong> Fisik di Narita T1/T2/T3, 28 hari, tanpa deposit; saldo tidak dikembalikan.</div>
-        <div>• <strong>Shuttle &amp; Akses:</strong> ART HOTEL shuttle gratis T2 Halte 26 / T1 Halte 16 (~30-35 mnt); pembatalan gratis sebelum 7 Des 2026.</div>
+      <div class="upload-zone">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px;">
+          <strong style="font-size:12.5px;color:var(--kincha);">⚡ Auto-Isi Hotel, Tiket &amp; Jadwal dari 1x Upload Foto</strong>
+          <span class="ocr-badge">Agoda · Trip.com · Klook · QR/Kode</span>
+        </div>
+        <div style="font-size:11.5px;color:var(--sumi);margin-bottom:7px;">
+          Pilih foto voucher/barcode/tiket atau coba contoh cepat di bawah. Kode terdeteksi bisa diklik untuk dijadikan nomor referensi utama, lalu langsung masuk ke daftar &amp; jadwal hari terpilih.
+        </div>
+        <div class="row" style="margin-bottom:7px;">
+          <button type="button" class="btn btn-sm" data-act="sample-voucher" data-s="agoda">Contoh Agoda</button>
+          <button type="button" class="btn btn-sm" data-act="sample-voucher" data-s="trip">Contoh Trip.com</button>
+          <button type="button" class="btn btn-sm" data-act="sample-voucher" data-s="klook">Contoh Klook</button>
+        </div>
+        <div class="row" style="margin-bottom:7px;">
+          <input type="file" id="voucher-file-in" accept="image/*" style="flex:1;font-size:11.5px;">
+          <select id="scan-kind" style="width:auto;">
+            <option value="auto" ${(scan?.kind||'auto')==='auto'?'selected':''}>Deteksi Otomatis</option>
+            <option value="hotel" ${(scan?.kind||'')==='hotel'?'selected':''}>Masuk ke Hotel</option>
+            <option value="ticket" ${(scan?.kind||'')==='ticket'?'selected':''}>Masuk ke Tiket</option>
+          </select>
+        </div>
+        <textarea id="voucher-raw-txt" placeholder="Tempel teks salinan voucher/barcode/e-ticket (Agoda / Trip.com / Klook / maskapai / kereta)..." style="min-height:54px;font-size:11.5px;margin-bottom:6px;">${(scan?.rawText || '').replace(/"/g,'&quot;')}</textarea>
+        <div class="row" style="margin-bottom:7px;">
+          <select id="scan-day" style="width:auto;">
+            ${DAYS.map(dx => `<option value="${dx.d}" ${(scan?.day||1)===dx.d?'selected':''}>Hari D${String(dx.d).padStart(2,"0")} (${dx.dt.slice(0,6)})</option>`).join("")}
+          </select>
+          <input type="number" id="scan-yen" value="${scan?.amountJpy || 0}" placeholder="Biaya ¥ (opsional)" style="width:125px;">
+          <label style="font-size:11.5px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;">
+            <input type="checkbox" id="scan-to-timeline" checked style="accent-color:var(--matcha);"> + Jadwal Hari
+          </label>
+          <label style="font-size:11.5px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;">
+            <input type="checkbox" id="scan-to-exp" style="accent-color:var(--kincha);"> + Catat ¥
+          </label>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-sm btn-kincha" data-act="reparse-voucher">Ekstrak &amp; Pratinjau</button>
+          <button type="button" class="btn btn-sm btn-matcha" data-act="apply-scan-now">Terapkan Otomatis</button>
+        </div>
+        ${scan?.preview ? `<img src="${scan.preview}" alt="Pratinjau Voucher" class="preview-thumb">` : ''}
+        ${scan ? `
+          <div class="addr-box" style="margin-top:7px;margin-bottom:0;">
+            <div><strong>Sumber:</strong> ${scan.provider} · <strong>Tipe:</strong> ${scan.kind === 'hotel' ? 'Hotel/Penginapan' : 'Tiket/Voucher'}</div>
+            <div><strong>Judul/Nama:</strong> ${scan.title}</div>
+            <div><strong>Tanggal:</strong> ${scan.dates || "-"} · <strong>Kode Terpilih:</strong> <span id="picked-scan-code" style="font-family:monospace;font-weight:800;color:var(--hanko);">${scan.code || "-"}</span></div>
+            ${Array.isArray(scan.tokens) && scan.tokens.length ? `
+              <div style="font-size:10.5px;color:var(--sumi);margin-top:4px;">Kandidat kode/barcode (klik untuk pakai):</div>
+              <div class="token-chips">
+                ${scan.tokens.map(tk => `<button type="button" class="tok-btn" data-act="pick-token" data-tok="${tk}">${tk}</button>`).join("")}
+              </div>
+            ` : ''}
+            ${scan.summary ? `<div style="color:var(--sumi);margin-top:3px;">${scan.summary}</div>` : ''}
+          </div>
+        ` : ''}
       </div>
 
-      <div style="margin-bottom:10px;">
-        <div class="card-lbl" style="margin-bottom:7px;">Daftar Akomodasi &amp; Hotel (${hotels.length})</div>
+      <div style="margin-bottom:12px;">
+        <div class="card-lbl" style="margin-bottom:7px;">Daftar Hotel &amp; Penginapan (${hotels.length})</div>
         ${hotelCardsHtml}
       </div>
 
-      <div class="addr-box" style="background:var(--washi);border-style:solid;margin-bottom:10px;">
+      <div class="addr-box" style="background:var(--washi);border-style:solid;margin-bottom:12px;">
         <div style="font-size:11.5px;font-weight:800;color:var(--kincha);margin-bottom:6px;">
-          ${editObj ? "✏️ Edit Data Hotel" : "+ Tambah Hotel / Penginapan Baru"}
+          ${editObj ? "Edit Data Hotel" : "+ Tambah / Edit Hotel Manual"}
         </div>
         <div style="display:grid;gap:6px;">
           <input type="text" id="h-name" value="${(editObj?.name || '').replace(/"/g,'&quot;')}" placeholder="Nama Hotel (mis. APA Hotel Ueno / Host Jōsō)">
           <div class="row">
             <input type="text" id="h-dates" value="${(editObj?.dates || '').replace(/"/g,'&quot;')}" placeholder="Tanggal / Malam (mis. 30 Des - 2 Jan)" style="flex:1;">
-            <input type="text" id="h-ref" value="${(editObj?.ref || '').replace(/"/g,'&quot;')}" placeholder="No. Booking / Ref" style="flex:1;">
+            <input type="text" id="h-ref" value="${(editObj?.ref || '').replace(/"/g,'&quot;')}" placeholder="No. Booking / Barcode" style="flex:1;">
           </div>
           <input type="text" id="h-note" value="${(editObj?.note || '').replace(/"/g,'&quot;')}" placeholder="Catatan check-in, shuttle, sarapan, atau onsen">
           <div class="row">
@@ -1689,12 +2333,17 @@ function renderSub(){
         </div>
       </div>
 
+      <div style="margin-bottom:12px;">
+        <div class="card-lbl" style="margin-bottom:7px;">Daftar Tiket, Barcode &amp; Voucher (${tickets.length})</div>
+        ${ticketCardsHtml}
+      </div>
+
       <div style="display:grid;gap:6px;">
         <div class="row">
           <input type="text" id="r-flight" value="${(st.refs.flight||'').replace(/"/g,'&quot;')}" placeholder="Kode E-Ticket ZE603 & YP732" style="flex:1;">
           <button type="button" class="btn btn-sm" data-act="c-ref" data-k="flight">Salin</button>
         </div>
-        <button type="button" class="btn btn-sm btn-kincha" data-act="save-refs">Simpan Kode Penerbangan</button>
+        <button type="button" class="btn btn-sm btn-matcha" data-act="save-refs">Simpan Kode Penerbangan</button>
       </div>
     `;
   } else if (s === "onebag") {
@@ -1737,7 +2386,7 @@ function renderSub(){
     bodyEl.innerHTML = SOURCES.map(x=>`
       <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;padding:5px 0;border-bottom:1px dashed var(--rule);">
         <span><strong>[${x[0]}]</strong> ${x[1]}</span>
-        <button type="button" class="btn btn-sm" data-act="ext" data-t="${x[1]}" data-u="${x[2]}">Buka ↗</button>
+        <button type="button" class="btn btn-sm" data-act="ext" data-t="${String(x[1]||'').replace(/"/g,'&quot;')}" data-u="${x[2]}">Buka →</button>
       </div>
     `).join("");
   }
@@ -1746,7 +2395,7 @@ function renderSub(){
 function renderTheme(){
   document.body.classList.toggle("night", !st.light);
   const b = document.getElementById("theme-btn");
-  if (b) b.textContent = st.light ? "🌙 Mode Malam (Sumi)" : "☀️ Mode Siang (Washi)";
+  if (b) b.textContent = st.light ? "Mode Malam · Sumi" : "Mode Siang · Washi";
 }
 
 function switchPage(p){
@@ -1781,12 +2430,39 @@ function openSos(k){
 
 document.body.addEventListener("click", e=>{
   if (e.target.id === "sheet-bg") { toggleSheet(false); return; }
-  if (e.target.id === "sos-bg") { document.getElementById("sos-bg").classList.remove("open"); return; }
+  if (e.target.id === "sos-bg") {
+    try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (err) {}
+    document.getElementById("sos-bg").classList.remove("open");
+    return;
+  }
   const b = e.target.closest("[data-act]");
   if (!b) return;
   const act = b.dataset.act;
 
-  if (act === "tab") { toggleSheet(false); switchPage(b.dataset.p); }
+  if (act === "toggle-fullscreen") {
+    try {
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(() => toast("Gunakan menu browser / pasang ke layar utama untuk layar penuh"));
+      } else if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      } else {
+        toast("Buka lewat GitHub Pages (https://...) lalu pasang ke layar utama");
+      }
+    } catch (e) {
+      toast("Mode layar penuh dikontrol oleh browser");
+    }
+  }
+  else if (act === "install-pwa") {
+    if (deferredInstallPrompt) {
+      deferredInstallPrompt.prompt();
+      deferredInstallPrompt.userChoice.finally(() => {
+        deferredInstallPrompt = null;
+      });
+    } else {
+      toast("Buka di Chrome (https://...) lalu pilih Add to Home screen / Instal");
+    }
+  }
+  else if (act === "tab") { toggleSheet(false); switchPage(b.dataset.p); }
   else if (act === "toggle-sheet") { toggleSheet(); }
   else if (act === "open-sheet") { toggleSheet(true); }
   else if (act === "close-sheet") { toggleSheet(false); }
@@ -1813,8 +2489,27 @@ document.body.addEventListener("click", e=>{
   else if (act === "close-ext") { document.getElementById("ext-strip").classList.remove("open"); }
   else if (act === "copy-txt") { copyStr(b.dataset.txt, "Teks disalin!"); }
   else if (act === "sos") { toggleSheet(false); openSos(b.dataset.k); }
-  else if (act === "close-sos") { document.getElementById("sos-bg").classList.remove("open"); }
+  else if (act === "close-sos") {
+    try { window.speechSynthesis && window.speechSynthesis.cancel(); } catch (err) {}
+    document.getElementById("sos-bg").classList.remove("open");
+  }
   else if (act === "fc") { openSos(b.dataset.k); }
+  else if (act === "speak-jp") {
+    const jpTxt = b.dataset.jp || b.dataset.txt || "";
+    const lbl = b.dataset.lbl || "";
+    if (b.dataset.txt) {
+      const ta = document.createElement("textarea");
+      ta.value = b.dataset.txt; ta.style.position="fixed"; ta.style.left="-9999px";
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand("copy"); }catch(err){}
+      document.body.removeChild(ta);
+    }
+    speakJapanese(jpTxt, lbl ? `${lbl} · Disalin` : "Disalin");
+  }
+  else if (act === "speak-fc") {
+    const c = FCS[curFc];
+    if (c) speakJapanese(c.jp, "Kartu Bahasa Jepang");
+  }
   else if (act === "copy-fc") { copyStr(FCS[curFc].jp, "Teks Jepang disalin!"); }
   else if (act === "theme") { st.light = !st.light; save(); renderTheme(); }
   else if (act === "suica") { st.suica = Math.max(0, st.suica + parseInt(b.dataset.d, 10)); save(); renderBudget(); renderSchedule(); toast(`Suica: ¥${st.suica.toLocaleString()}`); }
@@ -1893,6 +2588,64 @@ document.body.addEventListener("click", e=>{
     const v = document.getElementById("r-"+b.dataset.k)?.value || "";
     if (v.trim()) copyStr(v.trim(), "Disalin!");
   }
+  else if (act === "sample-voucher") {
+    const smp = VOUCHER_SAMPLES[b.dataset.s];
+    if (!smp) return;
+    const prev = st.lastScan?.preview || "";
+    const fname = st.lastScan?.fileName || `${b.dataset.s}_voucher.png`;
+    st.lastScan = { ...parseVoucherPayload(fname, smp.rawText, smp.kind), provider: smp.provider, title: smp.title, dates: smp.dates, code: smp.code, day: smp.day, amountJpy: smp.amountJpy || 0, fileName: fname, preview: prev };
+    save();
+    renderSub();
+    toast(`Contoh ${smp.provider} dimuat`);
+  }
+  else if (act === "pick-token") {
+    if (!st.lastScan) return;
+    st.lastScan.code = b.dataset.tok;
+    save();
+    renderSub();
+    toast(`Kode ${b.dataset.tok} dipilih`);
+  }
+  else if (act === "reparse-voucher") {
+    const rawTxt = document.getElementById("voucher-raw-txt")?.value || "";
+    const forced = document.getElementById("scan-kind")?.value || "auto";
+    const chosenDay = parseInt(document.getElementById("scan-day")?.value || "1", 10);
+    const amtYen = parseInt(document.getElementById("scan-yen")?.value || "0", 10) || 0;
+    const fname = st.lastScan?.fileName || "";
+    const prev = st.lastScan?.preview || "";
+    st.lastScan = { ...parseVoucherPayload(fname, rawTxt, forced), day: chosenDay, amountJpy: amtYen, fileName: fname, preview: prev };
+    save();
+    renderSub();
+    toast("Hasil scan diperbarui");
+  }
+  else if (act === "apply-scan-now") {
+    const rawTxt = document.getElementById("voucher-raw-txt")?.value || "";
+    const forced = document.getElementById("scan-kind")?.value || "auto";
+    const chosenDay = parseInt(document.getElementById("scan-day")?.value || "1", 10);
+    const amtYen = parseInt(document.getElementById("scan-yen")?.value || "0", 10) || 0;
+    const toTl = !!document.getElementById("scan-to-timeline")?.checked;
+    const toExp = !!document.getElementById("scan-to-exp")?.checked;
+    const fname = st.lastScan?.fileName || "voucher_upload.png";
+    const prev = st.lastScan?.preview || "";
+    const parsed = { ...parseVoucherPayload(fname, rawTxt, forced), day: chosenDay, amountJpy: amtYen, fileName: fname, preview: prev };
+    if (!rawTxt && !fname && !prev) { toast("Pilih foto atau isi detail voucher dulu"); return; }
+    if (st.lastScan && st.lastScan.committed) {
+      toast("Hasil scan ini sudah diterapkan");
+      return;
+    }
+    commitScanToState(parsed, { addToTimeline: toTl, addExpense: toExp, day: chosenDay, amountJpy: amtYen });
+    st.lastScan = null;
+    save();
+    renderSub();
+    renderSchedule();
+    renderBudget();
+  }
+  else if (act === "del-ticket") {
+    const tid = b.dataset.tid;
+    st.tickets = (st.tickets || []).filter(t => t.id !== tid);
+    save();
+    renderSub();
+    toast("Tiket dihapus");
+  }
   else if (act === "bag") { st.bag[b.dataset.id] = b.checked; save(); renderSub(); }
   else if (act === "dl-json") {
     const blob = new Blob([JSON.stringify(st,null,2)], {type:"application/json"});
@@ -1905,7 +2658,8 @@ document.body.addEventListener("click", e=>{
   else if (act === "imp-json") {
     try {
       const p = JSON.parse(document.getElementById("j-box").value);
-      st = { ...st, ...p }; save(); renderAll(); toast("Data dipulihkan!");
+      st = { ...st, ...p }; save(); setupPwaManifestAndSw();
+renderAll(); toast("Data dipulihkan!");
     } catch(err){ toast("JSON tidak valid"); }
   }
   else if (act === "ics") {
@@ -1926,6 +2680,25 @@ document.body.addEventListener("click", e=>{
 
 document.body.addEventListener("change", e=>{
   const el = e.target;
+  if (el && el.id === "voucher-file-in" && el.files && el.files[0]) {
+    const f = el.files[0];
+    const rawTxt = document.getElementById("voucher-raw-txt")?.value || "";
+    const forced = document.getElementById("scan-kind")?.value || "auto";
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = typeof reader.result === "string" ? reader.result : "";
+      const parsed = parseVoucherPayload(f.name, rawTxt, forced);
+      parsed.fileName = f.name;
+      parsed.preview = dataUrl;
+      parsed.committed = false;
+      st.lastScan = parsed;
+      save();
+      renderSub();
+      toast("Foto dimuat — klik Terapkan Otomatis");
+    };
+    reader.readAsDataURL(f);
+    return;
+  }
   const act = el.dataset ? el.dataset.act : null;
   if (act === "done") { st.done[el.dataset.id] = el.checked; save(); renderSchedule(); }
   else if (act === "bag") { st.bag[el.dataset.id] = el.checked; save(); renderSub(); }
@@ -1937,7 +2710,176 @@ document.body.addEventListener("input", e=>{
   if (e.target.id === "fx-in") renderBudget();
 });
 
+
+function updateLocalClocks(){
+  const el = document.getElementById("jst-clock");
+  if (!el) return;
+  try {
+    const nowJp = new Date(new Date().toLocaleString("en-US", { timeZone: "Asia/Tokyo" }));
+    const hh = String(nowJp.getHours()).padStart(2, "0");
+    const mm = String(nowJp.getMinutes()).padStart(2, "0");
+    const ss = String(nowJp.getSeconds()).padStart(2, "0");
+    el.textContent = `${hh}:${mm}:${ss}`;
+  } catch (e) {
+    el.textContent = "--:--:--";
+  }
+}
+updateLocalClocks();
+setInterval(updateLocalClocks, 1000);
+
+
+const ZEN_SVG = {
+  cal: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><circle cx="12" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>',
+  pin: '<svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>',
+  rail: '<svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 12h12M9 17l-2 4M15 17l2 4M9.5 8.5h.01M14.5 8.5h.01"/></svg>',
+  bowl: '<svg viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M8 19h8M7 7l5-3 5 3"/></svg>',
+  yen: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 8l3.5 4.5L15.5 8M12 12.5V17M8.5 13h7M8.5 15h7"/></svg>',
+  kana: '<svg viewBox="0 0 24 24"><path d="M4 7h10M9 4c-.5 6-2.5 11-5 14M13 11h7M17 8v9c0 1.5-1 2.2-2.5 2"/></svg>',
+  hotel: '<svg viewBox="0 0 24 24"><path d="M4 20V6l8-3 8 3v14"/><path d="M9 20v-5h6v5M9 10h.01M15 10h.01"/></svg>',
+  bag: '<svg viewBox="0 0 24 24"><path d="M6 8h12l1.5 12h-15L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  bolt: '<svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/></svg>',
+  save: '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>',
+  book: '<svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2V5z"/><path d="M8 7h6"/></svg>',
+  sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+  moon: '<svg viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4c0-.5 0-1 .1-1.5A8.5 8.5 0 1 0 21.5 14.4c-.5.1-1 .1-1.5.1z"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>',
+  enso: '<svg viewBox="0 0 24 24"><path d="M18.5 6.5A8.5 8.5 0 1 0 20.4 13"/></svg>'
+};
+function zenIcon(name){
+  return `<span class="zen-ico">${ZEN_SVG[name] || ZEN_SVG.enso}</span>`;
+}
+
+
+let deferredInstallPrompt = null;
+
+function generateAppIconPng(size){
+  try {
+    const cv = document.createElement("canvas");
+    cv.width = size;
+    cv.height = size;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return "";
+    ctx.fillStyle = "#F3EFE6";
+    ctx.fillRect(0, 0, size, size);
+
+    ctx.strokeStyle = "#1C1B18";
+    ctx.lineWidth = Math.max(4, Math.round(size * 0.03));
+    ctx.strokeRect(size * 0.07, size * 0.07, size * 0.86, size * 0.86);
+
+    ctx.fillStyle = "#B6362B";
+    const boxW = size * 0.44;
+    const boxH = size * 0.44;
+    const bx = (size - boxW) / 2;
+    const by = size * 0.17;
+    ctx.fillRect(bx, by, boxW, boxH);
+
+    ctx.fillStyle = "#FAF7F0";
+    ctx.font = `bold ${Math.round(size * 0.24)}px Georgia, serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("冬", size / 2, by + boxH / 2 + 2);
+
+    ctx.fillStyle = "#1C1B18";
+    ctx.font = `bold ${Math.round(size * 0.13)}px sans-serif`;
+    ctx.fillText("26 · 27", size / 2, size * 0.74);
+
+    return cv.toDataURL("image/png");
+  } catch (e) {
+    return "";
+  }
+}
+
+function setupPwaManifestAndSw(){
+  const i192 = generateAppIconPng(192);
+  const i512 = generateAppIconPng(512);
+  if (i192) {
+    const ap = document.getElementById("apple-icon-link");
+    if (ap) ap.href = i192;
+  }
+  const icons = [];
+  if (i192) icons.push({ src: i192, sizes: "192x192", type: "image/png", purpose: "any" });
+  if (i512) icons.push({ src: i512, sizes: "512x512", type: "image/png", purpose: "any maskable" });
+
+  const manifestObj = {
+    name: "Japan Winter Field Guide (冬旅案内)",
+    short_name: "冬旅案内",
+    description: "Panduan perjalanan musim dingin Jepang 10 hari (27 Des 2026 - 5 Jan 2027).",
+    start_url: "./",
+    scope: "./",
+    display: "fullscreen",
+    orientation: "portrait",
+    background_color: "#F3EFE6",
+    theme_color: "#F3EFE6",
+    icons: icons
+  };
+
+  try {
+    const mLink = document.getElementById("pwa-manifest-link");
+    if (mLink && (location.protocol === "file:" || location.protocol === "content:")) {
+      const mBlob = new Blob([JSON.stringify(manifestObj)], { type: "application/manifest+json" });
+      mLink.href = URL.createObjectURL(mBlob);
+    } else if (mLink && !mLink.getAttribute("href")) {
+      mLink.href = "./manifest.json";
+    }
+  } catch (e) {}
+
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+    const swCode = `
+      const CACHE_NAME = "jwfg-pwa-v1";
+      self.addEventListener("install", e => {
+        self.skipWaiting();
+      });
+      self.addEventListener("activate", e => {
+        e.waitUntil(self.clients.claim());
+      });
+      self.addEventListener("fetch", e => {
+        if (e.request.method !== "GET") return;
+        e.respondWith(
+          fetch(e.request).then(res => {
+            const copy = res.clone();
+            caches.open(CACHE_NAME).then(c => c.put(e.request, copy)).catch(()=>{});
+            return res;
+          }).catch(() => caches.match(e.request))
+        );
+      });
+    `;
+    try {
+      const swBlob = new Blob([swCode], { type: "application/javascript" });
+      const swUrl = URL.createObjectURL(swBlob);
+      navigator.serviceWorker.register(swUrl, { scope: "./" }).catch(()=>{});
+    } catch (e) {}
+  }
+
+  const bar = document.getElementById("install-bar");
+  const hint = document.getElementById("install-hint");
+  const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.matchMedia("(display-mode: fullscreen)").matches || window.navigator.standalone;
+  if (!isStandalone && bar) {
+    if (location.protocol === "file:" || location.protocol === "content:") {
+      if (hint) hint.textContent = "Buka lewat tautan GitHub Pages (https://...) di Chrome agar tombol Instal langsung muncul, atau pilih 'Add to Home screen' di menu browser.";
+      bar.classList.add("show");
+    } else if (hint) {
+      hint.textContent = "Ketuk Instal App atau menu browser (⋮) -> Add to Home screen / Instal aplikasi.";
+      bar.classList.add("show");
+    }
+  }
+}
+
+window.addEventListener("beforeinstallprompt", e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const bar = document.getElementById("install-bar");
+  if (bar) bar.classList.add("show");
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  const bar = document.getElementById("install-bar");
+  if (bar) bar.classList.remove("show");
+  toast("Aplikasi terpasang ke layar utama");
+});
+
 function renderAll(){
+  updateLocalClocks();
   renderTheme();
   renderHeroCarousel();
   renderSchedule();
