@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#F3EFE6"/>
+  <rect x="36" y="36" width="1128" height="558" rx="28" fill="#FAF7F0" stroke="#1C1B18" stroke-width="4"/>
+  <circle cx="910" cy="220" r="105" fill="#B6362B"/>
+  <polygon points="180,490 520,210 860,490" fill="#1B2A4A"/>
+  <polygon points="415,296 520,210 625,296 575,280 520,305 465,280" fill="#FAF7F0"/>
+  <rect x="36" y="490" width="1128" height="104" fill="#1B2A4A"/>
+  <text x="90" y="130" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#1C1B18">冬旅案内 · FIELD GUIDE</text>
+  <text x="90" y="180" font-family="sans-serif" font-size="24" fill="#5E5A50">https://kawan-e9.github.io/kawan-e9/</text>
+</svg>
